@@ -5,11 +5,8 @@ class Athlete < ApplicationRecord
   has_many :coaches, through: :recruits
 
   include PgSearch::Model
-  pg_search_scope :global_search,
+  pg_search_scope :search,
     against: [:first_name, :last_name, :grad_year, :rating, :team, :nationality],
-    associated_against: {
-      event: [:location, :date]
-    },
     using: {
       tsearch: { prefix: true }
     }
