@@ -7,6 +7,6 @@ class User < ApplicationRecord
   belongs_to :organization
   belongs_to :sport
 
-  has_many :recruits
+  has_many :recruits, dependent: :destroy
   has_many :calendars
 end
