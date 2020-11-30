@@ -7,13 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Clearing the Database...."
+Appearance.destroy_all
+Event.destroy_all
+Recruit.destroy_all
+Athlete.destroy_all
 User.destroy_all
 Organization.destroy_all
 Sport.destroy_all
-Athlete.destroy_all
-Recruit.destroy_all
-Event.destroy_all
-Appearance.destroy_all
 
 
 puts "Generating Coach & Athletes"
