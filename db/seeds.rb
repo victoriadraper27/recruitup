@@ -5,3 +5,49 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts "Clearing the Database...."
+User.destroy_all
+Organization.destroy_all
+Sport.destroy_all
+Athlete.destroy_all
+
+
+puts "Generating Coach & Athletes"
+
+@masters = Organization.create!(
+  name: 'Masters'
+  )
+
+@golf = Sport.create!(
+  name: 'golf'
+  )
+
+user_attributes = {
+  email: 'coachie@email.com',
+  password: 'coachiecoach',
+  first_name: 'Butch',
+  last_name: 'Harmon'
+}
+
+user = User.new(user_attributes)
+user.organization = @masters
+user.sport = @golf
+user.save
+
+puts "Generated #{user.first_name} #{user.last_name} user"
+
+25.times do
+  athlete = Athlete.create!( first_name: Faker::Name.female_first_name,
+                  last_name: Faker::Name.last_name  ,
+                  grad_year: rand(2022..2025),
+                  team: Faker::Team.name,
+                  team_url: "www.#{Faker::Team.name}.com",
+                  nationality: Faker::Nation.nationality,
+                  rating: Faker::Number.decimal(l_digits: 3, r_digits: 3))
+  puts "Generated #{athlete.first_name} #{athlete.last_name}"
+end
+
+
+puts "Generated #{user.first_name} #{user.last_name} user"
+puts "Generated #{Athlete.count} athletes"

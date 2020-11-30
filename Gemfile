@@ -27,6 +27,7 @@ gem 'redis', '~> 4.0'
 
 # Custom Gems Added by JVR
 gem 'cloudinary', '~> 1.16.0'
+gem 'faker'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
