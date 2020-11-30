@@ -2,11 +2,8 @@ class AthletesController < ApplicationController
   after_action :authorize_athlete, except: :index
 
   def index
-    if params[:query].present?
-      @athletes = Athlete.search(params[:query])
-    else
-      @athletes = Athlete.all
-    end
+    @athletes = policy_scope(Athlete).order(created_at: :desc)
+    @athletes = Athlete.search(params[:query]) if params[:query].present?
   end
 
   def show
@@ -16,8 +13,7 @@ class AthletesController < ApplicationController
 
   private
 
-  def authorize_wand
+  def authorize_athlete
     authorize @athlete
   end
-
 end

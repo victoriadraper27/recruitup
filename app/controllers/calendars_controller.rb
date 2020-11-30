@@ -1,6 +1,8 @@
 class CalendarsController < ApplicationController
+  after_action :authorize_calendar, except: :index
+
   def index
-    @calendars = Calendar.all
+    @calendars = policy_scope(Calendar).order(created_at: :desc)
   end
 
   def show
@@ -12,4 +14,11 @@ class CalendarsController < ApplicationController
 
   # def update
   #end
+
+
+  private
+
+  def authorize_calendar
+    authorize @calendar
+  end
 end
