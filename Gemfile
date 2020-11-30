@@ -28,6 +28,7 @@ gem 'redis', '~> 4.0'
 # Custom Gems Added by JVR
 gem 'cloudinary', '~> 1.16.0'
 gem 'faker'
+gem 'pundit'
 gem 'pg_search', '~> 2.3.0'
 
 # Reduces boot times through caching; required in config/boot.rb
