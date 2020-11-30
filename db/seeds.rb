@@ -12,6 +12,8 @@ Event.destroy_all
 Recruit.destroy_all
 Athlete.destroy_all
 User.destroy_all
+Calendar.destroy_all
+CalendarEvent.destroy_all
 Organization.destroy_all
 Sport.destroy_all
 
