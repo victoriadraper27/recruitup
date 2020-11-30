@@ -1,4 +1,7 @@
 <h1>My Recruits</h1>
+  <div class='d-flex input-group-prepend w-100 flex-grow-1'>
+      <%= render 'shared/search' %>
+  </div>
 <ul>
   <% @recruits.each do |recruit| %>
     <li>
