@@ -12,6 +12,8 @@ Event.destroy_all
 Recruit.destroy_all
 Athlete.destroy_all
 User.destroy_all
+Calendar.destroy_all
+CalendarEvent.destroy_all
 Organization.destroy_all
 Sport.destroy_all
 
@@ -111,5 +113,10 @@ end
 # Need to prioritize games that have overlapping recruits
 # Need to only see one recruit 3 times in a calendar
 
+calendar = Calendar.create!(user: user)
+
+Event.find_each do |event|
+  calendar_event = CalendarEvent.create!(event: event, calendar: calendar)
+end
 
 
