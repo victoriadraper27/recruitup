@@ -7,9 +7,10 @@ class CalendarsController < ApplicationController
     @calendar = Calendar.find(params[:id])
   end
 
-  # def edit
-  # end
+  #def edit
+  #end
 
   # def update
   #end
+
 end
