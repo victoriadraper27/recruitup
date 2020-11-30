@@ -7,19 +7,19 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Clearing the Database...."
+User.destroy_all
 Organization.destroy_all
 Sport.destroy_all
-User.destroy_all
 Athlete.destroy_all
 
 
-puts "Generating Athletes"
+puts "Generating Coach & Athletes"
 
-masters = Organization.create!(
+@masters = Organization.create!(
   name: 'Masters'
   )
 
-golf = Sport.create!(
+@golf = Sport.create!(
   name: 'golf'
   )
 
@@ -27,15 +27,15 @@ user_attributes = {
   email: 'coachie@email.com',
   password: 'coachiecoach',
   first_name: 'Butch',
-  last_name: 'Harmon',
-
+  last_name: 'Harmon'
 }
+
 user = User.new(user_attributes)
-user.organization = masters
-user.sport = golf
+user.organization = @masters
+user.sport = @golf
 user.save
 
-puts "Generated #{user.name} user"
+puts "Generated #{user.first_name} #{user.last_name} user"
 
 25.times do
   athlete = Athlete.create!( first_name: Faker::Name.female_first_name,
@@ -45,9 +45,9 @@ puts "Generated #{user.name} user"
                   team_url: "www.#{Faker::Team.name}.com",
                   nationality: Faker::Nation.nationality,
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3))
-  puts "Generated #{athlete.name}"
+  puts "Generated #{athlete.first_name} #{athlete.last_name}"
 end
 
 
-puts "Generated #{user.name} user"
+puts "Generated #{user.first_name} #{user.last_name} user"
 puts "Generated #{Athlete.count} athletes"
