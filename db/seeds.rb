@@ -11,6 +11,9 @@ User.destroy_all
 Organization.destroy_all
 Sport.destroy_all
 Athlete.destroy_all
+Recruit.destroy_all
+Event.destroy_all
+Appearance.destroy_all
 
 
 puts "Generating Coach & Athletes"
@@ -104,4 +107,9 @@ recruit5 = Recruit.create!(athlete: athlete5, user: user)
 
   puts "Generated event on #{event.date} with recruit #{recruit5.athlete.first_name}"
 end
+
+# Need to prioritize games that have overlapping recruits
+# Need to only see one recruit 3 times in a calendar
+
+
 
