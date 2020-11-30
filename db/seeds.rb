@@ -48,6 +48,50 @@ puts "Generated #{user.first_name} #{user.last_name} user"
   puts "Generated #{athlete.first_name} #{athlete.last_name}"
 end
 
-
-puts "Generated #{user.first_name} #{user.last_name} user"
 puts "Generated #{Athlete.count} athletes"
+
+athlete1 = Athlete.first
+athlete2 = Athlete.second
+athlete3 = Athlete.third
+athlete4 = Athlete.fourth
+athlete5 = Athlete.fifth
+athlete6 = Athlete.sixth
+
+recruit1 = Recruit.create!(athlete: athlete1, coach: user)
+3.times do
+  event = Event.create!(date: Faker::Date.between(from: 30.days.ago, to: Date.today)),
+                        location: Faker::Address.full_address)
+  appearence = Appearance.create!(event: event, recruit: recruit1)
+
+  puts "Generated event on #{event.date} with recruit #{recruit1.athlete.first_name}"
+end
+recruit2 = Recruit.create!(athlete: athlete2, coach: user)
+3.times do
+  event = Event.create!(date: Faker::Date.between(from: 30.days.ago, to: Date.today)),
+                        location: Faker::Address.full_address)
+  appearence = Appearance.create!(event: event, recruit: recruit2)
+end
+recruit3 = Recruit.create!(athlete: athlete3, coach: user)
+3.times do
+  event = Event.create!(date: Faker::Date.between(from: 30.days.ago, to: Date.today)),
+                        location: Faker::Address.full_address)
+  appearence = Appearance.create!(event: event, recruit: recruit3)
+end
+recruit4 = Recruit.create!(athlete: athlete4, coach: user)
+3.times do
+  event = Event.create!(date: Faker::Date.between(from: 30.days.ago, to: Date.today)),
+                        location: Faker::Address.full_address)
+  appearence = Appearance.create!(event: event, recruit: recruit4)
+end
+recruit5 = Recruit.create!(athlete: athlete5, coach: user)
+3.times do
+  event = Event.create!(date: Faker::Date.between(from: 30.days.ago, to: Date.today)),
+                        location: Faker::Address.full_address)
+  appearence = Appearance.create!(event: event, recruit: recruit5)
+end
+recruit6 = Recruit.create!(athlete: athlete6, coach: user)
+3.times do
+  event = Event.create!(date: Faker::Date.between(from: 30.days.ago, to: Date.today)),
+                        location: Faker::Address.full_address)
+  appearence = Appearance.create!(event: event, recruit: recruit6)
+end
