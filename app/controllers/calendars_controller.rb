@@ -9,12 +9,11 @@ class CalendarsController < ApplicationController
     @calendar = Calendar.find(params[:id])
   end
 
-  # def edit
-  # end
-
-  # def update
+  #def edit
   #end
 
+  # def update
+  #en
 
   private
 
