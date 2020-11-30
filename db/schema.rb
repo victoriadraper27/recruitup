@@ -66,15 +66,6 @@ ActiveRecord::Schema.define(version: 2020_11_30_040839) do
     t.integer "rating"
   end
 
-  create_table "attendees", force: :cascade do |t|
-    t.bigint "event_id", null: false
-    t.bigint "recruit_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["event_id"], name: "index_attendees_on_event_id"
-    t.index ["recruit_id"], name: "index_attendees_on_recruit_id"
-  end
-
   create_table "calendar_events", force: :cascade do |t|
     t.bigint "event_id", null: false
     t.bigint "calendar_id", null: false
@@ -144,8 +135,6 @@ ActiveRecord::Schema.define(version: 2020_11_30_040839) do
   add_foreign_key "appearances", "recruits"
   add_foreign_key "athlete_events", "athletes"
   add_foreign_key "athlete_events", "events"
-  add_foreign_key "attendees", "events"
-  add_foreign_key "attendees", "recruits"
   add_foreign_key "calendar_events", "calendars"
   add_foreign_key "calendar_events", "events"
   add_foreign_key "calendars", "users"
