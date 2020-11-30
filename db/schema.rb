@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_30_033330) do
+ActiveRecord::Schema.define(version: 2020_11_30_040839) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,15 @@ ActiveRecord::Schema.define(version: 2020_11_30_033330) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "appearances", force: :cascade do |t|
+    t.bigint "event_id", null: false
+    t.bigint "recruit_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_appearances_on_event_id"
+    t.index ["recruit_id"], name: "index_appearances_on_recruit_id"
+  end
+
   create_table "athlete_events", force: :cascade do |t|
     t.bigint "athlete_id", null: false
     t.bigint "event_id", null: false
@@ -51,10 +60,10 @@ ActiveRecord::Schema.define(version: 2020_11_30_033330) do
     t.integer "grad_year"
     t.string "team"
     t.string "team_url"
-    t.integer "rank"
     t.string "nationality"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "rating"
   end
 
   create_table "attendees", force: :cascade do |t|
@@ -131,6 +140,8 @@ ActiveRecord::Schema.define(version: 2020_11_30_033330) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "appearances", "events"
+  add_foreign_key "appearances", "recruits"
   add_foreign_key "athlete_events", "athletes"
   add_foreign_key "athlete_events", "events"
   add_foreign_key "attendees", "events"
