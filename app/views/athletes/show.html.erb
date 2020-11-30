@@ -1,2 +1,10 @@
-<h1>Athletes#show</h1>
-<p>Find me in app/views/athletes/show.html.erb</p>
+<h1><%= @athlete.first_name %> <%= @athlete.last_name %></h1>
+<h2>Team: <%= @athlete.team %>: <%= @athlete.team_url %></h2>
+<p>Graduation Year: <%= @athlete.grad_year %></p>
+<p>Rating: <%= @athlete.rating %></p>
+<p>Nationality: <%= @athlete.nationality %></p>
+
+<p><%= simple_form([@athlete, @recruit]) do |f| %>
+  <%= f.submit %>
+  <% end %>
+</p>
