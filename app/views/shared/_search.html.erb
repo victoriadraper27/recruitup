@@ -1,11 +1,13 @@
-<%= form_tag athletes_path, method: :get do %>
+<%= form_tag athletes_path, method: :get, class: "search-form w-50" do %>
+
 <div class="search-form-control form-group flex-form d-flex">
   <%= text_field_tag :query,
     params[:query],
     class: "control text flex-grow-1 placeholder-design",
-    placeholder: "Search an Athlete"
-  %>
+    placeholder: "Search an Athlete" %>
   <%= button_tag(type: "submit", class: "btn btn-flat") do %>
     <i class="fas fa-search"></i>
   <% end %>
+</div>
+
 <% end %>

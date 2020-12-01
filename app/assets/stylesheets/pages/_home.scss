@@ -1,22 +1,3 @@
-// Specific CSS for your home-page
-body {
-    font-family: 'Roboto Slab', serif;
-    background-color: #fff;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-
-   font-family: 'Work Sans', sans-serif;
-    font-weight: 400;
-    color: #000;
-    line-height: 1.2;
-}
-
 p {
   line-height: 1.4;
 }
@@ -87,9 +68,9 @@ p {
     padding-bottom: 50px;
 }
 
-img {
-    max-width: 100%;
-    max-height: 100%;
+svg {
+  width: 360px;
+  height: 300px;
 }
 
 .mt-15 {
@@ -164,19 +145,13 @@ img {
     margin-left: 100px;
 }
 
-ul,
-ol {
-    margin: 0;
-    padding: 0;
-}
-
 #scrollUp {
   border-radius: 10px 10px 0px 0px;
     bottom: 0;
     font-size: 24px;
     right: 30px;
     width: 50px;
-    background-color: #fb397d;
+    background-color: #290001;
     color: #fff;
     text-align: center;
     height: 50px;
@@ -193,10 +168,6 @@ a:active {
     transition-duration: 500ms;
 }
 
-li {
-    list-style: none;
-}
-
 p {
     color: #726a84;
     font-size: 16px;
@@ -210,7 +181,7 @@ p {
 
 .section-heading > h2 {
     font-weight: 300;
-    color: #726DF1;
+    color: #d57149;
     font-size: 48px;
     margin: 0;
 }
@@ -224,7 +195,7 @@ p {
 .line-shape {
     width: 80px;
     height: 2px;
-    background-color: #fb397d;
+    background-color: #290001;
     margin-top: 15px;
 }
 
@@ -306,7 +277,7 @@ p {
 
 
 .menu_area nav ul li > a:hover {
-    color: #fb397d;
+    color: #290001;
 }
 
 .sign-up-button {
@@ -317,7 +288,7 @@ p {
     color: #fff;
     font-weight: 500;
     display: inline-block;
-    border: 2px solid #a883e9;
+    border: 2px solid #290001;
     height: 50px;
     min-width: 178px;
     line-height: 46px;
@@ -326,7 +297,7 @@ p {
 }
 
 .sign-up-button > a:hover {
-    background: #fb397d;
+    background: #290001;
     color: #fff;
     border-color: transparent;
     transition-duration: 500ms;
@@ -341,13 +312,13 @@ p {
     z-index: 99;
 }
 .header_area.sticky .menu_area #nav .nav-link{
-  color: #726DF1;
+  color: #d57149;
 }
 .header_area.sticky .menu_area .navbar-brand{
-      color: #726DF1;
+      color: #d57149;
 }
 .header_area.sticky .sing-up-button > a{
-  color: #FB397D;
+  color: #290001;
 }
 .header_area.sticky .sing-up-button > a:hover{
   color: #fff;
@@ -368,8 +339,9 @@ p {
 }
 
 .welcome_area {
-    background-image: image-url("bg-img/welcome-bg.png");
-    height: 500px;
+    background-image: linear-gradient(#904f214a,rgba(0,0,0,0.31)), url("https://images.unsplash.com/photo-1595735927257-c45301611ef9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
+    // https://images.unsplash.com/photo-1574589086107-5c12f84418a0?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2250&q=80
+    height: 550px;
     position: relative;
     z-index: 1;
     background-position: bottom center;
@@ -401,10 +373,108 @@ p {
     width: 100%;
 }
 
-.welcome-heading > h2 {
-    font-size: 100px;
-    color: #120078;
+.welcome-heading {
+  h1 {
+    margin-top: 20px;
+    font-size: 130px;
+    color: #ec823a;
     font-weight: 700;
     position: relative;
     z-index: 3;
+    text-shadow: 0 0 5px #4a3f35;
+  }
+
+  h4 {
+    font-size: 40px;
+    color: #e8e4e1;
+    text-shadow: 0 0 5px #f9c49a;
+  }
+}
+
+
+
+
+
+// --------------
+// single-special
+// --------------
+
+.single-icon > i {
+    font-size: 36px;
+    color: #2f2519;
+}
+
+.single-special > h4 {
+    font-size: 22px;
+    color: #aa4a30;
+}
+
+.single-icon {
+    margin-bottom: 25px;
+}
+
+.single-special > h4 {
+    font-size: 22px;
+    color: #aa4a30;
+    margin-bottom: 15px;
+}
+
+.single-special {
+  background: #fff5ea;
+    box-shadow: 0 2px 2px 0 #f1e3cb, 0 0 0 1px #f1e3cb;
+
+    padding: 40px;
+    border-radius: 40px 40px 40px 0px;
+    -webkit-transition-duration: 800ms;
+    -o-transition-duration: 800ms;
+    transition-duration: 800ms;
+    margin-bottom: 30px;
+}
+
+.special_description_content > h2 {
+    color: #edcfa9;
+    font-size: 48px;
+    margin-bottom: 30px;
+}
+
+.single-special:hover {
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+}
+
+.single-special p {
+    margin-bottom: 0;
+}
+
+
+
+
+
+// --------------
+// single-feature
+// --------------
+
+.single-feature {
+    margin-bottom: 50px;
+}
+
+.single-feature > p {
+    margin-bottom: 0;
+}
+
+.single-feature > i {
+    color: #edcfa9;
+    font-size: 30px;
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+}
+
+.single-feature > h5 {
+    font-size: 22px;
+    color: #aa4a30;
+}
+
+.single-feature > p {
+    margin-top: 15px;
 }
