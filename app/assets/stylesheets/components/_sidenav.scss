@@ -4,6 +4,7 @@
   left: 0px;
   top: 0px;
   height: 100%;
+  padding-top: 8px;
 }
 
 .wrapper {
@@ -12,7 +13,7 @@
 
 #sidebar {
     /* background: #1A1E21; */
-    z-index: 999999999;
+    z-index: 999999;
     font-size: 16px;
     color: #fff;
     padding: 16px;
@@ -47,79 +48,7 @@
   #sidebar b {
     font-size: 15px !important;
   }
-  #count-down {
-    display: initial;
-    padding-left: 10px;
-    font-weight: bold;
-    font-size: 20px;
-  }
-  #close-bar {
-    font-size: 17px;
-    opacity: 0.5;
-    cursor: pointer;
-  }
-  #close-bar:hover{
-    opacity: 1;
-  }
-  #btn-bar {
-    background-color: #fff;
-    color: #40312d;
-    border-radius: 4px;
-    padding: 10px 20px;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 12px;
-    opacity: .95;
-    margin-right: 20px;
-    box-shadow: 0 5px 10px -3px rgba(0,0,0,.23), 0 6px 10px -5px rgba(0,0,0,.25);
-  }
-  #btn-bar:hover{
-    opacity: 0.9;
-  }
-  #btn-bar{
-    opacity: 1;
-  }
 
-  #btn-bar span, #sidebar-content span {
-    color: red;
-    font-weight: 700;
-  }
-
-  #oldPriceBar {
-    text-decoration: line-through;
-    font-size: 16px;
-    color: #fff;
-    font-weight: 400;
-    top: 2px;
-    position: relative;
-  }
-  #newPrice{
-    color: #fff;
-    font-size: 19px;
-    font-weight: 700;
-    top: 2px;
-    position: relative;
-    margin-left: 7px;
-  }
-
-  #fromText {
-    font-size: 15px;
-    color: #fff;
-    font-weight: 400;
-    margin-right: 3px;
-    top: 0px;
-    position: relative;
-  }
-
-  @media(max-width: 991px){
-    #count-down {
-      display: block;
-      margin-top: 15px;
-      text-align: center;
-      font-size: 19px;
-    }
-  }
   @media (max-width: 768px) {
 
     #sidebar {
