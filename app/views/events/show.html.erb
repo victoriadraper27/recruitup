@@ -1,10 +1,9 @@
 <h1>Event</h1>
-<p> @event.start_date </p>
-<p> @event.start_time </p>
+<p><%= @event.start_date  %></p>
+<p><%= @event.start_time  %></p>
 
-<% @event.athletes.each do |athlete| %>
-  <p><% athlete.first_name %></p>
-  <p><% athlete.last_name %></p>
+<% @event.recruits.each do |recruit| %>
+  <p><%= recruit.athlete.first_name %>  <%= recruit.athlete.last_name %></p>
+  <p><%= recruit.athlete.grad_year %></p>
 <% end %>
-
 
