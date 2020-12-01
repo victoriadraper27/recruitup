@@ -348,6 +348,10 @@ p {
     padding: 0;
 }
 
+.container h-100 {
+  display: flex;
+}
+
 .welcome_area {
     background-image: image-url("bg-img/welcome-bg.png");
     height: 500px;
@@ -355,6 +359,7 @@ p {
     z-index: 1;
     background-position: bottom center;
     background-size: cover;
+    display: flex;
 }
 
 .welcome_area:after {
