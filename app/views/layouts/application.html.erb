@@ -13,8 +13,12 @@
 
   <body>
     <%= render 'shared/navbar' %>
-<!--     <%#= render 'shared/flashes' %> -->
+    <%= render 'shared/flashes' %>
+
+    <div class="mt-5">
       <%= yield %>
+    </div>
+
     <%= render 'shared/footer' %>
   </body>
 </html>
