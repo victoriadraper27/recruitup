@@ -1,30 +1,39 @@
-<h1>ATHLETES WORLD RANKINGS</h1>
+<div class="mt-5 container athlete-index">
 
-<table>
-  <thead>
-    <tr>
-      <div class='d-flex input-group-prepend w-100 flex-grow-1'>
-      <%= render 'shared/search' %>
-      </div>
-    </tr>
-  </thead>
+  <h1>Athletes</h1>
 
-  <tbody>
-    <% @athletes.each do |athlete| %>
-      <tr>
-        <td><%= athlete.first_name %> <%= athlete.last_name %></td>
-        <td><%= athlete.grad_year %></td>
-        <td><%= athlete.nationality %></td>
-        <td><%= athlete.team %></td>
-        <td><%= athlete.team_url %></td>
-        <td><%= athlete.rating %></td>
-        <td><%= link_to 'Show', athlete %></td>
-        <!-- <td> --><%#= link_to '➕', () %><!-- </td> -->
+
+  <div class='input-group-prepend'>
+        <%= render 'shared/search' %>
+  </div>
+
+
+  <table>
+    <thead>
+      <tr class="athlete-table-header">
+        <td class="text-center">Name</td>
+        <td class="text-center">Graduation Year</td>
+        <td class="text-center">Nationality</td>
+        <td class="text-center">Team</td>
+        <td class="text-center">Team URL</td>
+        <td class="text-center">Rating</td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @athletes.each do |athlete| %>
+        <tr class="athlete-table-content">
+          <td><%= athlete.first_name %> <%= athlete.last_name %></td>
+          <td class="text-center"><%= athlete.grad_year %></td>
+          <td class="text-center"><%= athlete.nationality %></td>
+          <td class="text-center"><%= athlete.team %></td>
+          <td class="text-center"><%= athlete.team_url %></td>
+          <td class="text-center"><%= athlete.rating %></td>
+          <td><%= link_to 'VIEW', athlete %></td>
+          <!-- <td> --><%#= link_to '➕', () %><!-- </td> -->
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'My Recruits', recruits_path %>
+</div>

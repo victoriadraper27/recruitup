@@ -1,0 +1,40 @@
+.text-center {
+  text-align: center;
+}
+
+.athlete-index {
+
+  h1 {
+    font-size: 70px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .athlete-table-header {
+
+    td {
+    font-weight: bold;
+    font-size: 20px;
+    color: #aa4a30;
+    padding-right: 20px;
+    padding-bottom: 15px;
+    }
+  }
+
+  .athlete-table-content {
+    td {
+    padding-right: 20px;
+
+    }
+
+    a {
+      color: #d57149;
+
+      &:hover {
+        color: #aa4a30;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
