@@ -12,7 +12,7 @@
 
 # Only 3 contacts per Athlete a year
 
-# dead_period = (11/29/2021..3/15/2020).to_a
+# dead_period = (11/29/2021..3/15/2022).to_a
 # dead_week = [11/10/2021..11/25/2021].to_a
 
 # @events = Event.all
@@ -21,7 +21,7 @@
 #   dead_period.include?(event) || dead_week.include?(event)
 # end
 
-# #Once I have only have events inwhich a are legal recruting dates,
+# Once I have only have events in which a are legal recruting dates,
 # I need to group the events by dates and then my location.
 # I then need to inject my event card, into my "calendar table" where my calendar
 # table cell matches the date of the event/events.
@@ -29,9 +29,9 @@
 # <h1>Calendar</h1>
 
 # <% start_date = params.fetch(:start_date, Date.today).to_date %>
-# <% date_range = (start_date.beginning_of_mont.beginning_of_week..start_date.end_of_month.end_of_week).to_a %>
+# <% date_range = (start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week).to_a %>
 # <% date_range.each_slice(7) do |week| %>
-# <div><%= week %></div>
+#   <div><%= week %></div>
 # <% end %>
 
 # <table>
@@ -54,4 +54,3 @@
 #   </tbody>
 # </table>
 
-<br>
