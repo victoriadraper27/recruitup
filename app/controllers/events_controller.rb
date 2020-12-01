@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  after_action :authorize_event, except: :index
+
   def index
     @events = policy_scope(Event).order(created_at: :desc)
   end
@@ -12,4 +14,10 @@ class EventsController < ApplicationController
 
   # def update
   # end
+
+  private
+
+  def authorize_event
+    authorize @event
+  end
 end

@@ -3,7 +3,7 @@
 
   <% events.each do |event| %>
     <div>
-      <%= event.start_date %>
+      <%= link_to event do %><%= event.start_date %><% end %>
       <%= event.start_time %>
       <% event.athletes.each do |athlete| %>
         <%= athlete.first_name %> <%= athlete.last_name %>

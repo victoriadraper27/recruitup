@@ -1,2 +1,10 @@
-<h1>Event#show</h1>
-<p>Find me in app/views/event/show.html.erb</p>
+<h1>Event</h1>
+<p> @event.start_date </p>
+<p> @event.start_time </p>
+
+<% @event.athletes.each do |athlete| %>
+  <p><% athlete.first_name %></p>
+  <p><% athlete.last_name %></p>
+<% end %>
+
+
