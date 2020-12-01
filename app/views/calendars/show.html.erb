@@ -1,2 +1,16 @@
-<h1><%=  @calendar.id %> </h1>
-<p><%= @calendar %></p>
+<!-- <h1><%#=  @calendar.id %> </h1>
+<p><%#= @calendar %></p> -->
+
+
+
+<%= month_calendar(events: @events) do |date, @events| %>
+  <%= date %>
+
+  <% events.each do |event| %>
+    <div>
+      <%= event.date %>
+      <%= event.time %>
+      <%= event.athletes %>
+    </div>
+  <% end %>
+<% end %>

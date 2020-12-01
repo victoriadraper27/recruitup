@@ -1,0 +1,14 @@
+<%= month_calendar(attribute: :start_date, events: @events) do |date, events| %>
+  <%= date %>
+
+  <% events.each do |event| %>
+    <div>
+      <%= link_to event do %><%= event.start_date %><% end %>
+      <%= event.start_time %>
+      <% event.athletes.each do |athlete| %>
+        <%= athlete.first_name %> <%= athlete.last_name %>
+        <%= athlete.grad_year %>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
