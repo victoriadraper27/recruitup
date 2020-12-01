@@ -1,5 +1,5 @@
 <div class="container">
-<%= month_calendar(attribute: :start_date, calendar_events: @calendar_events) do |date, events| %>
+<%= month_calendar(attribute: :start_date, events: @events) do |date, events| %>
   <%= date %>
 
   <% events.each do |event| %>
