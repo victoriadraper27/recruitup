@@ -12,7 +12,7 @@
 
 # Only 3 contacts per Athlete a year
 
-# dead_period = (11/29/2021..3/15/2020).to_a
+# dead_period = (11/29/2021..3/15/2022).to_a
 # dead_week = [11/10/2021..11/25/2021].to_a
 
 # @events = Event.all
@@ -54,4 +54,4 @@
 #   </tbody>
 # </table>
 
-<br>
+# <br>
