@@ -1,31 +1,50 @@
+<div class="recruit-index">
 
   <h1>My Recruits</h1>
 
-    <div class='input-group-prepend w-100'>
+    <div class='input-group-prepend'>
         <%= render 'shared/search' %>
     </div>
 
-    <div>
-
-    <ul class="list-group">
+    <div class="list-group">
         <% @recruits.each do |recruit| %>
           <% if recruit.athlete.grad_year == 2022 %>
-            <li class="list-group-item list-group-item-action list-group-item-danger">
-              <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %> - <%= recruit.athlete.grad_year %>
-            </li>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-danger d-flex justify-content-between">
+              <div>
+                <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
+              </div>
+              <div>
+              <%= recruit.athlete.grad_year %>
+              </div>
+            </a>
           <% elsif recruit.athlete.grad_year == 2023 %>
-            <li class="list-group-item list-group-item-action list-group-item-primary">
-              <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %> - <%= recruit.athlete.grad_year %>
-            </li>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-primary d-flex justify-content-between">
+              <div>
+                <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
+              </div>
+              <div>
+              <%= recruit.athlete.grad_year %>
+              </div>
+            </a>
           <% elsif recruit.athlete.grad_year == 2024 %>
-            <li class="list-group-item list-group-item-action list-group-item-info">
-              <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %> - <%= recruit.athlete.grad_year %>
-            </li>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-info d-flex justify-content-between">
+              <div>
+                <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
+              </div>
+              <div>
+              <%= recruit.athlete.grad_year %>
+              </div>
+            </a>
           <% else %>
-            <li class="list-group-item list-group-item-action list-group-item-success">
-              <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %> - <%= recruit.athlete.grad_year %>
-            </li>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-success d-flex justify-content-between">
+              <div>
+                <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
+              </div>
+              <div>
+              <%= recruit.athlete.grad_year %>
+              </div>
+            </a>
           <% end %>
         <% end %>
-    </ul>
     </div>
+</div>

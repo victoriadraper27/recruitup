@@ -1,18 +1,20 @@
-<!-- ***** Wellcome Area Start ***** -->
+<!-- ***** Welcome Area Start ***** -->
     <section class="welcome_area clearfix" id="home">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12 col-md">
                     <div class="welcome-heading">
-                        <h2>Recruit Up</h2>
+                        <h1>Recruit Up</h1>
                         <h4 class="text-align">Recruiting made efficient!</h4>
                     </div>
                     <div class="get-start-area">
                         <!-- Form Start -->
-                        <form action="#" method="post" class="form-inline">
+                      <% if !current_user %>
+                        <form action="#" method="post" class="form-inline mt-3">
                             <input type="email" class="form-control email" style="margin-right: 16px;" placeholder="name@company.com">
                             <input type="submit" class="btn btn-warning" value="Get Started" style= "border-radius: 4px;">
                         </form>
+                      <% end %>
                         <!-- Form End -->
                     </div>
                     <div class="image_tag">

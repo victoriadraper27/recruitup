@@ -1,21 +1,21 @@
 // Specific CSS for your home-page
-body {
-    font-family: 'Roboto Slab', serif;
-    background-color: #fff;
-}
+// body {
+//     font-family: 'Roboto Slab', serif;
+//     background-color: #fff;
+// }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
 
-   font-family: 'Work Sans', sans-serif;
-    font-weight: 400;
-    color: #000;
-    line-height: 1.2;
-}
+//    font-family: 'Work Sans', sans-serif;
+//     font-weight: 400;
+//     color: #000;
+//     line-height: 1.2;
+// }
 
 p {
   line-height: 1.4;
@@ -153,19 +153,13 @@ img {
     margin-left: 100px;
 }
 
-ul,
-ol {
-    margin: 0;
-    padding: 0;
-}
-
 #scrollUp {
   border-radius: 10px 10px 0px 0px;
     bottom: 0;
     font-size: 24px;
     right: 30px;
     width: 50px;
-    background-color: #fb397d;
+    background-color: #290001;
     color: #fff;
     text-align: center;
     height: 50px;
@@ -182,10 +176,6 @@ a:active {
     transition-duration: 500ms;
 }
 
-li {
-    list-style: none;
-}
-
 p {
     color: #726a84;
     font-size: 16px;
@@ -199,7 +189,7 @@ p {
 
 .section-heading > h2 {
     font-weight: 300;
-    color: #726DF1;
+    color: #d57149;
     font-size: 48px;
     margin: 0;
 }
@@ -213,7 +203,7 @@ p {
 .line-shape {
     width: 80px;
     height: 2px;
-    background-color: #fb397d;
+    background-color: #290001;
     margin-top: 15px;
 }
 
@@ -295,7 +285,7 @@ p {
 
 
 .menu_area nav ul li > a:hover {
-    color: #fb397d;
+    color: #290001;
 }
 
 .sign-up-button {
@@ -315,7 +305,7 @@ p {
 }
 
 .sign-up-button > a:hover {
-    background: #fb397d;
+    background: #290001;
     color: #fff;
     border-color: transparent;
     transition-duration: 500ms;
@@ -330,13 +320,13 @@ p {
     z-index: 99;
 }
 .header_area.sticky .menu_area #nav .nav-link{
-  color: #726DF1;
+  color: #d57149;
 }
 .header_area.sticky .menu_area .navbar-brand{
-      color: #726DF1;
+      color: #d57149;
 }
 .header_area.sticky .sing-up-button > a{
-  color: #FB397D;
+  color: #290001;
 }
 .header_area.sticky .sing-up-button > a:hover{
   color: #fff;
@@ -390,10 +380,17 @@ p {
     width: 100%;
 }
 
-.welcome-heading > h2 {
-    font-size: 100px;
-    color: #120078;
+.welcome-heading {
+  h1 {
+    margin-top: 20px;
+    font-size: 130px;
+    color: #aa4a30;
     font-weight: 700;
     position: relative;
     z-index: 3;
+  }
+
+  h4 {
+    font-size: 40px;
+  }
 }

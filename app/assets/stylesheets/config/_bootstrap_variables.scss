@@ -5,8 +5,15 @@
 
 // General style
 $font-family-sans-serif:  $body-font;
-$headings-font-family:    $headers-font;
-$body-bg:                 $light-gray;
+
+h1 {
+  font-family: $h1-font;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: $headers-font;
+}
+
 $font-size-base: 1rem;
 
 // Colors
