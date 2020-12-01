@@ -7,6 +7,7 @@ class CalendarsController < ApplicationController
 
   def show
     @calendar = Calendar.find(params[:id])
+    @events = policy_scope(Calendar).where(calendar: :calendar)
   end
 
   #def edit
