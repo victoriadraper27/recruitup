@@ -1,10 +1,33 @@
-<h1><%= @athlete.first_name %> <%= @athlete.last_name %></h1>
-<h2>Team: <%= @athlete.team %>: <%= @athlete.team_url %></h2>
-<p>Graduation Year: <%= @athlete.grad_year %></p>
-<p>Rating: <%= @athlete.rating %></p>
-<p>Nationality: <%= @athlete.nationality %></p>
+<div class="container">
+  <div class="row">
+    <div class="col col-md-4">
+      <div class="card w-100">
+        <h1 class = "card-title"><%= @athlete.first_name %> <%= @athlete.last_name %></h1>
+        <%= image_tag "golf_girl.png", class: "card-img-bottom" %>
+      </div>
+    </div>
+    <div class="col col-md-4">
+      <div class= "card w-100">
+        <h1 class= "card-title"> Prospect Info: </h1>
+        <h4>Team: <%= @athlete.team %> </h4>
+        <h6><%= @athlete.team_url %></h6>
+        <p>Graduation Year: <%= @athlete.grad_year %></p>
+        <p>Nationality: <%= @athlete.nationality %></p
+        </div>
+      </div>
+    </div>
+    <div class="col col-md-4">
+      <div class= "card w-100">
+        <h1 class= "card-title">Rating:</h1>
+        <h4><%= @athlete.rating %></p>
+      </div>
+    </div>
+  </div>
 
-<p><%= simple_form_for([@athlete, @recruit]) do |f| %>
-  <%= f.submit %>
-  <% end %>
-</p>
+
+  <p><%= simple_form_for([@athlete, @recruit]) do |f| %>
+    <%= f.submit %>
+    <% end %>
+  </p>
+</div>
+
