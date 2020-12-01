@@ -1,9 +1,4 @@
 // Specific CSS for your home-page
-* {
-    margin: 0;
-    padding: 0;
-}
-
 body {
     font-family: 'Roboto Slab', serif;
     background-color: #fff;
@@ -243,44 +238,6 @@ p {
     z-index: 999999;
 }
 
-.devdap-load {
-    -webkit-animation: 2000ms linear 0s normal none infinite running devdap-load;
-    animation: 2000ms linear 0s normal none infinite running devdap-load;
-    background: transparent none repeat scroll 0 0;
-    border-color: #dddddd #dddddd #fb397d;
-    border-radius: 50%;
-    border-style: solid;
-    border-width: 2px;
-    height: 40px;
-    left: calc(50% - 20px);
-    position: relative;
-    top: calc(50% - 20px);
-    width: 40px;
-    z-index: 9;
-}
-
-@-webkit-keyframes devdap-load {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes devdap-load {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-
 /* --------------------------
 :: 2.0 Header Area CSS
 -------------------------- */
@@ -352,8 +309,6 @@ p {
     background: #fb397d;
     color: #fff;
     border-color: transparent;
-    -webkit-transition-duration: 500ms;
-    -o-transition-duration: 500ms;
     transition-duration: 500ms;
 }
 
@@ -388,7 +343,7 @@ p {
     padding: 0;
 }
 
-.wellcome_area {
+.welcome_area {
     background-image: image-url("bg-img/welcome-bg.png");
     height: 900px;
     position: relative;
@@ -397,7 +352,7 @@ p {
     background-size: cover;
 }
 
-.wellcome_area:after {
+.welcome_area:after {
     position: absolute;
     width: 100%;
     left: 0;
@@ -421,7 +376,7 @@ p {
     width: 100%;
 }
 
-.wellcome-heading > h2 {
+.welcome-heading > h2 {
     font-size: 100px;
     color: #ffffff;
     font-weight: 700;

@@ -1,0 +1,16 @@
+.group-avatars {
+  .avatar {
+    position: relative;
+    z-index: 2;
+    border: 2px solid $card-bg;
+
+    &:hover {
+      z-index: 3;
+    }
+  }
+
+  .avatar + .avatar {
+    margin-left: -1rem;
+
+  }
+}

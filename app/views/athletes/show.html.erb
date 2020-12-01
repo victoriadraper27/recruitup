@@ -4,7 +4,7 @@
 <p>Rating: <%= @athlete.rating %></p>
 <p>Nationality: <%= @athlete.nationality %></p>
 
-<p><%= simple_form([@athlete, @recruit]) do |f| %>
+<p><%= simple_form_for([@athlete, @recruit]) do |f| %>
   <%= f.submit %>
   <% end %>
 </p>
