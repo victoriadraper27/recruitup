@@ -7,10 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Clearing the Database...."
+Appearance.destroy_all
+Event.destroy_all
+Recruit.destroy_all
+Athlete.destroy_all
 User.destroy_all
+Calendar.destroy_all
+CalendarEvent.destroy_all
 Organization.destroy_all
 Sport.destroy_all
-Athlete.destroy_all
 
 
 puts "Generating Coach & Athletes"
@@ -104,4 +109,14 @@ recruit5 = Recruit.create!(athlete: athlete5, user: user)
 
   puts "Generated event on #{event.date} with recruit #{recruit5.athlete.first_name}"
 end
+
+# Need to prioritize games that have overlapping recruits
+# Need to only see one recruit 3 times in a calendar
+
+calendar = Calendar.create!(user: user)
+
+Event.find_each do |event|
+  calendar_event = CalendarEvent.create!(event: event, calendar: calendar)
+end
+
 

@@ -1,13 +1,13 @@
 <h1>ATHLETES WORLD RANKINGS</h1>
 
 <table>
-  <!-- <thead>
+  <thead>
     <tr>
-      <th>This is where my searbar is about to go</th>
-      <th>User</th>
-      <th colspan="3"></th>
+      <div class='d-flex input-group-prepend w-100 flex-grow-1'>
+      <%= render 'shared/search' %>
+      </div>
     </tr>
-  </thead> -->
+  </thead>
 
   <tbody>
     <% @athletes.each do |athlete| %>
@@ -19,7 +19,7 @@
         <td><%= athlete.team_url %></td>
         <td><%= athlete.rating %></td>
         <td><%= link_to 'Show', athlete %></td>
-        <td><%#= link_to '➕', () %></td>
+        <!-- <td> --><%#= link_to '➕', () %><!-- </td> -->
       </tr>
     <% end %>
   </tbody>
