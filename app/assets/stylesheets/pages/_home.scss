@@ -21,6 +21,17 @@ p {
   line-height: 1.4;
 }
 
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.banner-info {
+
+}
+
+
 .image_tag {
   width: 400px;
   float: right;
