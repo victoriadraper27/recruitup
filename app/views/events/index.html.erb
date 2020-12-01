@@ -1,12 +1,10 @@
-
-
 <%= month_calendar(events: @events) do |date, @events| %>
   <%= date %>
 
   <% events.each do |event| %>
     <div>
-      <%= event.date %>
-      <%= event.time %>
+      <%= event.start_date %>
+      <%= event.start_time %>
       <%= event.athletes %>
     </div>
   <% end %>

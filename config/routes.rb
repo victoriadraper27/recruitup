@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'event/index'
-  get 'event/show'
-  get 'event/edit'
-  get 'event/update'
   # get 'calendars/index'
   # get 'calendars/show'
   # get 'calendars/edit'
@@ -19,6 +15,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  resouces :events, only: [:index, :show]
 
   resources :calendars, only: [:index, :show, :edit, :update]
   resources :recruits, except: [:new, :create]
