@@ -149,11 +149,11 @@ end
 # Need to prioritize games that have overlapping recruits
 # Need to only see one recruit 3 times in a Schedule
 
-schedule = Schedule.create!(user: user)
+# schedule = Schedule.create!(user: user)
 
-Event.find_each do |event|
-  schedule_event = ScheduleEvent.create!(event: event, schedule: schedule)
-end
+# Event.find_each do |event|
+#   schedule_event = ScheduleEvent.create!(event: event, schedule: schedule)
+# end
 # Schedule = Schedule.create!(user: user)
 
 # Event.find_each do |event|
