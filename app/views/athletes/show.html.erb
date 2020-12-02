@@ -1,13 +1,14 @@
+<body class="background"
 <div class="container">
   <div class="row">
     <div class="col col-md-4">
-      <div class="card w-100">
+      <div class="card w-75">
+        <%= image_tag "golf_girl.png", class: "card-img-top" %>
         <h1 class = "card-title"><%= @athlete.first_name %> <%= @athlete.last_name %></h1>
-        <%= image_tag "golf_girl.png", class: "card-img-bottom" %>
       </div>
     </div>
     <div class="col col-md-4">
-      <div class= "card w-100">
+      <div class= "card w-75">
         <h1 class= "card-title"> Prospect Info: </h1>
         <h4>Team: <%= @athlete.team %> </h4>
         <h6><%= @athlete.team_url %></h6>
@@ -17,17 +18,33 @@
       </div>
     </div>
     <div class="col col-md-4">
-      <div class= "card w-100">
+      <div class= "card w-75">
         <h1 class= "card-title">Rating:</h1>
-        <h4><%= @athlete.rating %></p>
+        <h4 style="text-align: center"><%= @athlete.rating %></p>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="card-notes">
+          <h1> Notes: </h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="btn-group btn-group-lg" role="group" aria-label="Add to Recruiting List">
+        <p><%= simple_form_for([@athlete, @recruit]) do |f| %>
+          <%= f.submit "Add to Recruiting List", class: "btn btn-primary" %>
+          <% end %>
+        </p>
       </div>
     </div>
   </div>
-
-
-  <p><%= simple_form_for([@athlete, @recruit]) do |f| %>
-    <%= f.submit %>
-    <% end %>
-  </p>
-</div>
-
+</body>
