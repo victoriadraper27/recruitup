@@ -1,9 +1,41 @@
-<h1>Calendars</h1>
-<ul>
-  <% @calendars.each do |calendar| %>
-    <li> <%= calendar %> </li>
-  <% end %>
-</ul>
+<div class="my-5 schedule-index">
+  <h1 class="mb-5">Available Schedules</h1>
 
+  <ul class="mr-5 d-flex justify-content-between">
+    <% @schedules.each do |schedule| %>
+      <li>
+        <div class="d-flex justify-content-center">
+          <%= link_to 'CHOOSE THIS SCHEDULE', schedule_path(schedule), class: "select-calendar-link p-2" %>
+        </div>
+        <div class="index-calendar">
+          <%= month_calendar(attribute: :start_date, events: schedule.events) do |date, events| %>
+            <%= date.day %>
 
+            <% events.each do |event| %>
+              <% event.recruits.each do |recruit| %>
+                <div class="calendar-card shadow">
+                    <!-- Card Header - Accordion -->
+  <!--                   <a href="#collapseCardExample" class="d-block calendar-card-header" data-toggle="collapse"
+                        role="button" aria-expanded="true" aria-controls="collapseCardExample"> -->
+                        <p class="m-0 font-weight-bold"><%= event.start_time.to_s(:time) %>-<%= recruit.athlete.first_name %></p>
+  <!--                   </a> -->
+                    <!-- Card Content - Collapse -->
+  <!--                   <div class="collapse" id="collapseCardExample">
+                        <div class="calendar-card-body">
+                          <%= link_to event_path(event) do %><%= event.start_time.to_s(:time) %><% event.location %><% end %>
+                          <%= link_to athlete_path(recruit.athlete) do %>
+                          <%= recruit.athlete.first_name %>
+                          <%= recruit.athlete.last_name %>
+                          <%= recruit.athlete.grad_year %><% end %>
+                          </div>
+                        </div> -->
+                    </div>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
 

@@ -1,4 +1,4 @@
-class CalendarPolicy < ApplicationPolicy
+class SchedulePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
