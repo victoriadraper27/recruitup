@@ -17,8 +17,7 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'pages#dashboard'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-
-  resources :calendars, only: [:index, :show, :edit, :update] do
+  resources :schedules, only: [:index, :show, :edit, :update] do
     resources :events, only: [:index]
   end
 

@@ -6,7 +6,7 @@ class CreateAthletes < ActiveRecord::Migration[6.0]
       t.integer :grad_year
       t.string :team
       t.string :team_url
-      t.integer :rank
+      t.integer :rating
       t.string :nationality
 
       t.timestamps
