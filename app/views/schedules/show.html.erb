@@ -8,19 +8,19 @@
           <% event.recruits.each do |recruit| %>
 
             <% if recruit.athlete.grad_year == 2022 %>
-              <a href="events/<%= event.id %>" class="calendar list-group-item list-group-item-action list-group-item-danger d-flex justify-content-between">
+              <a href="events/<%= event.id %>" class="list-group-item calendar list-group-item-action list-group-item-danger d-flex justify-content-between">
                 <%= event.start_time.to_s(:time) %>-<%= recruit.athlete.first_name %>
               </a>
             <% elsif recruit.athlete.grad_year == 2023 %>
-              <a href="events/<%= event.id %>" class="calendar list-group-item list-group-item-action list-group-item-primary d-flex justify-content-between">
+              <a href="events/<%= event.id %>" class="list-group-item calendar list-group-item-action list-group-item-primary d-flex justify-content-between">
                 <%= event.start_time.to_s(:time) %>-<%= recruit.athlete.first_name %>
               </a>
             <% elsif recruit.athlete.grad_year == 2024 %>
-              <a href="events/<%= event.id %>" class="calendar list-group-item list-group-item-action list-group-item-info d-flex justify-content-between">
+              <a href="events/<%= event.id %>" class="list-group-item calendar list-group-item-action list-group-item-info d-flex justify-content-between">
                 <%= event.start_time.to_s(:time) %>-<%= recruit.athlete.first_name %>
               </a>
             <% else %>
-              <a href="events/<%= event.id %>" class="calendar list-group-item list-group-item-action list-group-item-success d-flex justify-content-between">
+              <a href="events/<%= event.id %>" class="list-group-item calendar list-group-item-action list-group-item-success d-flex justify-content-between">
                 <%= event.start_time.to_s(:time) %>-<%= recruit.athlete.first_name %>
               </a>
             <% end %>
