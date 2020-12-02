@@ -25,10 +25,11 @@
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   text-align: center;
   justify-content: space-between;
-  margin-left: 100px;
+  margin-left: 400px;
   margin-bottom: 16px;
   display: flex;
   background-color: white;
+  float: none;
 }
 
 
@@ -52,7 +53,7 @@ card h1 {
  background-repeat: no-repeat;
 }
 
-.btn btn-primary {
+.btn {
   border-radius: 5px;
 }
 
