@@ -1,9 +1,82 @@
-<h1>Event</h1>
-<p><%= @event.start_date  %></p>
-<p><%= @event.start_time  %></p>
-
-<% @event.recruits.each do |recruit| %>
-  <p><%= recruit.athlete.first_name %>  <%= recruit.athlete.last_name %></p>
-  <p><%= recruit.athlete.grad_year %></p>
-<% end %>
-
+<div class="m-10">
+<h1><%= @event.start_date.to_date  %></h1>
+</div>
+<div class="top-show vh-100 pb-6">
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-xl-8">
+          <div class="event-card bg-default">
+            <div class="event-card-header bg-transparent">
+              <div class="row align-items-center">
+                <div class="col mt-3">
+                  <h1><%= @event.start_date.to_date  %></h1>
+                  <h1 class="h3 mb-0"><%= @event.start_time.to_s(:time) %></h1>
+                  <p><%= @event.location%></p>
+                </div>
+                <div class="col">
+                  <ul class="nav nav-pills justify-content-end">
+                    <li class="nav-item mr-2 mr-md-0" data-toggle="chart">
+                      <a href="#" class="nav-link py-2 px-3 active" data-toggle="tab">
+                        <%= link_to event_path(params[:id].to_i - 1) do %>
+                        <span class="d-none d-md-block">Previous</span>
+                        <span class="d-md-none">P</span>
+                        <% end %>
+                      </a>
+                    </li>
+                    <li class="nav-item" data-toggle="chart">
+                      <a href="#" class="nav-link py-2 px-3" data-toggle="tab">
+                        <%= link_to event_path(params[:id].to_i + 1) do %>
+                        <span class="d-none d-md-block">Next</span>
+                        <span class="d-md-none">N</span>
+                        <% end %>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="event-card-body mt-3">
+            <div class="d-flex align-items-center justify-content-start">
+              <% @event.recruits.each do |recruit| %>
+                <%= link_to athlete_path(recruit.athlete) do %>
+                <div class="d-flex small-card-2025">
+                <%= image_tag "golf_girl.png", class: "avatar-xlarge-square" %>
+                <div>
+                <h3><strong><%= recruit.athlete.first_name %>  <%= recruit.athlete.last_name %></strong></h3>
+                <h5 class="text-white"><%= recruit.athlete.grad_year %></h5>
+                <p class=""><i class="fa fa-arrow-up"></i><%= recruit.athlete.rating %></p>
+                </div>
+                </div>
+              <% end %>
+                <h5 class="m-3">vs.</h5>
+               <div class="d-flex small-card-2024">
+                <%= image_tag "golf_girl2.jpg", class: "avatar-xlarge-square" %>
+                <div>
+                <h3><strong>Haley Walshmon</strong></h3>
+                <h5 class="text-white">2024</h5>
+                <p class=""><i class="fa fa-arrow-up"></i>477</p>
+                </div>
+                </div>
+            </div>
+                  <% end %>
+            </div>
+              </div>
+            </div>
+            <div class="col-xl-4">
+          <div class="event-card">
+            <div class="event-card-header bg-transparent">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h6 class="text-uppercase text-muted ls-1 mb-1"></h6>
+                  <h5 class="h3 mb-0">Notes</h5>
+                </div>
+              </div>
+            </div>
+            <div class="event-card-body">
+            </div>
+            </div>
+          </div>
+              </div>
+            </div>
+          </div>
+        </div>

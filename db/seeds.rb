@@ -153,6 +153,7 @@ end
 
 # Event.find_each do |event|
 #   schedule_event = ScheduleEvent.create!(event: event, schedule: schedule)
+#   schedule_event = ScheduleEvent.create!(event: event, Schedule: Schedule)
 # end
 # Schedule = Schedule.create!(user: user)
 
