@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Clearing the Database...."
-CalendarEvent.destroy_all
-Calendar.destroy_all
+ScheduleEvent.destroy_all
+Schedule.destroy_all
 Appearance.destroy_all
 Event.destroy_all
 Recruit.destroy_all
@@ -111,12 +111,12 @@ recruit5 = Recruit.create!(athlete: athlete5, user: user)
 end
 
 # Need to prioritize games that have overlapping recruits
-# Need to only see one recruit 3 times in a calendar
+# Need to only see one recruit 3 times in a Schedule
 
-calendar = Calendar.create!(user: user)
+Schedule = Schedule.create!(user: user)
 
 Event.find_each do |event|
-  calendar_event = CalendarEvent.create!(event: event, calendar: calendar)
+  Schedule_event = ScheduleEvent.create!(event: event, Schedule: Schedule)
 end
 
 
