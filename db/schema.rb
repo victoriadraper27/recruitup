@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_01_030439) do
+ActiveRecord::Schema.define(version: 2020_11_30_040620) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,34 +60,18 @@ ActiveRecord::Schema.define(version: 2020_12_01_030439) do
     t.integer "grad_year"
     t.string "team"
     t.string "team_url"
+    t.integer "rating"
     t.string "nationality"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "rating"
-  end
-
-  create_table "calendar_events", force: :cascade do |t|
-    t.bigint "event_id", null: false
-    t.bigint "calendar_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["calendar_id"], name: "index_calendar_events_on_calendar_id"
-    t.index ["event_id"], name: "index_calendar_events_on_event_id"
-  end
-
-  create_table "calendars", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_calendars_on_user_id"
   end
 
   create_table "events", force: :cascade do |t|
+    t.datetime "start_date"
+    t.datetime "start_time"
     t.string "location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.datetime "start_date"
-    t.datetime "start_time"
   end
 
   create_table "organizations", force: :cascade do |t|
@@ -103,6 +87,22 @@ ActiveRecord::Schema.define(version: 2020_12_01_030439) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["athlete_id"], name: "index_recruits_on_athlete_id"
     t.index ["user_id"], name: "index_recruits_on_user_id"
+  end
+
+  create_table "schedule_events", force: :cascade do |t|
+    t.bigint "event_id", null: false
+    t.bigint "schedule_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_schedule_events_on_event_id"
+    t.index ["schedule_id"], name: "index_schedule_events_on_schedule_id"
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_schedules_on_user_id"
   end
 
   create_table "sports", force: :cascade do |t|
@@ -135,11 +135,11 @@ ActiveRecord::Schema.define(version: 2020_12_01_030439) do
   add_foreign_key "appearances", "recruits"
   add_foreign_key "athlete_events", "athletes"
   add_foreign_key "athlete_events", "events"
-  add_foreign_key "calendar_events", "calendars"
-  add_foreign_key "calendar_events", "events"
-  add_foreign_key "calendars", "users"
   add_foreign_key "recruits", "athletes"
   add_foreign_key "recruits", "users"
+  add_foreign_key "schedule_events", "events"
+  add_foreign_key "schedule_events", "schedules"
+  add_foreign_key "schedules", "users"
   add_foreign_key "users", "organizations"
   add_foreign_key "users", "sports"
 end
