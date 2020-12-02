@@ -1,11 +1,15 @@
-<h1>schedules</h1>
-<ul>
-  <% @schedules.each do |schedule| %>
-    <% schedule.events.each do |event| %>
-      <li><%= event.start_time %> <%= event.location %></li>
+<div class="mt-5 container schedule-index">
+  <h1>My Schedules</h1>
+
+  <ul>
+    <% @schedules.each do |schedule| %>
+      <h2 class="mt-5">Option</h2>
+      <% schedule.events.each do |event| %>
+        <li><%= event.start_time %> <%= event.location %></li>
+      <% end %>
     <% end %>
-  <% end %>
-</ul>
+  </ul>
+</div>
 
 
 
