@@ -62,6 +62,8 @@ ActiveRecord::Schema.define(version: 2020_11_30_040620) do
     t.string "team_url"
     t.integer "rating"
     t.string "nationality"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "events", force: :cascade do |t|

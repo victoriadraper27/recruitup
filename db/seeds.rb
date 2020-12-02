@@ -81,7 +81,7 @@ recruit1 = Recruit.create!(athlete: athlete1, user: user)
                         location: Faker::Address.full_address,
                         start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
   appearence = Appearance.create!(event: event, recruit: recruit1)
-  schedule_event = ScheduleEvent.create!(event: event, Schedule: Schedule)
+  schedule_event = ScheduleEvent.create!(event: event, schedule: schedule)
 
   puts "Generated event on #{event.start_date} with recruit #{recruit1.athlete.first_name}"
 end
@@ -93,7 +93,7 @@ recruit2 = Recruit.create!(athlete: athlete2, user: user)
                         location: Faker::Address.full_address,
                         start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
   appearence = Appearance.create!(event: event, recruit: recruit2)
-  schedule_event = ScheduleEvent.create!(event: event, Schedule: Schedule)
+  schedule_event = ScheduleEvent.create!(event: event, schedule: schedule)
 
   puts "Generated event on #{event.start_date} with recruit #{recruit2.athlete.first_name}"
 end
@@ -105,7 +105,7 @@ recruit3 = Recruit.create!(athlete: athlete3, user: user)
                         location: Faker::Address.full_address,
                         start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
   appearence = Appearance.create!(event: event, recruit: recruit3)
-  schedule_event = ScheduleEvent.create!(event: event, Schedule: Schedule)
+  schedule_event = ScheduleEvent.create!(event: event, schedule: schedule)
 
   puts "Generated event on #{event.start_date} with recruit #{recruit3.athlete.first_name}"
 end
@@ -117,7 +117,7 @@ recruit4 = Recruit.create!(athlete: athlete4, user: user)
                         location: Faker::Address.full_address,
                         start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
   appearence = Appearance.create!(event: event, recruit: recruit4)
-  schedule_event = ScheduleEvent.create!(event: event, Schedule: Schedule)
+  schedule_event = ScheduleEvent.create!(event: event, schedule: schedule)
 
   puts "Generated event on #{event.start_date} with recruit #{recruit4.athlete.first_name}"
 end
@@ -129,7 +129,7 @@ recruit5 = Recruit.create!(athlete: athlete5, user: user)
                         location: Faker::Address.full_address,
                         start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
   appearence = Appearance.create!(event: event, recruit: recruit5)
-  schedule_event = ScheduleEvent.create!(event: event, Schedule: Schedule)
+  schedule_event = ScheduleEvent.create!(event: event, schedule: schedule)
 
   puts "Generated event on #{event.start_date} with recruit #{recruit5.athlete.first_name}"
 end
@@ -142,7 +142,7 @@ recruits = [recruit1, recruit2, recruit3, recruit4, recruit5]
                         location: Faker::Address.full_address,
                         start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
   appearence = Appearance.create!(event: event, recruit: recruits.sample)
-  schedule_event = ScheduleEvent.create!(event: event, Schedule: Schedule2)
+  schedule_event = ScheduleEvent.create!(event: event, schedule: schedule2)
 end
 
 
@@ -152,7 +152,7 @@ end
 schedule = Schedule.create!(user: user)
 
 Event.find_each do |event|
-  schedule_event = ScheduleEvent.create!(event: event, Schedule: Schedule)
+  schedule_event = ScheduleEvent.create!(event: event, schedule: schedule)
 end
 # Schedule = Schedule.create!(user: user)
 
