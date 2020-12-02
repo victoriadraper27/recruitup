@@ -152,11 +152,8 @@ end
 # schedule = Schedule.create!(user: user)
 
 # Event.find_each do |event|
-<<<<<<< HEAD
 #   schedule_event = ScheduleEvent.create!(event: event, schedule: schedule)
-=======
 #   schedule_event = ScheduleEvent.create!(event: event, Schedule: Schedule)
->>>>>>> 9cd8d6e... FIX: Master
 # end
 # Schedule = Schedule.create!(user: user)
 
