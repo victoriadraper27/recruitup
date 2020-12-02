@@ -1,7 +1,9 @@
-<h1>Calendars</h1>
+<h1>schedules</h1>
 <ul>
-  <% @calendars.each do |calendar| %>
-    <li> <%= calendar %> </li>
+  <% @schedules.each do |schedule| %>
+    <% schedule.events.each do |event| %>
+      <li><%= event.start_time %> <%= event.location %></li>
+    <% end %>
   <% end %>
 </ul>
 
