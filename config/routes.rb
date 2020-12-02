@@ -14,12 +14,16 @@ Rails.application.routes.draw do
   # get 'athletes/show'
   devise_for :users
   root to: 'pages#home'
+  get '/dashboard', to: 'pages#dashboard'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  resources :events, only: [:index, :show]
+  resources :schedules, only: [:index, :show, :edit, :update] do
+    resources :events, only: [:index]
+  end
 
-  resources :schedules, only: [:index, :show, :edit, :update]
+  resources :events, only: [:show]
   resources :recruits, except: [:new, :create]
+
   resources :athletes, only: [:index, :show] do
     resources :recruits, only: [:new, :create]
   end

@@ -10,6 +10,7 @@ puts "Clearing the Database...."
 ScheduleEvent.destroy_all
 Schedule.destroy_all
 Appearance.destroy_all
+AthleteEvent.destroy_all
 Event.destroy_all
 Recruit.destroy_all
 Athlete.destroy_all
@@ -55,17 +56,32 @@ end
 
 puts "Generated #{Athlete.count} athletes"
 
+
 athlete1 = Athlete.first
 athlete2 = Athlete.second
 athlete3 = Athlete.third
 athlete4 = Athlete.fourth
 athlete5 = Athlete.fifth
 
+schedule = Schedule.create!(user: user)
+
+# events = []
+# 25.time do
+#   event = Event.create!(start_date: Faker::Date.between(from: 30.days.ago, to: Date.today),
+#                         location: Faker::Address.full_address)
+#   events << event
+# end
+
+# appearence = Appearance.create!(event: events.sample, recruit: recruits.sample)
+
+
 recruit1 = Recruit.create!(athlete: athlete1, user: user)
 3.times do
-  event = Event.create!(start_date: Faker::Date.between(from: 30.days.ago, to: Date.today),
-                        location: Faker::Address.full_address)
+  event = Event.create!(start_date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
+                        location: Faker::Address.full_address,
+                        start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
   appearence = Appearance.create!(event: event, recruit: recruit1)
+  schedule_event = ScheduleEvent.create!(event: event, Schedule: Schedule)
 
   puts "Generated event on #{event.start_date} with recruit #{recruit1.athlete.first_name}"
 end
@@ -73,9 +89,11 @@ end
 
 recruit2 = Recruit.create!(athlete: athlete2, user: user)
 3.times do
-  event = Event.create!(start_date: Faker::Date.between(from: 30.days.ago, to: Date.today),
-                        location: Faker::Address.full_address)
+  event = Event.create!(start_date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
+                        location: Faker::Address.full_address,
+                        start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
   appearence = Appearance.create!(event: event, recruit: recruit2)
+  schedule_event = ScheduleEvent.create!(event: event, Schedule: Schedule)
 
   puts "Generated event on #{event.start_date} with recruit #{recruit2.athlete.first_name}"
 end
@@ -83,9 +101,11 @@ end
 
 recruit3 = Recruit.create!(athlete: athlete3, user: user)
 3.times do
-  event = Event.create!(start_date: Faker::Date.between(from: 30.days.ago, to: Date.today),
-                        location: Faker::Address.full_address)
+  event = Event.create!(start_date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
+                        location: Faker::Address.full_address,
+                        start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
   appearence = Appearance.create!(event: event, recruit: recruit3)
+  schedule_event = ScheduleEvent.create!(event: event, Schedule: Schedule)
 
   puts "Generated event on #{event.start_date} with recruit #{recruit3.athlete.first_name}"
 end
@@ -93,9 +113,11 @@ end
 
 recruit4 = Recruit.create!(athlete: athlete4, user: user)
 3.times do
-  event = Event.create!(start_date: Faker::Date.between(from: 30.days.ago, to: Date.today),
-                        location: Faker::Address.full_address)
+  event = Event.create!(start_date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
+                        location: Faker::Address.full_address,
+                        start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
   appearence = Appearance.create!(event: event, recruit: recruit4)
+  schedule_event = ScheduleEvent.create!(event: event, Schedule: Schedule)
 
   puts "Generated event on #{event.start_date} with recruit #{recruit4.athlete.first_name}"
 end
@@ -103,20 +125,40 @@ end
 
 recruit5 = Recruit.create!(athlete: athlete5, user: user)
 3.times do
-  event = Event.create!(start_date: Faker::Date.between(from: 30.days.ago, to: Date.today),
-                        location: Faker::Address.full_address)
+  event = Event.create!(start_date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
+                        location: Faker::Address.full_address,
+                        start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
   appearence = Appearance.create!(event: event, recruit: recruit5)
+  schedule_event = ScheduleEvent.create!(event: event, Schedule: Schedule)
 
   puts "Generated event on #{event.start_date} with recruit #{recruit5.athlete.first_name}"
 end
 
+schedule2 = Schedule.create!(user: user)
+recruits = [recruit1, recruit2, recruit3, recruit4, recruit5]
+
+15.times do
+  event = Event.create!(start_date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
+                        location: Faker::Address.full_address,
+                        start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
+  appearence = Appearance.create!(event: event, recruit: recruits.sample)
+  schedule_event = ScheduleEvent.create!(event: event, Schedule: Schedule2)
+end
+
+
 # Need to prioritize games that have overlapping recruits
 # Need to only see one recruit 3 times in a Schedule
 
-Schedule = Schedule.create!(user: user)
+schedule = Schedule.create!(user: user)
 
 Event.find_each do |event|
-  Schedule_event = ScheduleEvent.create!(event: event, Schedule: Schedule)
+  schedule_event = ScheduleEvent.create!(event: event, Schedule: Schedule)
 end
+# Schedule = Schedule.create!(user: user)
+
+# Event.find_each do |event|
+#   Schedule_event = ScheduleEvent.create!(event: event, Schedule: Schedule)
+# end
+
 
 

@@ -61,7 +61,32 @@ ActiveRecord::Schema.define(version: 2020_11_30_040620) do
     t.string "team"
     t.string "team_url"
     t.integer "rating"
+<<<<<<< HEAD
     t.string "nationality"
+=======
+  end
+
+  create_table "attendees", force: :cascade do |t|
+    t.bigint "event_id", null: false
+    t.bigint "recruit_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_attendees_on_event_id"
+    t.index ["recruit_id"], name: "index_attendees_on_recruit_id"
+  end
+
+  create_table "calendar_events", force: :cascade do |t|
+    t.bigint "event_id", null: false
+    t.bigint "calendar_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["calendar_id"], name: "index_calendar_events_on_calendar_id"
+    t.index ["event_id"], name: "index_calendar_events_on_event_id"
+  end
+
+  create_table "calendars", force: :cascade do |t|
+    t.bigint "user_id", null: false
+>>>>>>> 3ad73be1ae559c9751249afa0340a9bf81adb56c
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -135,6 +160,8 @@ ActiveRecord::Schema.define(version: 2020_11_30_040620) do
   add_foreign_key "appearances", "recruits"
   add_foreign_key "athlete_events", "athletes"
   add_foreign_key "athlete_events", "events"
+  add_foreign_key "attendees", "events"
+  add_foreign_key "attendees", "recruits"
   add_foreign_key "recruits", "athletes"
   add_foreign_key "recruits", "users"
   add_foreign_key "schedule_events", "events"
