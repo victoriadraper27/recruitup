@@ -1,0 +1,29 @@
+.schedule-index {
+  margin: auto;
+
+  h1 {
+    font-size: 70px;
+    text-align: center;
+  }
+
+  ul {
+    list-style: none;
+  }
+}
+
+.select-calendar-link {
+  margin: auto;
+  background-color: #d57149;
+  color: #f0ece3;
+  border-radius: 10px;
+
+  &:hover {
+    background-color: #4a3f35;
+    color: #f0ece3;
+  }
+}
+
+.index-calendar {
+  height: 750px;
+  width: 550px;
+}

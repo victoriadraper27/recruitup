@@ -26,7 +26,7 @@ puts "Generating Coach & Athletes"
   )
 
 @golf = Sport.create!(
-  name: 'golf'
+  name: 'Golf'
   )
 
 user_attributes = {
