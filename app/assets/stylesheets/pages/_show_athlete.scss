@@ -12,12 +12,12 @@
   justify-content: space-between;
   margin: 75px;
   display: flex;
+  padding: 0;
 }
 
 .card-notes {
-  width: 600px;
+  width: 300px;
   height: 300px;
-  align-items: center;
   justify-content: center;
   color: #2f2519;
   border-radius: 24px;
@@ -25,8 +25,9 @@
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   text-align: center;
   justify-content: space-between;
-  margin: 75px;
+  margin: 24px;
   display: flex;
+  background-color: white;
 }
 
 
@@ -44,7 +45,6 @@ card h1 {
 }
 
 .background {
- background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url("golf-background.jpg");
  background-color: #cccccc;
  background-position: bottom;
  background-size: cover;
