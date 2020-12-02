@@ -8,5 +8,5 @@ class User < ApplicationRecord
   belongs_to :sport
 
   has_many :recruits, dependent: :destroy
-  has_many :calendars
+  has_many :schedules
 end

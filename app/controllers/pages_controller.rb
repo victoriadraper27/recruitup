@@ -5,7 +5,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @user = current_user
-    @calendars = @user.calendars.all
+    @schedules = @user.schedules.all
     @events = policy_scope(Event).order(created_at: :desc)
     @recruits = @user.recruits.all
   end

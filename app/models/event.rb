@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
-  has_many :calendar_events
-  has_many :calendars, through: :calendar_events
+  has_many :schedule_events
+  has_many :schedules, through: :schedule_events
   has_many :appearances
   has_many :recruits, through: :appearances
   has_many :athlete_events

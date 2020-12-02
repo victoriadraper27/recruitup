@@ -2,7 +2,7 @@ class Athlete < ApplicationRecord
   has_many :athlete_events
   has_many :events, through: :athlete_events
   has_many :recruits
-  has_many :coaches, through: :recruits
+  has_many :users, through: :recruits
 
   include PgSearch::Model
   pg_search_scope :search,
