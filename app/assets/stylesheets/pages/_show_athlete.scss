@@ -1,7 +1,7 @@
 
 .card {
   height: 300px;
-  width: 100px;
+  width: 200px;
   align-items: center;
   justify-content: center;
   color: #2f2519;
@@ -16,8 +16,8 @@
 }
 
 .card-notes {
-  width: 300px;
-  height: 300px;
+  width: 800px;
+  height: 200px;
   justify-content: center;
   color: #2f2519;
   border-radius: 24px;
@@ -25,7 +25,8 @@
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   text-align: center;
   justify-content: space-between;
-  margin: 24px;
+  margin-left: 100px;
+  margin-bottom: 16px;
   display: flex;
   background-color: white;
 }
@@ -49,12 +50,10 @@ card h1 {
  background-position: bottom;
  background-size: cover;
  background-repeat: no-repeat;
-
-
 }
 
-.card-notes {
-  width: 300px;
-  height: 500px
+.btn btn-primary {
+  border-radius: 5px;
 }
+
 
