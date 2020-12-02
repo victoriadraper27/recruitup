@@ -1,19 +1,20 @@
 class SchedulesController < ApplicationController
-  after_action :authorize_calendar, except: :index
+  after_action :authorize_schedule, except: :index
 
   def index
     @schedules = policy_scope(Schedule).order(created_at: :desc)
   end
 
   def show
-    @schedules = Schedule.find(params[:id])
+    @schedule = Schedule.find(params[:id])
+    @events = policy_scope(Event)
   end
 
-  #def edit
-  #end
+  # def edit
+  # end
 
   # def update
-  #en
+  # end
 
   private
 

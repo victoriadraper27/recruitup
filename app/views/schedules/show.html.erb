@@ -1,28 +1,31 @@
-<!-- <h1><%#=  @calendar.id %> </h1>
-<p><%#= @calendar %></p> -->
-<div class="container">
-<%= month_calendar(attribute: :start_date, events: @events) do |date, events| %>
-  <%= date %>
+<div class="my-5 schedule-show">
+  <h1 class="mb-5">My Schedule</h1>
 
-  <% events.each do |event| %>
-  <% event.recruits.each do |recruit| %>
-  <div class="calendar-card shadow">
-      <!-- Card Header - Accordion -->
-      <a href="#collapseCardExample" class="d-block calendar-card-header" data-toggle="collapse"
-          role="button" aria-expanded="true" aria-controls="collapseCardExample">
-          <p class="m-0 font-weight-bold"><%= event.start_time.to_s(:time) %> <%= recruit.athlete.first_name %></p>
-      </a>
-      <!-- Card Content - Collapse -->
-      <div class="collapse" id="collapseCardExample">
-          <div class="calendar-card-body">
-            <%= link_to "/calendars/:calendar_id/events/#{event.id}" do %><%= event.start_time.to_s(:time) %><% event.location %><% end %>
-            <%= link_to athlete_path(recruit.athlete) do %>
-            <%= recruit.athlete.first_name %>
-            <%= recruit.athlete.last_name %>
-            <%= recruit.athlete.grad_year %><% end %>
+  <div class="show-calendar">
+    <%= month_calendar(attribute: :start_date, events: @events) do |date, events| %>
+      <%= date.day %>
+
+      <% events.each do |event| %>
+      <% event.recruits.each do |recruit| %>
+      <div class="calendar-card shadow">
+          <!-- Card Header - Accordion -->
+          <a href="#collapseCardExample" class="d-block calendar-card-header" data-toggle="collapse"
+              role="button" aria-expanded="true" aria-controls="collapseCardExample">
+              <p class="m-0 font-weight-bold"><%= event.start_time.to_s(:time) %> <%= recruit.athlete.first_name %></p>
+          </a>
+          <!-- Card Content - Collapse -->
+          <div class="collapse" id="collapseCardExample">
+              <div class="calendar-card-body">
+                <%= link_to "/calendars/:calendar_id/events/#{event.id}" do %><%= event.start_time.to_s(:time) %><% event.location %><% end %>
+                <%= link_to athlete_path(recruit.athlete) do %>
+                <%= recruit.athlete.first_name %>
+                <%= recruit.athlete.last_name %>
+                (<%= recruit.athlete.grad_year %>)<% end %>
+              </div>
           </div>
+          <% end %>
       </div>
       <% end %>
+    <% end %>
   </div>
-  <% end %>
-<% end %>
+</div>
