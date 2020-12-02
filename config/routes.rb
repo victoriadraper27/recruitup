@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     resources :events, only: [:index, :show]
   end
 
+  resources :events, only: :show
   resources :recruits, except: [:new, :create]
 
   resources :athletes, only: [:index, :show] do
