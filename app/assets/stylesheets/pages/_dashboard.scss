@@ -1,0 +1,26 @@
+.dashboard {
+  img {
+    height: 300px;
+  }
+
+  h1 {
+    font-size: 80px;
+  }
+
+  p {
+    font-size: 30px;
+    color: #393e46;
+  }
+
+  .color {
+    color: #d57149;
+
+    .active {
+      background-color: #d57149;
+    }
+  }
+
+  .flex-column {
+    border-right: 2px #d57149 solid;
+  }
+}

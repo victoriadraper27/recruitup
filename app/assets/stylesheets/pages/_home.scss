@@ -168,13 +168,6 @@ a:active {
     transition-duration: 500ms;
 }
 
-p {
-    color: #726a84;
-    font-size: 16px;
-    font-weight: 300;
-    margin-top: 0;
-}
-
 .heading-text > p {
     font-size: 16px;
 }
@@ -392,7 +385,14 @@ p {
 }
 
 
-
+.home {
+  p {
+    color: #726a84;
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 0;
+}
+}
 
 
 // --------------

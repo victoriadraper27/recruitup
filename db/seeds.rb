@@ -26,7 +26,7 @@ puts "Generating Coach & Athletes"
   )
 
 @golf = Sport.create!(
-  name: 'golf'
+  name: 'Golf'
   )
 
 user_attributes = {
@@ -153,6 +153,7 @@ end
 
 # Event.find_each do |event|
 #   schedule_event = ScheduleEvent.create!(event: event, schedule: schedule)
+#   schedule_event = ScheduleEvent.create!(event: event, Schedule: Schedule)
 # end
 # Schedule = Schedule.create!(user: user)
 
