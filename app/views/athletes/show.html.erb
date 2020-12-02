@@ -1,50 +1,31 @@
-<body class="background"
-<div class="container">
-  <div class="row">
-    <div class="col col-md-4">
-      <div class="card w-75">
+<div class="mt-5 athlete-show">
+  <div class="pt-5">
+
+    <h1 class = "card-title"><%= @athlete.first_name %> <%= @athlete.last_name %></h1>
+
+    <div class="d-flex mb-5">
+      <div>
         <%= image_tag "golf_girl.png", class: "card-img-top" %>
-        <h1 class = "card-title"><%= @athlete.first_name %> <%= @athlete.last_name %></h1>
       </div>
-    </div>
-    <div class="col col-md-4">
-      <div class= "card w-75">
-        <h1 class= "card-title"> Prospect Info: </h1>
-        <h4>Team: <%= @athlete.team %> </h4>
-        <h6><%= @athlete.team_url %></h6>
-        <p>Graduation Year: <%= @athlete.grad_year %></p>
-        <p>Nationality: <%= @athlete.nationality %></p
-        </div>
-      </div>
-    </div>
-    <div class="col col-md-4">
-      <div class= "card w-75">
-        <h1 class= "card-title">Rating:</h1>
-        <h4 style="text-align: center"><%= @athlete.rating %></p>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
-        </div>
+      <div>
+        <p><strong>Team: </strong><%= @athlete.team %> - <%= @athlete.team_url %></p>
+        <p><strong>Graduation Year: </strong><%= @athlete.grad_year %></p>
+        <p><strong>Nationality: </strong><%= @athlete.nationality %></p>
+        <p><strong>Rating: </strong><%= @athlete.rating %></p>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col">
-        <div class="card-notes">
-          <h1> Notes: </h1>
-        </div>
-      </div>
-    </div>
+  <div class="card py-1 px-3">
+    <p> Notes: </p>
+  </div>
 
-    <div class="row justify-content-center">
+    <div class="mt-3 row justify-content-center">
       <div class="btn-group btn-group-lg" role="group" aria-label="Add to Recruiting List">
         <p><%= simple_form_for([@athlete, @recruit]) do |f| %>
-          <%= f.submit "Add to Recruiting List", class: "btn btn-primary" %>
+          <%= f.submit "Add to Recruiting List", class: "btn" %>
           <% end %>
         </p>
       </div>
     </div>
   </div>
-</body>
+</div>
