@@ -20,7 +20,10 @@ class RecruitsController < ApplicationController
     end
   end
 
-  def destroy; end
+  def destroy
+    @recruit.destroy
+    redirect_to recruits_path
+  end
 
   # def edit; end
 
