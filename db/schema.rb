@@ -62,8 +62,11 @@ ActiveRecord::Schema.define(version: 2020_11_30_040620) do
     t.string "team_url"
     t.integer "rating"
     t.string "nationality"
+<<<<<<< HEAD
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+=======
+>>>>>>> 7f1ea4d... FIX: Rebase
   end
 
   create_table "events", force: :cascade do |t|
