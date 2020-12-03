@@ -9,5 +9,6 @@ class PagesController < ApplicationController
     @events = policy_scope(Event).order(created_at: :desc)
     @recruits = @user.recruits.all
     @unavailable_day = UnavailableDay.new
+    @unavailable_days = policy_scope(Event).order(created_at: :desc)
   end
 end

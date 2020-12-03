@@ -4,6 +4,8 @@ class UnavailableDaysController < ApplicationController
   def create
     @unavailable_day = UnavailableDay.new(unavailable_day_params)
     @unavailable_day.user = current_user
+    raise
+
     if @unavailable_day.save
       redirect_to '/dashboard'
     else
