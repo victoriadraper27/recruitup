@@ -121,7 +121,7 @@ ActiveRecord::Schema.define(version: 2020_11_30_040620) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "first_name"
     t.string "last_name"
-    t.string "role", default: "head_coach"
+    t.string "role", default: "Head Coach"
     t.bigint "organization_id", null: false
     t.bigint "sport_id", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

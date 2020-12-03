@@ -39,9 +39,11 @@ user_attributes = {
 user = User.new(user_attributes)
 user.organization = @masters
 user.sport = @golf
-user.save
+user.save!
 
 puts "Generated #{user.first_name} #{user.last_name} user"
+
+schedule = Schedule.create!(user: user)
 
 25.times do
   athlete = Athlete.create!( first_name: Faker::Name.female_first_name,
@@ -63,7 +65,6 @@ athlete3 = Athlete.third
 athlete4 = Athlete.fourth
 athlete5 = Athlete.fifth
 
-schedule = Schedule.create!(user: user)
 
 # events = []
 # 25.time do
