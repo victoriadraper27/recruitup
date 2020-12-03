@@ -15,18 +15,25 @@ Event.destroy_all
 Recruit.destroy_all
 Athlete.destroy_all
 User.destroy_all
+Team.destroy_all
 Organization.destroy_all
 Sport.destroy_all
 
 
 puts "Generating Coach & Athletes"
 
-@masters = Organization.create!(
+masters = Organization.create!(
   name: 'Masters'
   )
 
-@golf = Sport.create!(
+golf = Sport.create!(
   name: 'Golf'
+  )
+
+team = Team.create!(
+  name: 'Swingers',
+  organization: masters,
+  sport: golf
   )
 
 user_attributes = {
@@ -40,17 +47,16 @@ user2_attributes = {
   email: 'assist@email.com',
   password: 'assistant',
   first_name: 'Pia',
-  last_name: 'Nilsson'
+  last_name: 'Nilsson',
+  role: 'Assistant Coach'
 }
 
 user = User.new(user_attributes)
-user.organization = @masters
-user.sport = @golf
+user.team = team
 user.save!
 
 user2 = User.new(user2_attributes)
-user2.organization = @masters
-user2.sport = @golf
+user2.team = team
 user2.save!
 
 
@@ -58,14 +64,14 @@ puts "Generated #{user.first_name} #{user.last_name} user"
 puts "Generated #{user2.first_name} #{user2.last_name} user"
 
 
-schedule = Schedule.create!(user: user)
+schedule = Schedule.create!(team: team)
 
 25.times do
   athlete = Athlete.create!( first_name: Faker::Name.female_first_name,
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
-                  team: Faker::Team.name,
-                  team_url: "www.#{Faker::Team.name}.com",
+                  athlete_team: Faker::Team.name,
+                  athlete_team_url: "www.#{Faker::Team.name}.com",
                   nationality: Faker::Nation.nationality,
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3))
   puts "Generated #{athlete.first_name} #{athlete.last_name}"
@@ -91,7 +97,7 @@ athlete5 = Athlete.fifth
 # appearence = Appearance.create!(event: events.sample, recruit: recruits.sample)
 
 
-recruit1 = Recruit.create!(athlete: athlete1, user: user)
+recruit1 = Recruit.create!(athlete: athlete1, team: team)
 3.times do
   event = Event.create!(start_date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
                         address: "2000 Visalia Row, Coronado, CA 92118, United States",
@@ -103,7 +109,7 @@ recruit1 = Recruit.create!(athlete: athlete1, user: user)
 end
 
 
-recruit2 = Recruit.create!(athlete: athlete2, user: user)
+recruit2 = Recruit.create!(athlete: athlete2, team: team)
 3.times do
   event = Event.create!(start_date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
                         address: "6320 Grandview Dr W, University Place, WA 98467, United States",
@@ -115,7 +121,7 @@ recruit2 = Recruit.create!(athlete: athlete2, user: user)
 end
 
 
-recruit3 = Recruit.create!(athlete: athlete3, user: user)
+recruit3 = Recruit.create!(athlete: athlete3, team: team)
 3.times do
   event = Event.create!(start_date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
                         address: "Van Cortlandt Park S, The Bronx, NY 10463, United States",
@@ -127,7 +133,7 @@ recruit3 = Recruit.create!(athlete: athlete3, user: user)
 end
 
 
-recruit4 = Recruit.create!(athlete: athlete4, user: user)
+recruit4 = Recruit.create!(athlete: athlete4, team: team)
 3.times do
   event = Event.create!(start_date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
                         address: "1700 W Renwick Rd, Romeoville, IL 60446, United States",
@@ -139,7 +145,7 @@ recruit4 = Recruit.create!(athlete: athlete4, user: user)
 end
 
 
-recruit5 = Recruit.create!(athlete: athlete5, user: user)
+recruit5 = Recruit.create!(athlete: athlete5, team: team)
 
 3.times do
   event = Event.create!(start_date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
@@ -151,7 +157,7 @@ recruit5 = Recruit.create!(athlete: athlete5, user: user)
   puts "Generated event on #{event.start_date} with recruit #{recruit5.athlete.first_name}"
 end
 
-schedule2 = Schedule.create!(user: user)
+schedule2 = Schedule.create!(team: team)
 recruits = [recruit1, recruit2, recruit3, recruit4, recruit5]
 
 5.times do

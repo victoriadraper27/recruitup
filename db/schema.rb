@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_03_072013) do
+ActiveRecord::Schema.define(version: 2020_12_03_082624) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,8 +58,8 @@ ActiveRecord::Schema.define(version: 2020_12_03_072013) do
     t.string "first_name"
     t.string "last_name"
     t.integer "grad_year"
-    t.string "team"
-    t.string "team_url"
+    t.string "athlete_team"
+    t.string "athlete_team_url"
     t.integer "rating"
     t.string "nationality"
     t.datetime "created_at", precision: 6, null: false
@@ -76,6 +76,15 @@ ActiveRecord::Schema.define(version: 2020_12_03_072013) do
     t.float "longitude"
   end
 
+  create_table "notes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "appearance_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["appearance_id"], name: "index_notes_on_appearance_id"
+    t.index ["user_id"], name: "index_notes_on_user_id"
+  end
+
   create_table "organizations", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -84,11 +93,11 @@ ActiveRecord::Schema.define(version: 2020_12_03_072013) do
 
   create_table "recruits", force: :cascade do |t|
     t.bigint "athlete_id", null: false
-    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "team_id", null: false
     t.index ["athlete_id"], name: "index_recruits_on_athlete_id"
-    t.index ["user_id"], name: "index_recruits_on_user_id"
+    t.index ["team_id"], name: "index_recruits_on_team_id"
   end
 
   create_table "schedule_events", force: :cascade do |t|
@@ -96,21 +105,34 @@ ActiveRecord::Schema.define(version: 2020_12_03_072013) do
     t.bigint "schedule_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
     t.index ["event_id"], name: "index_schedule_events_on_event_id"
     t.index ["schedule_id"], name: "index_schedule_events_on_schedule_id"
+    t.index ["user_id"], name: "index_schedule_events_on_user_id"
   end
 
   create_table "schedules", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.bigint "team_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_schedules_on_user_id"
+    t.index ["team_id"], name: "index_schedules_on_team_id"
   end
 
   create_table "sports", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string "name"
+    t.bigint "organization_id", null: false
+    t.bigint "sport_id", null: false
+    t.integer "selected_schedule_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["organization_id"], name: "index_teams_on_organization_id"
+    t.index ["sport_id"], name: "index_teams_on_sport_id"
   end
 
   create_table "unavailable_days", force: :cascade do |t|
@@ -132,13 +154,11 @@ ActiveRecord::Schema.define(version: 2020_12_03_072013) do
     t.string "first_name"
     t.string "last_name"
     t.string "role", default: "Head Coach"
-    t.bigint "organization_id", null: false
-    t.bigint "sport_id", null: false
+    t.bigint "team_id", null: false
     t.integer "selected_schedule_id"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["organization_id"], name: "index_users_on_organization_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["sport_id"], name: "index_users_on_sport_id"
+    t.index ["team_id"], name: "index_users_on_team_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
@@ -146,12 +166,16 @@ ActiveRecord::Schema.define(version: 2020_12_03_072013) do
   add_foreign_key "appearances", "recruits"
   add_foreign_key "athlete_events", "athletes"
   add_foreign_key "athlete_events", "events"
+  add_foreign_key "notes", "appearances"
+  add_foreign_key "notes", "users"
   add_foreign_key "recruits", "athletes"
-  add_foreign_key "recruits", "users"
+  add_foreign_key "recruits", "teams"
   add_foreign_key "schedule_events", "events"
   add_foreign_key "schedule_events", "schedules"
-  add_foreign_key "schedules", "users"
+  add_foreign_key "schedule_events", "users"
+  add_foreign_key "schedules", "teams"
+  add_foreign_key "teams", "organizations"
+  add_foreign_key "teams", "sports"
   add_foreign_key "unavailable_days", "users"
-  add_foreign_key "users", "organizations"
-  add_foreign_key "users", "sports"
+  add_foreign_key "users", "teams"
 end

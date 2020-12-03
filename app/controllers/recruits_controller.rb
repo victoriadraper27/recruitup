@@ -12,7 +12,7 @@ class RecruitsController < ApplicationController
     @athlete = Athlete.find(params[:athlete_id])
     @recruit = Recruit.new
     @recruit.athlete = @athlete
-    @recruit.user = current_user
+    @recruit.team = current_user.team
     if @recruit.save
       redirect_to recruits_path
     else
