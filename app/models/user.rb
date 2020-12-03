@@ -10,4 +10,6 @@ class User < ApplicationRecord
 
   has_many :recruits, dependent: :destroy
   has_many :schedules
+
+  has_many :unavailable_days
 end

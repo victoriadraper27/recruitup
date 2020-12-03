@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'unavailable_days/create'
   # get 'calendars/index'
   # get 'calendars/show'
   # get 'calendars/edit'
@@ -18,11 +19,13 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :schedules, only: [:index, :show, :edit, :update] do
+    resources :events, only: [:index, :show]
     member do
       post :select
     end
-    resources :events, only: [:index, :show]
   end
+
+  resources :unavailable_days, only: [:create, :destroy]
 
   resources :events, only: :show
   resources :recruits, except: [:new, :create]

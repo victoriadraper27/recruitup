@@ -1,0 +1,12 @@
+<!-- <div data-controller="sweetalert"> -->
+<%= simple_form_for(@unavailable_day) do |f| %>
+  <%= f.input :date, as: :string, required: true, input_html: {class: "datepicker"} %>
+    <%#= w.input :photos, as: :file, input_html: { multiple: true } %>
+  <div class='dropdown-divider'></div>
+  <!-- <button data-action='click->sweetalert#trigger'> -->
+    <%= f.submit class: 'form-partial-button', id: "sweet-alert-create" %>
+  <!-- </button> -->
+<% end %>
+</div>
+
+<!-- 'data-target' => 'form' -->

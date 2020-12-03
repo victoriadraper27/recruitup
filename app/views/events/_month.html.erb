@@ -4,6 +4,9 @@
 
     <% events.each do |event| %>
 
+      <% if event.class == UnavailableDay %>
+        <%= event.user.first_name %>
+      <% else %>
       <% event.recruits.each do |recruit| %>
 
       <% if recruit.athlete.grad_year == 2022 %>
@@ -23,10 +26,10 @@
           <%= event.start_time.to_s(:time) %>-<%= recruit.athlete.first_name %>
         </a>
       <% end %>
-
     <% end %>
     <% end %>
   <% end %>
+  <% end %>
 </div>
 
-
+<!-- , attribute: :date,  events: @unavailable_days  -->

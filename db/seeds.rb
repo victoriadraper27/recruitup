@@ -33,7 +33,14 @@ user_attributes = {
   email: 'coachie@email.com',
   password: 'coachiecoach',
   first_name: 'Butch',
-  last_name: 'Harmon'
+  last_name: 'Harmon',
+}
+
+user2_attributes = {
+  email: 'assist@email.com',
+  password: 'assistant',
+  first_name: 'Pia',
+  last_name: 'Nilsson'
 }
 
 user = User.new(user_attributes)
@@ -41,7 +48,15 @@ user.organization = @masters
 user.sport = @golf
 user.save!
 
+user2 = User.new(user2_attributes)
+user2.organization = @masters
+user2.sport = @golf
+user2.save!
+
+
 puts "Generated #{user.first_name} #{user.last_name} user"
+puts "Generated #{user2.first_name} #{user2.last_name} user"
+
 
 schedule = Schedule.create!(user: user)
 
