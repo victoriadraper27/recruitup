@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'unavailable_days/create'
   # get 'calendars/index'
   # get 'calendars/show'
   # get 'calendars/edit'
