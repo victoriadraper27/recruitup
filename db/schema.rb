@@ -113,6 +113,14 @@ ActiveRecord::Schema.define(version: 2020_12_03_072013) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "unavailable_days", force: :cascade do |t|
+    t.datetime "date"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_unavailable_days_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -143,6 +151,7 @@ ActiveRecord::Schema.define(version: 2020_12_03_072013) do
   add_foreign_key "schedule_events", "events"
   add_foreign_key "schedule_events", "schedules"
   add_foreign_key "schedules", "users"
+  add_foreign_key "unavailable_days", "users"
   add_foreign_key "users", "organizations"
   add_foreign_key "users", "sports"
 end
