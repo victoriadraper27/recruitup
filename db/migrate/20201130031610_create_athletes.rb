@@ -4,8 +4,8 @@ class CreateAthletes < ActiveRecord::Migration[6.0]
       t.string :first_name
       t.string :last_name
       t.integer :grad_year
-      t.string :team
-      t.string :team_url
+      t.string :athlete_team
+      t.string :athlete_team_url
       t.integer :rating
       t.string :nationality
 

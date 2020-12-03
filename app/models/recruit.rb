@@ -1,6 +1,6 @@
 class Recruit < ApplicationRecord
   belongs_to :athlete
-  belongs_to :user
+  belongs_to :team
   has_many :appearances, dependent: :destroy
   has_many :events, through: :appearances
 
