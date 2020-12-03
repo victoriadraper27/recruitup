@@ -69,9 +69,11 @@ ActiveRecord::Schema.define(version: 2020_12_03_032230) do
   create_table "events", force: :cascade do |t|
     t.datetime "start_date"
     t.datetime "start_time"
-    t.string "location"
+    t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "organizations", force: :cascade do |t|
@@ -129,7 +131,7 @@ ActiveRecord::Schema.define(version: 2020_12_03_032230) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "first_name"
     t.string "last_name"
-    t.string "role", default: "head_coach"
+    t.string "role", default: "Head Coach"
     t.bigint "organization_id", null: false
     t.bigint "sport_id", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
