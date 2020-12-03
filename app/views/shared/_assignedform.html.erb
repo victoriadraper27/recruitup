@@ -1,3 +1,5 @@
 <p><%= simple_form_for(@schedule_event) do |f| %>
-      <%= f.submit "Add to Recruiting List", class: "btn" %>
-      <% end %>
+  <%= f.input :user_id, collection: ScheduleEvent::TEAM_MEMBERS, input_html: { class: 'select2' }, class: 'form-inputs' %>
+  <%= f.submit "Assign Event", class: "btn" %>
+  <% end %>
+</p>
