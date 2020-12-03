@@ -105,7 +105,7 @@ ActiveRecord::Schema.define(version: 2020_12_03_082624) do
     t.bigint "schedule_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.index ["event_id"], name: "index_schedule_events_on_event_id"
     t.index ["schedule_id"], name: "index_schedule_events_on_schedule_id"
     t.index ["user_id"], name: "index_schedule_events_on_user_id"
