@@ -8,7 +8,7 @@ export default class extends Controller {
   }
 
   trigger = (event) => {
-    const form = document.querySelector('#new_date');
+    const form = document.querySelector('#new_unavailable_day');
     console.log(form);
     event.preventDefault();
     fetch(form.action, {method:'post', body: new FormData(form), headers: { accept: "application/json" }})
