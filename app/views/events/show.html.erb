@@ -85,4 +85,12 @@
               </div>
             </div>
           </div>
+
+          <div>
+            <%= simple_form_for([@event, @note]) do |f| %>
+            <%= f.input :content %>
+            <%= f.submit "Add Notes", class: "btn" %>
+            <% end %>
+          </div>
+
         </div>

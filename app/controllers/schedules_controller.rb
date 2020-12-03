@@ -12,7 +12,7 @@ class SchedulesController < ApplicationController
 
   def select
     @schedule = Schedule.find(params[:id])
-    current_user.selected_schedule = @schedule
+    current_user.team.selected_schedule = @schedule
     if current_user.save
       redirect_to dashboard_path
     else

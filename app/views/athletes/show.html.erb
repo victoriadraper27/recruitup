@@ -22,7 +22,8 @@
 
     <div class="mt-3 row justify-content-center">
       <div class="btn-group btn-group-lg" role="group" aria-label="Add to Recruiting List">
-        <p><%= simple_form_for([@athlete, @recruit]) do |f| %>
+        <p>
+          <%= simple_form_for([@athlete, @recruit]) do |f| %>
           <%= f.submit "Add to Recruiting List", class: "btn" %>
           <% end %>
         </p>
