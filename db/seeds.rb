@@ -68,7 +68,7 @@ schedule = Schedule.create!(user: user)
 # events = []
 # 25.time do
 #   event = Event.create!(start_date: Faker::Date.between(from: 30.days.ago, to: Date.today),
-#                         location: Faker::Address.full_address)
+#                         address: Faker::Address.full_address)
 #   events << event
 # end
 
@@ -78,7 +78,7 @@ schedule = Schedule.create!(user: user)
 recruit1 = Recruit.create!(athlete: athlete1, user: user)
 3.times do
   event = Event.create!(start_date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
-                        location: Faker::Address.full_address,
+                        address: "2000 Visalia Row, Coronado, CA 92118, United States",
                         start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
   appearence = Appearance.create!(event: event, recruit: recruit1)
   schedule_event = ScheduleEvent.create!(event: event, schedule: schedule)
@@ -90,7 +90,7 @@ end
 recruit2 = Recruit.create!(athlete: athlete2, user: user)
 3.times do
   event = Event.create!(start_date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
-                        location: Faker::Address.full_address,
+                        address: "6320 Grandview Dr W, University Place, WA 98467, United States",
                         start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
   appearence = Appearance.create!(event: event, recruit: recruit2)
   schedule_event = ScheduleEvent.create!(event: event, schedule: schedule)
@@ -102,7 +102,7 @@ end
 recruit3 = Recruit.create!(athlete: athlete3, user: user)
 3.times do
   event = Event.create!(start_date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
-                        location: Faker::Address.full_address,
+                        address: "Van Cortlandt Park S, The Bronx, NY 10463, United States",
                         start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
   appearence = Appearance.create!(event: event, recruit: recruit3)
   schedule_event = ScheduleEvent.create!(event: event, schedule: schedule)
@@ -114,7 +114,7 @@ end
 recruit4 = Recruit.create!(athlete: athlete4, user: user)
 3.times do
   event = Event.create!(start_date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
-                        location: Faker::Address.full_address,
+                        address: "1700 W Renwick Rd, Romeoville, IL 60446, United States",
                         start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
   appearence = Appearance.create!(event: event, recruit: recruit4)
   schedule_event = ScheduleEvent.create!(event: event, schedule: schedule)
@@ -124,9 +124,10 @@ end
 
 
 recruit5 = Recruit.create!(athlete: athlete5, user: user)
+
 3.times do
   event = Event.create!(start_date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
-                        location: Faker::Address.full_address,
+                        address: "600 Delaware Springs Blvd, Burnet, TX 78611, United States",
                         start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
   appearence = Appearance.create!(event: event, recruit: recruit5)
   schedule_event = ScheduleEvent.create!(event: event, schedule: schedule)
@@ -137,14 +138,29 @@ end
 schedule2 = Schedule.create!(user: user)
 recruits = [recruit1, recruit2, recruit3, recruit4, recruit5]
 
-15.times do
+5.times do
   event = Event.create!(start_date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
-                        location: Faker::Address.full_address,
+                        address: "Ankerveien 127, 0766 Oslo, Norway",
                         start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
   appearence = Appearance.create!(event: event, recruit: recruits.sample)
   schedule_event = ScheduleEvent.create!(event: event, schedule: schedule2)
 end
 
+5.times do
+  event = Event.create!(start_date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
+                        address: "N1, Sidi Bouknadel, Morocco",
+                        start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
+  appearence = Appearance.create!(event: event, recruit: recruits.sample)
+  schedule_event = ScheduleEvent.create!(event: event, schedule: schedule2)
+end
+
+5.times do
+  event = Event.create!(start_date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
+                        address: "2600 Constitution Ave, Prattville, AL 36066, United States",
+                        start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
+  appearence = Appearance.create!(event: event, recruit: recruits.sample)
+  schedule_event = ScheduleEvent.create!(event: event, schedule: schedule2)
+end
 
 # Need to prioritize games that have overlapping recruits
 # Need to only see one recruit 3 times in a Schedule
