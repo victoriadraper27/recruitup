@@ -14,15 +14,13 @@ AthleteEvent.destroy_all
 Event.destroy_all
 Recruit.destroy_all
 Athlete.destroy_all
+Chatroom.destroy_all
 User.destroy_all
 Organization.destroy_all
 Sport.destroy_all
-Chatroom.destroy_all
+
 
 puts "Generating the Chatroom"
-
-
-
 puts "Generating Coaches & Athletes"
 
 @masters = Organization.create!(
@@ -48,7 +46,7 @@ user_attributes = {
 
 user_two_attributes = {
   email: 'assistant@email.com',
-  password: 'golf1',
+  password: 'golfgame1',
   first_name: 'Hank',
   last_name: 'Haney'
 }
@@ -59,9 +57,9 @@ user.sport = @golf
 user.save!
 
 user_two = User.new(user_two_attributes)
-user.organization = @masters
-user.sport = @golf
-user.save!
+user_two.organization = @masters
+user_two.sport = @golf
+user_two.save!
 
 
 puts "Generated #{user.first_name} #{user.last_name} user"
