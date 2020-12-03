@@ -6,7 +6,7 @@ class Athlete < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :search,
-    against: [:first_name, :last_name, :grad_year, :rating, :team, :nationality],
+    against: [:first_name, :last_name, :grad_year, :rating, :athlete_team, :nationality],
     using: {
       tsearch: { prefix: true }
     }
