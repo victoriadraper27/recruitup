@@ -1,0 +1,26 @@
+.form-page-background {
+  margin-top: 60px;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1515816052601-210d5501d471?ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.form-background {
+  background: linear-gradient(#ffffffa6, #ffffff94);
+  border-radius: 20px;
+}
+
+.form-partial-button {
+  border-radius: 10px;
+  background: linear-gradient(#cabcac, #e8e6dfc4);
+
+  &:hover {
+    background: linear-gradient(#3e1922d1, #564348d1);
+    transition: 2s;
+  }
+}
+
+.form-inputs {
+  color: #c5bca675;
+}

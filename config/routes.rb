@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'unavailable_days/create'
   # get 'calendars/index'
   # get 'calendars/show'
   # get 'calendars/edit'
@@ -19,7 +20,12 @@ Rails.application.routes.draw do
 
   resources :schedules, only: [:index, :show, :edit, :update] do
     resources :events, only: [:index, :show]
+    member do
+      post :select
+    end
   end
+
+  resources :unavailable_days, only: [:create, :destroy]
 
   resources :events, only: :show
   resources :recruits, except: [:new, :create]

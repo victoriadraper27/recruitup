@@ -10,6 +10,12 @@ class SchedulesController < ApplicationController
     @events = policy_scope(Event)
   end
 
+  def select
+    @schedule = Schedule.find(params[:id])
+    current_user.selected_schedule = @schedule
+    current_user.save
+  end
+
   # def edit
   # end
 

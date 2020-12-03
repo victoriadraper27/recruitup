@@ -5,7 +5,7 @@
     <% @schedules.each do |schedule| %>
       <li>
         <div class="d-flex justify-content-center">
-          <%= link_to 'CHOOSE THIS SCHEDULE', schedule_path(schedule), class: "select-calendar-link p-2" %>
+          <%= link_to 'VIEW', schedule_path(schedule), class: "select-calendar-link p-2" %>
         </div>
         <div class="index-calendar">
           <%= month_calendar(attribute: :start_date, events: schedule.events) do |date, events| %>

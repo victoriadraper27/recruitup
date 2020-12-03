@@ -1,0 +1,120 @@
+
+    td {
+        .progress {
+            height: 3px;
+            width: 120px;
+            margin: 0;
+        }
+    }
+
+    td,
+    th {
+        white-space: nowrap;
+    }
+
+
+    // Vetical align table content
+
+    .align-items-center {
+        td,
+        th {
+            vertical-align: middle;
+        }
+    }
+
+
+// Flush tables
+
+.table-flush {
+    td,
+    th {
+        border-left: 0;
+        border-right: 0;
+    }
+
+    tbody {
+        tr {
+            &:first-child {
+                td,
+                th {
+                    border-top: 0;
+                }
+            }
+
+            &:last-child {
+                td,
+                th {
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+
+// Tables inside cards
+
+.card {
+    .table {
+        margin-bottom: 0;
+
+        td,
+        th {
+            padding-left: $card-spacer-x;
+            padding-right: $card-spacer-x;
+        }
+    }
+}
+
+
+// Fixes for custom elements inside tables
+
+.table {
+    .custom-toggle {
+        display: block;
+    }
+}
+
+.table  {
+    [data-sort] {
+        cursor: pointer;
+    }
+
+    .thead-dark {
+        [data-sort] {
+            &::after {
+                margin-left: .25rem;
+            }
+        }
+    }
+
+    .thead-light {
+        [data-sort] {
+            &::after {
+                margin-left: .25rem;
+            }
+        }
+    }
+}
+
+
+.table-action {
+    font-size: $font-size-sm;
+
+    margin: 0 .25rem;
+
+    &:hover {
+        color: darken;
+    }
+}
+
+.table-action-delete {
+    &:hover {
+        color: theme-color("danger");
+    }
+}
+
+.table-dark {
+    .table{
+    }
+}
