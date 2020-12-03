@@ -1,9 +1,10 @@
 <div class="mt-5 athlete-show">
   <div class="pt-5">
-
     <h1 class = "card-title"><%= @athlete.first_name %> <%= @athlete.last_name %></h1>
-
     <div class="d-flex mb-5">
+     <!--  <%#= link_to athlete_recruit_path(@athlete.recruit.id.to_i - 1) do %><i class="fas fa-reply">Previous Athlete</i><%# end %> -->
+      <%= link_to athlete_path(@athlete.id.to_i - 1) do %><i class="fas fa-reply">Previous Athlete</i><% end %>
+
       <div>
         <%= image_tag "golf_girl.png", class: "card-img-top" %>
       </div>
@@ -14,6 +15,9 @@
         <p><strong>Nationality: </strong><%= @athlete.nationality %></p>
         <p><strong>Rating: </strong><%= @athlete.rating %></p>
       </div>
+      <%# if @athlete.teams.include?(current_user.team) %>
+      <!-- <%#= link_to athlete_recruit_path(@athlete.recruit.id.to_i + 1) do %><i class="fas fa-share">Next Recruit</i><%# end %> -->
+      <%= link_to athlete_path(@athlete.id.to_i + 1) do %><i class="fas fa-share">Next Athlete</i><% end %>
     </div>
 
   <div class="card py-1 px-3">
