@@ -2,8 +2,13 @@
 
   <h1>My Recruits</h1>
 
-    <div class='input-group-prepend'>
-        <%= render 'shared/search' %>
+    <div class="recruit-index-top d-flex justify-content-between">
+      <div class='input-group-prepend'>
+          <%= render 'shared/search' %>
+      </div>
+      <div>
+        <%= link_to 'Generate Available Schedules', schedules_path, class: "p-2" %>
+      </div>
     </div>
 
     <div class="list-group">
@@ -12,7 +17,6 @@
             <li class="list-group-item list-group-item-action list-group-item-danger d-flex justify-content-between">
                 <%= link_to athlete_path(recruit.athlete) do %> <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
                 (<%= recruit.athlete.grad_year %>)
-
                 <% end %>
 
                 <%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %><i class="fas fa-trash-alt"></i><% end %>
@@ -21,7 +25,6 @@
             <li class="list-group-item list-group-item-action list-group-item-primary d-flex justify-content-between">
                 <%= link_to athlete_path(recruit.athlete) do %> <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
                 (<%= recruit.athlete.grad_year %>)
-
                 <% end %>
 
                 <%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %><i class="fas fa-trash-alt"></i><% end %>
@@ -30,7 +33,6 @@
             <li class="list-group-item list-group-item-action list-group-item-info d-flex justify-content-between">
                 <%= link_to athlete_path(recruit.athlete) do %> <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
                 (<%= recruit.athlete.grad_year %>)
-
                 <% end %>
 
                 <%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %><i class="fas fa-trash-alt"></i><% end %>
@@ -39,7 +41,6 @@
             <li class="list-group-item list-group-item-action list-group-item-success d-flex justify-content-between">
                 <%= link_to athlete_path(recruit.athlete) do %> <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
                 (<%= recruit.athlete.grad_year %>)
-
                 <% end %>
 
                 <%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %><i class="fas fa-trash-alt"></i><% end %>
