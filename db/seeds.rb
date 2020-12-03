@@ -17,9 +17,13 @@ Athlete.destroy_all
 User.destroy_all
 Organization.destroy_all
 Sport.destroy_all
+Chatroom.destroy_all
+
+puts "Generating the Chatroom"
 
 
-puts "Generating Coach & Athletes"
+
+puts "Generating Coaches & Athletes"
 
 @masters = Organization.create!(
   name: 'Masters'
@@ -29,6 +33,12 @@ puts "Generating Coach & Athletes"
   name: 'Golf'
   )
 
+@chatroom = Chatroom.create!(
+  name: "Chats",
+  organization: @masters,
+  sport: @golf
+  )
+
 user_attributes = {
   email: 'coachie@email.com',
   password: 'coachiecoach',
@@ -36,12 +46,28 @@ user_attributes = {
   last_name: 'Harmon'
 }
 
+user_two_attributes = {
+  email: 'assistant@email.com',
+  password: 'golf1',
+  first_name: 'Hank',
+  last_name: 'Haney'
+}
+
 user = User.new(user_attributes)
 user.organization = @masters
 user.sport = @golf
-user.save
+user.save!
+
+user_two = User.new(user_two_attributes)
+user.organization = @masters
+user.sport = @golf
+user.save!
+
 
 puts "Generated #{user.first_name} #{user.last_name} user"
+puts "Generated #{user_two.first_name} #{user_two.last_name} user"
+
+
 
 25.times do
   athlete = Athlete.create!( first_name: Faker::Name.female_first_name,
