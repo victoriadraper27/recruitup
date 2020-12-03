@@ -8,4 +8,14 @@ class UnavailableDayPolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def destroy?
+    owner_or_admin?
+  end
+
+  private
+
+  def owner_or_admin?
+    user == record.user || user.admin
+  end
 end
