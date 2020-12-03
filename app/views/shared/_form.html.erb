@@ -1,6 +1,6 @@
 <div data-controller="sweetalert">
-<%= simple_form_for(wand, 'data-target' => 'form') do |w| %>
-  <%= w.input :check_out, as: :string, required: true, input_html: {class: "datepicker"} %>
+<%= simple_form_for(@unavailable_day, 'data-target' => 'form') do |w| %>
+  <%= w.input :date, as: :string, required: true, input_html: {class: "datepicker"} %>
   </div>
     <%#= w.input :photos, as: :file, input_html: { multiple: true } %>
   <div>
