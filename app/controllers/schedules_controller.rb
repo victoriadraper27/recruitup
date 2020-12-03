@@ -13,7 +13,11 @@ class SchedulesController < ApplicationController
   def select
     @schedule = Schedule.find(params[:id])
     current_user.selected_schedule = @schedule
-    current_user.save
+    if current_user.save
+      redirect_to dashboard_path
+    else
+      render :show
+    end
   end
 
   # def edit
