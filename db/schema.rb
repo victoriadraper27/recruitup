@@ -94,10 +94,11 @@ ActiveRecord::Schema.define(version: 2020_12_04_020039) do
 
   create_table "notes", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "appearance_id", null: false
+    t.bigint "event_id", null: false
+    t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["appearance_id"], name: "index_notes_on_appearance_id"
+    t.index ["event_id"], name: "index_notes_on_event_id"
     t.index ["user_id"], name: "index_notes_on_user_id"
   end
 
@@ -184,9 +185,9 @@ ActiveRecord::Schema.define(version: 2020_12_04_020039) do
   add_foreign_key "appearances", "recruits"
   add_foreign_key "athlete_events", "athletes"
   add_foreign_key "athlete_events", "events"
+  add_foreign_key "notes", "events"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
-  add_foreign_key "notes", "appearances"
   add_foreign_key "notes", "users"
   add_foreign_key "recruits", "athletes"
   add_foreign_key "recruits", "teams"

@@ -1,88 +1,135 @@
-<div class="m-10">
-<h1><%= @event.start_date.to_date  %></h1>
+<div class="event-show mt-5">
+  <div class="pt-5">
+
+    <div class="d-flex justify-content-center">
+      <p class="event-show-header mr-4">
+        <%= link_to event_path(params[:id].to_i - 1), class: "event-show-color" do %>
+         <i class="fas fa-arrow-circle-left"></i>
+        <% end %>
+      </p>
+      <p class="event-show-header"><strong>
+        <%= @event.start_date.strftime("%A, %B %d") %> at <%= @event.start_time.strftime("%I:%M %p") %>
+      </strong></p>
+      <p class="event-show-header ml-4">
+        <%= link_to event_path(params[:id].to_i + 1), class: "event-show-color" do %>
+          <i class="fas fa-arrow-circle-right"></i>
+        <% end %>
+      </p>
+    </div>
+
+
+    <div class="event-show-middle p-3 d-flex justify-content-around">
+
+      <div class="event-show-left mr-2">
+        <p class="event-show-address"><%= @event.address%></p>
+        <div
+          id="map"
+          style="width: 100%;
+          height: 300px;"
+          data-markers="<%= @marker.to_json %>"
+        ></div>
+      </div>
+
+      <div>
+        <% @event.recruits.each do |recruit| %>
+          <%= link_to athlete_path(recruit.athlete) do %>
+            <% if recruit.athlete.grad_year == 2022 %>
+              <a href="/athletes/<%= recruit.athlete.id %>" class="list-group-item list-group-item-action list-group-item-danger d-flex justify-content-left">
+                <%= image_tag "golf_girl.png", class: "avatar-xlarge-square mr-2" %>
+                <div>
+                  <p><%= recruit.athlete.first_name %>  <%= recruit.athlete.last_name %></p>
+                  <p class="text-white"><%= recruit.athlete.grad_year %></p>
+                  <p><i class="fa fa-arrow-up"></i> <%= recruit.athlete.rating %></p>
+                </div>
+              </a>
+            <% elsif recruit.athlete.grad_year == 2023 %>
+              <a href="/athletes/<%= recruit.athlete.id %>" class="list-group-item list-group-item-action list-group-item-primary d-flex justify-content-left">
+                <%= image_tag "golf_girl.png", class: "avatar-xlarge-square mr-2" %>
+                <div>
+                  <p><%= recruit.athlete.first_name %>  <%= recruit.athlete.last_name %></p>
+                  <p class="text-white"><%= recruit.athlete.grad_year %></p>
+                  <p><i class="fa fa-arrow-up"></i> <%= recruit.athlete.rating %></p>
+                </div>
+              </a>
+            <% elsif recruit.athlete.grad_year == 2024 %>
+              <a href="/athletes/<%= recruit.athlete.id %>" class="list-group-item list-group-item-action list-group-item-info d-flex justify-content-left">
+                <%= image_tag "golf_girl.png", class: "avatar-xlarge-square mr-2" %>
+                <div>
+                  <p><%= recruit.athlete.first_name %>  <%= recruit.athlete.last_name %></p>
+                  <p class="text-white"><%= recruit.athlete.grad_year %></p>
+                  <p><i class="fa fa-arrow-up"></i> <%= recruit.athlete.rating %></p>
+                </div>
+              </a>
+            <% else %>
+              <a href="/athletes/<%= recruit.athlete.id %>" class="list-group-item list-group-item-action list-group-item-success d-flex justify-content-left">
+                <%= image_tag "golf_girl.png", class: "avatar-xlarge-square mr-2" %>
+                <div>
+                  <p><%= recruit.athlete.first_name %>  <%= recruit.athlete.last_name %></p>
+                  <p class="text-white"><%= recruit.athlete.grad_year %></p>
+                  <p><i class="fa fa-arrow-up"></i> <%= recruit.athlete.rating %></p>
+                </div>
+              </a>
+            <% end %>
+          <% end %>
+        <% end %>
+
+        <h2 class="m-1" style="text-align: center;">VS.</h2>
+
+        <%= link_to athlete_path(@athlete) do %>
+          <% if @athlete.grad_year == 2022 %>
+            <a href="/athletes/<%= @athlete.id %>" class="list-group-item list-group-item-action list-group-item-danger d-flex justify-content-left">
+              <%= image_tag "golf_girl.png", class: "avatar-xlarge-square mr-2" %>
+              <div>
+                <p><%= @athlete.first_name %>  <%= @athlete.last_name %></p>
+                <p class="text-white"><%= @athlete.grad_year %></p>
+                <p><i class="fa fa-arrow-up"></i> <%= @athlete.rating %></p>
+              </div>
+            </a>
+          <% elsif @athlete.grad_year == 2023 %>
+            <a href="/athletes/<%= @athlete.id %>" class="list-group-item list-group-item-action list-group-item-primary d-flex justify-content-left">
+              <%= image_tag "golf_girl.png", class: "avatar-xlarge-square mr-2" %>
+              <div>
+                <p><%= @athlete.first_name %>  <%= @athlete.last_name %></p>
+                <p class="text-white"><%= @athlete.grad_year %></p>
+                <p><i class="fa fa-arrow-up"></i> <%= @athlete.rating %></p>
+              </div>
+            </a>
+          <% elsif @athlete.grad_year == 2024 %>
+            <a href="/athletes/<%= @athlete.id %>" class="list-group-item list-group-item-action list-group-item-info d-flex justify-content-left">
+              <%= image_tag "golf_girl.png", class: "avatar-xlarge-square mr-2" %>
+              <div>
+                <p><%= @athlete.first_name %>  <%= @athlete.last_name %></p>
+                <p class="text-white"><%= @athlete.grad_year %></p>
+                <p><i class="fa fa-arrow-up"></i> <%= @athlete.rating %></p>
+              </div>
+            </a>
+          <% else %>
+            <a href="/athletes/<%= @athlete.id %>" class="list-group-item list-group-item-action list-group-item-success d-flex justify-content-left">
+              <%= image_tag "golf_girl.png", class: "avatar-xlarge-square mr-2" %>
+              <div>
+                <p><%= @athlete.first_name %>  <%= @athlete.last_name %></p>
+                <p class="text-white"><%= @athlete.grad_year %></p>
+                <p><i class="fa fa-arrow-up"></i> <%= @athlete.rating %></p>
+              </div>
+            </a>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <ul>
+      <% @notes.each do |note| %>
+        <li class="note-list">
+          <strong class="username-note"><%= note.user.first_name.upcase %> <%= note.user.last_name.upcase %>:</strong> <%= note.content %>
+        </li>
+      <% end %>
+    </ul>
+
+    <div class="notes-form pb-5">
+      <%= simple_form_for([@event, @note]) do |f| %>
+      <%= f.input :content, label: "NOTES" %>
+      <%= f.submit "Add Notes", class: "btn notes-btn" %>
+      <% end %>
+    </div>
+  </div>
 </div>
-<div class="top-show vh-100 pb-6">
-  <div class="container-fluid">
-      <div class="row">
-        <div class="col-xl-8">
-          <div class="event-card bg-default">
-            <div class="event-card-header bg-transparent">
-              <div class="row align-items-center">
-                <div class="col mt-3">
-                  <h1><%= @event.start_date.to_date  %></h1>
-                  <h1 class="h3 mb-0"><%= @event.start_time.to_s(:time) %></h1>
-                  <p><%= @event.address%></p>
-                  <div
-                    id="map"
-                    style="width: 100%;
-                    height: 400px;"
-                    data-markers="<%= @marker.to_json %>"
-                  ></div>
-                </div>
-                <div class="col">
-                  <ul class="nav nav-pills justify-content-end">
-                    <li class="nav-item mr-2 mr-md-0" data-toggle="chart">
-                      <a href="#" class="nav-link py-2 px-3 active" data-toggle="tab">
-                        <%= link_to event_path(params[:id].to_i - 1) do %>
-                        <span class="d-none d-md-block">Previous</span>
-                        <span class="d-md-none">P</span>
-                        <% end %>
-                      </a>
-                    </li>
-                    <li class="nav-item" data-toggle="chart">
-                      <a href="#" class="nav-link py-2 px-3" data-toggle="tab">
-                        <%= link_to event_path(params[:id].to_i + 1) do %>
-                        <span class="d-none d-md-block">Next</span>
-                        <span class="d-md-none">N</span>
-                        <% end %>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="event-card-body mt-3">
-            <div class="d-flex align-items-center justify-content-start">
-              <% @event.recruits.each do |recruit| %>
-                <%= link_to athlete_path(recruit.athlete) do %>
-                <div class="d-flex small-card-2025">
-                <%= image_tag "golf_girl.png", class: "avatar-xlarge-square" %>
-                <div>
-                <h3><strong><%= recruit.athlete.first_name %>  <%= recruit.athlete.last_name %></strong></h3>
-                <h5 class="text-white"><%= recruit.athlete.grad_year %></h5>
-                <p class=""><i class="fa fa-arrow-up"></i><%= recruit.athlete.rating %></p>
-                </div>
-                </div>
-              <% end %>
-                <h5 class="m-3">vs.</h5>
-               <div class="d-flex small-card-2024">
-                <%= image_tag "golf_girl2.jpg", class: "avatar-xlarge-square" %>
-                <div>
-                <h3><strong>Haley Walshmon</strong></h3>
-                <h5 class="text-white">2024</h5>
-                <p class=""><i class="fa fa-arrow-up"></i>477</p>
-                </div>
-                </div>
-            </div>
-                  <% end %>
-            </div>
-              </div>
-            </div>
-            <div class="col-xl-4">
-          <div class="event-card">
-            <div class="event-card-header bg-transparent">
-              <div class="row align-items-center">
-                <div class="col">
-                  <h6 class="text-uppercase text-muted ls-1 mb-1"></h6>
-                  <h5 class="h3 mb-0">Notes</h5>
-                </div>
-              </div>
-            </div>
-            <div class="event-card-body">
-            </div>
-            </div>
-          </div>
-              </div>
-            </div>
-          </div>
-        </div>

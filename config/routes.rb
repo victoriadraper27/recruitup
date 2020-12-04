@@ -28,11 +28,8 @@ Rails.application.routes.draw do
   resources :unavailable_days, only: [:create, :destroy]
 
   resources :events, only: :show do
-    resources :schedule_events, only: :update
+    resources :notes, except: [:index, :new, :show]
   end
-
-
-
 
   resources :recruits, except: [:new, :create]
 
