@@ -5,9 +5,17 @@
   border-radius: 5px;
 }
 
-.container {
-  background-color: #d57149;
-  height: 500px;
-  width: 1000px;
-  border-radius: 16px;
+.messages-show {
+  margin: auto;
+  width: 70%;
+  height: 100%;
+
+  h1{
+    color: #fff5ea;
+  }
+}
+
+.chatroom {
+  background-color: #fc8621;
+  border-radius: 5px;
 }
