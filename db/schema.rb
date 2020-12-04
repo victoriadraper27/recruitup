@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_03_025053) do
+ActiveRecord::Schema.define(version: 2020_12_04_011119) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,10 +70,8 @@ ActiveRecord::Schema.define(version: 2020_12_03_025053) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "organization_id", null: false
-    t.bigint "sport_id", null: false
-    t.index ["organization_id"], name: "index_chatrooms_on_organization_id"
-    t.index ["sport_id"], name: "index_chatrooms_on_sport_id"
+    t.bigint "team_id", null: false
+    t.index ["team_id"], name: "index_chatrooms_on_team_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -86,15 +84,6 @@ ActiveRecord::Schema.define(version: 2020_12_03_025053) do
     t.float "longitude"
   end
 
-  create_table "notes", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "appearance_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["appearance_id"], name: "index_notes_on_appearance_id"
-    t.index ["user_id"], name: "index_notes_on_user_id"
-  end
-
   create_table "messages", force: :cascade do |t|
     t.string "content"
     t.bigint "chatroom_id", null: false
@@ -103,6 +92,15 @@ ActiveRecord::Schema.define(version: 2020_12_03_025053) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "appearance_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["appearance_id"], name: "index_notes_on_appearance_id"
+    t.index ["user_id"], name: "index_notes_on_user_id"
   end
 
   create_table "organizations", force: :cascade do |t|
@@ -186,8 +184,7 @@ ActiveRecord::Schema.define(version: 2020_12_03_025053) do
   add_foreign_key "appearances", "recruits"
   add_foreign_key "athlete_events", "athletes"
   add_foreign_key "athlete_events", "events"
-  add_foreign_key "chatrooms", "organizations"
-  add_foreign_key "chatrooms", "sports"
+  add_foreign_key "chatrooms", "teams"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "notes", "appearances"
