@@ -1,31 +1,28 @@
 <div class="container">
-  <%= month_calendar(attribute: :start_date, events: @events) do |date, events| %>
+  <%= month_calendar(attribute: :start_date, events: schedule.events) do |date, events| %>
     <%= date.day %>
 
     <% events.each do |event| %>
+      <% schedule_event = ScheduleEvent.find_by event: event, schedule: schedule %>
 
       <% event.recruits.each do |recruit| %>
 
       <% if recruit.athlete.grad_year == 2022 %>
         <a href="events/<%= event.id %>" class="calendar list-group-item list-group-item-action list-group-item-danger d-flex justify-content-between">
           <%= event.start_time.to_s(:time) %>-<%= recruit.athlete.first_name %>
-          <%= render 'shared/assignedform' %>
-        </a>
+          <%= render partial: 'shared/assignedform', locals: { schedule_event: schedule_event } %>        </a>
       <% elsif recruit.athlete.grad_year == 2023 %>
         <a href="events/<%= event.id %>" class="calendar list-group-item list-group-item-action list-group-item-primary d-flex justify-content-between">
           <%= event.start_time.to_s(:time) %>-<%= recruit.athlete.first_name %>
-          <%= render 'shared/assignedform' %>
-        </a>
+          <%= render partial: 'shared/assignedform', locals: { schedule_event: schedule_event } %>          </a>
       <% elsif recruit.athlete.grad_year == 2024 %>
         <a href="events/<%= event.id %>" class="calendar list-group-item list-group-item-action list-group-item-info d-flex justify-content-between">
           <%= event.start_time.to_s(:time) %>-<%= recruit.athlete.first_name %>
-          <%= render 'shared/assignedform' %>
-        </a>
+          <%= render partial: 'shared/assignedform', locals: { schedule_event: schedule_event } %>          </a>
       <% else %>
         <a href="events/<%= event.id %>" class="calendar list-group-item list-group-item-action list-group-item-success d-flex justify-content-between">
           <%= event.start_time.to_s(:time) %>-<%= recruit.athlete.first_name %>
-          <%= render 'shared/assignedform' %>
-        </a>
+          <%= render partial: 'shared/assignedform', locals: { schedule_event: schedule_event } %>          </a>
       <% end %>
     <% end %>
     <% end %>
