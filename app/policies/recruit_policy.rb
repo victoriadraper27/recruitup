@@ -20,6 +20,6 @@ class RecruitPolicy < ApplicationPolicy
   private
 
   def owner_or_admin?
-    user == record.user || user.admin
+    user.team == record.team || user.admin
   end
 end
