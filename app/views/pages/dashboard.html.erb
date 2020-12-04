@@ -20,8 +20,8 @@
             <div>
               <h1><%= current_user.first_name %> <%= current_user.last_name %></h1>
               <p>Role: <%= current_user.role %></p>
-              <p>Sport: <%= current_user.sport.name %></p>
-              <p>Organization: <%= current_user.organization.name %></p>
+              <p>Sport: <%= current_user.team.sport.name %></p>
+              <p>Organization: <%= current_user.team.organization.name %></p>
             </div>
           </div>
         </div>
