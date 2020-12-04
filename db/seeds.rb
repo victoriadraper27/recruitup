@@ -33,7 +33,7 @@ golf = Sport.create!(
   name: 'Golf'
   )
 
-chatroom = Chatroom.create!(name: "Swinger's Chatroom")
+chatroom = Chatroom.create!(name: "Chat")
 
 team = Team.new(name: 'Swingers')
 team.organization = masters

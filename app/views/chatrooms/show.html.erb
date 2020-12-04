@@ -10,16 +10,17 @@
             <%= render 'messages/message', message: message %>
           </div>
         <% end %>
-
-      <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-        <%= f.input :content, label: false, placeholder: "Write your Message here" %>
-      <% end %>
       </div>
-
-      <h1> Messages: </h1>
-      <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-        <%= f.input :content, label: false, placeholder: "Write your Message here" %>
-      <% end %>
+      <div class="messages-form mt-1">
+        <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+          <%= f.input :content, label: false, placeholder: "Write your Message here..." %>
+        <% end %>
+      </div>
+<!--
+      <h1> Messages: </h1> -->
+<!--       <%#= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+        <%#= f.input :content, label: false, placeholder: "Write your Message here" %>
+      <%# end %> -->
     </div>
   </div>
 </div>
