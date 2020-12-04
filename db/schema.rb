@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_04_011119) do
+ActiveRecord::Schema.define(version: 2020_12_04_020039) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,8 +70,6 @@ ActiveRecord::Schema.define(version: 2020_12_04_011119) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "team_id", null: false
-    t.index ["team_id"], name: "index_chatrooms_on_team_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -149,6 +147,8 @@ ActiveRecord::Schema.define(version: 2020_12_04_011119) do
     t.integer "selected_schedule_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "chatroom_id", null: false
+    t.index ["chatroom_id"], name: "index_teams_on_chatroom_id"
     t.index ["organization_id"], name: "index_teams_on_organization_id"
     t.index ["sport_id"], name: "index_teams_on_sport_id"
   end
@@ -184,7 +184,6 @@ ActiveRecord::Schema.define(version: 2020_12_04_011119) do
   add_foreign_key "appearances", "recruits"
   add_foreign_key "athlete_events", "athletes"
   add_foreign_key "athlete_events", "events"
-  add_foreign_key "chatrooms", "teams"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "notes", "appearances"
@@ -195,6 +194,7 @@ ActiveRecord::Schema.define(version: 2020_12_04_011119) do
   add_foreign_key "schedule_events", "schedules"
   add_foreign_key "schedule_events", "users"
   add_foreign_key "schedules", "teams"
+  add_foreign_key "teams", "chatrooms"
   add_foreign_key "teams", "organizations"
   add_foreign_key "teams", "sports"
   add_foreign_key "unavailable_days", "users"
