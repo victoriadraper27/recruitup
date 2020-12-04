@@ -1,7 +1,14 @@
 class NotesController < ApplicationController
+  after_action :authorize_note, except: :show
+
+  def index
+    @event = Event.find(parmas[:event_id])
+    @notes = @event.notes.order(created_at: :desc)
+  end
+
   def create
-    @event = Event.find(params[:id])
-    @note = Note.new
+    @event = Event.find(params[:event_id])
+    @note = Note.new(note_params)
     @note.user = current_user
     @note.event = @event
 
@@ -12,12 +19,22 @@ class NotesController < ApplicationController
     end
   end
 
-  def edit
+  # def edit
+  # end
+
+  # def update
+  # end
+
+  # def destroy
+  # end
+
+  private
+
+  def note_params
+    params.require(:note).permit(:content, :event_id)
   end
 
-  def update
-  end
-
-  def destroy
+  def authorize_note
+    authorize @note
   end
 end
