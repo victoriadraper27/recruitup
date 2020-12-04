@@ -2,9 +2,9 @@
 
   <h1>My Recruits</h1>
 
-    <div class="recruit-index-top d-flex">
-      <div>
-        <%= link_to 'Generate Schedules', schedules_path, class: "p-2" %>
+    <div class="recruit-index-top">
+      <div class="d-flex justify-content-center mb-3">
+        <%= link_to 'Generate Schedules', schedules_path, class: "p-3" %>
       </div>
       <div class='input-group-prepend recruit-index-search'>
           <%= render 'shared/search' %>
