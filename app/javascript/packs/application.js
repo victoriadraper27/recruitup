@@ -24,12 +24,13 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import "../plugins/init_flatpickr";
+// import "../plugins/init_flatpickr";
 
 // Internal imports, e.g:
 import { initSelect2 } from '../plugins/init_select2';
 import { initFlatpickr } from "../plugins/init_flatpickr";
 // import { initSweetalert } from '../plugins/init_sweetalert';
+import { initMapbox } from '../plugins/init_mapbox';
 
 import { initChatroomCable} from '../channels/chatroom_channel';
 
@@ -40,6 +41,8 @@ document.addEventListener('turbolinks:load', () => {
   initChatroomCable();
 
   initFlatpickr();
+
+  initMapbox();
 
 });
 
