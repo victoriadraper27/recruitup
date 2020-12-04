@@ -1,4 +1,6 @@
-<%= simple_form_for(schedule_event) do |f| %>
-  <%= f.input :user_id, collection: current_user.team.users, input_html: { class: 'select2' }, class: 'form-inputs' %>
+<div>
+<%= simple_form_for(schedule_event, url: assign_event_path(schedule_event), method: :patch) do |f| %>
+  <%= f.input :user_id, collection: current_user.team.users, input_html: { class: 'select2' }, label: false, class: 'form-inputs' %>
   <%= f.submit "Assign Event", class: "btn" %>
 <% end %>
+<div>
