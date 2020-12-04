@@ -14,9 +14,10 @@ AthleteEvent.destroy_all
 Event.destroy_all
 Recruit.destroy_all
 Athlete.destroy_all
-Chatroom.destroy_all
+Message.destroy_all
 User.destroy_all
 Team.destroy_all
+Chatroom.destroy_all
 Organization.destroy_all
 Sport.destroy_all
 
@@ -32,7 +33,7 @@ golf = Sport.create!(
   name: 'Golf'
   )
 
-chatroom = Chatroom.create!(name: "Chat")
+chatroom = Chatroom.create!(name: "Swinger's Chatroom")
 
 team = Team.new(name: 'Swingers')
 team.organization = masters
