@@ -2,14 +2,12 @@
 
   <h1>My Recruits</h1>
 
-    <div class="recruit-index-top d-flex justify-content-between">
-      <div class='input-group-prepend'>
-          <%= render 'shared/search' %>
-      </div>
-      <%= link_to :back do %><i class="fas fa-reply"></i><% end %>
-      <%= link_to recruits_path do %><i class="fas fa-share"></i><% end %>
+    <div class="recruit-index-top d-flex">
       <div>
-        <%= link_to 'Generate Available Schedules', schedules_path, class: "p-2" %>
+        <%= link_to 'Generate Schedules', schedules_path, class: "p-2" %>
+      </div>
+      <div class='input-group-prepend recruit-index-search'>
+          <%= render 'shared/search' %>
       </div>
     </div>
 

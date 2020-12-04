@@ -3,13 +3,17 @@
   width: 60%;
   height: 100%;
 
+  a {
+    color: #d57149;
+  }
+
   img {
     border: 4px #393e46 solid;
     width: 200px;
     margin-right: 20px;
   }
 
-  h1 {
+  h1, a {
     font-size: 70px;
   }
 
@@ -23,3 +27,5 @@
     color: #f4f4f2;
   }
 }
+
+
