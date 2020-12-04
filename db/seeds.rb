@@ -32,7 +32,6 @@ golf = Sport.create!(
   name: 'Golf'
   )
 
-
 chatroom = Chatroom.create!(
   name: "Chat",
   organization: masters,
@@ -43,6 +42,12 @@ team = Team.create!(
   organization: masters,
   sport: golf
   )
+
+chatroom = Chatroom.create!(
+  name: "Chat",
+  organization: masters,
+  sport: golf
+)
 
 user_attributes = {
   email: 'coachie@email.com',
