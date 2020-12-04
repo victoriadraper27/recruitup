@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get '/dashboard', to: 'pages#dashboard'
-  post '/schedule_events/:id', to: 'schedule_events#update'
+  # post '/schedule_events/:id', to: 'schedule_events#update'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :schedules, only: [:index, :show, :edit, :update] do
@@ -29,6 +29,7 @@ Rails.application.routes.draw do
 
   resources :events, only: :show do
     resources :notes, except: [:index, :new, :show]
+    resources :schedule_events, only: [:edit, :update]
   end
 
   resources :recruits, except: [:new, :create]
