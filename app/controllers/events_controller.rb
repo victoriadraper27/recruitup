@@ -7,6 +7,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @note = Note.new
 
     @marker = [{
       lng: @event.longitude,

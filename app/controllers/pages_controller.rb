@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   def dashboard
     @team = current_user.team
     @schedule = @team.selected_schedule
-    @events = policy_scope(Event).order(created_at: :desc)
+    @events = @team.selected_schedule.events
     @recruits = @team.recruits.all
     @unavailable_day = UnavailableDay.new
     @unavailable_days = policy_scope(Event).order(created_at: :desc)
