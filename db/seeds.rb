@@ -15,6 +15,7 @@ Event.destroy_all
 Recruit.destroy_all
 Athlete.destroy_all
 Message.destroy_all
+UnavailableDay.destroy_all
 User.destroy_all
 Team.destroy_all
 Chatroom.destroy_all
