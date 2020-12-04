@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_03_112616) do
+ActiveRecord::Schema.define(version: 2020_12_04_020039) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,12 @@ ActiveRecord::Schema.define(version: 2020_12_03_112616) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "events", force: :cascade do |t|
     t.datetime "start_date"
     t.datetime "start_time"
@@ -74,6 +80,16 @@ ActiveRecord::Schema.define(version: 2020_12_03_112616) do
     t.datetime "updated_at", precision: 6, null: false
     t.float "latitude"
     t.float "longitude"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "chatroom_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "notes", force: :cascade do |t|
@@ -132,6 +148,8 @@ ActiveRecord::Schema.define(version: 2020_12_03_112616) do
     t.integer "selected_schedule_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "chatroom_id", null: false
+    t.index ["chatroom_id"], name: "index_teams_on_chatroom_id"
     t.index ["organization_id"], name: "index_teams_on_organization_id"
     t.index ["sport_id"], name: "index_teams_on_sport_id"
   end
@@ -168,6 +186,8 @@ ActiveRecord::Schema.define(version: 2020_12_03_112616) do
   add_foreign_key "athlete_events", "athletes"
   add_foreign_key "athlete_events", "events"
   add_foreign_key "notes", "events"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "notes", "users"
   add_foreign_key "recruits", "athletes"
   add_foreign_key "recruits", "teams"
@@ -175,6 +195,7 @@ ActiveRecord::Schema.define(version: 2020_12_03_112616) do
   add_foreign_key "schedule_events", "schedules"
   add_foreign_key "schedule_events", "users"
   add_foreign_key "schedules", "teams"
+  add_foreign_key "teams", "chatrooms"
   add_foreign_key "teams", "organizations"
   add_foreign_key "teams", "sports"
   add_foreign_key "unavailable_days", "users"

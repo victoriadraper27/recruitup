@@ -4,31 +4,31 @@
 
     <% events.each do |event| %>
 
-      <% if event.class == UnavailableDay %>
-        <%= event.user.first_name %>
-      <% else %>
       <% event.recruits.each do |recruit| %>
 
       <% if recruit.athlete.grad_year == 2022 %>
         <a href="events/<%= event.id %>" class="calendar list-group-item list-group-item-action list-group-item-danger d-flex justify-content-between">
           <%= event.start_time.to_s(:time) %>-<%= recruit.athlete.first_name %>
+          <%= render 'shared/assignedform' %>
         </a>
       <% elsif recruit.athlete.grad_year == 2023 %>
         <a href="events/<%= event.id %>" class="calendar list-group-item list-group-item-action list-group-item-primary d-flex justify-content-between">
           <%= event.start_time.to_s(:time) %>-<%= recruit.athlete.first_name %>
+          <%= render 'shared/assignedform' %>
         </a>
       <% elsif recruit.athlete.grad_year == 2024 %>
         <a href="events/<%= event.id %>" class="calendar list-group-item list-group-item-action list-group-item-info d-flex justify-content-between">
           <%= event.start_time.to_s(:time) %>-<%= recruit.athlete.first_name %>
+          <%= render 'shared/assignedform' %>
         </a>
       <% else %>
         <a href="events/<%= event.id %>" class="calendar list-group-item list-group-item-action list-group-item-success d-flex justify-content-between">
           <%= event.start_time.to_s(:time) %>-<%= recruit.athlete.first_name %>
+          <%= render 'shared/assignedform' %>
         </a>
       <% end %>
     <% end %>
     <% end %>
-  <% end %>
   <% end %>
 </div>
 
