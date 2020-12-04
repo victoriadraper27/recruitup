@@ -20,14 +20,15 @@
             <div>
               <h1><%= current_user.first_name %> <%= current_user.last_name %></h1>
               <p>Role: <%= current_user.role %></p>
-              <p>Sport: <%= current_user.sport.name %></p>
-              <p>Organization: <%= current_user.organization.name %></p>
+              <p>Sport: <%= current_user.team.sport.name %></p>
+              <p>Organization: <%= current_user.team.organization.name %></p>
             </div>
           </div>
         </div>
 
         <div class="tab-pane fade" id="v-pills-schedule" role="tabpanel" aria-labelledby="v-pills-schedule-tab">
           <%= render 'events/month' %>
+          <%= render 'shared/form' %>
         </div>
   <!--  <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
         <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div> -->

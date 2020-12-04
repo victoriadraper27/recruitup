@@ -2,11 +2,11 @@ class Athlete < ApplicationRecord
   has_many :athlete_events
   has_many :events, through: :athlete_events
   has_many :recruits
-  has_many :users, through: :recruits
+  has_many :teams, through: :recruits
 
   include PgSearch::Model
   pg_search_scope :search,
-    against: [:first_name, :last_name, :grad_year, :rating, :team, :nationality],
+    against: [:first_name, :last_name, :grad_year, :rating, :athlete_team, :nationality],
     using: {
       tsearch: { prefix: true }
     }

@@ -1,16 +1,17 @@
 .search-form {
-  margin: auto;
+  // margin: auto;
 
   .btn-flat {
     background-color: #e89f71;
   }
 
   input {
-    .placeholder-design {
-      color: $light-gray;
-    }
     color: -internal-light-dark($light-gray);
     border-color: -internal-light-dark($light-gray, $gray);
     padding: 1px 5px;
+
+    .placeholder-design {
+      color: $light-gray;
+    }
   }
 }

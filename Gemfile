@@ -31,6 +31,7 @@ gem 'faker'
 gem 'pundit'
 gem 'pg_search', '~> 2.3.0'
 gem "simple_calendar", "~> 2.0"
+gem 'turbolinks_render'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -42,6 +43,8 @@ gem 'pundit'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
+gem 'geocoder'
+
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'

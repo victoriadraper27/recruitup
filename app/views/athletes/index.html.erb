@@ -3,10 +3,13 @@
   <h1>Athletes</h1>
 
 
+
   <div class='input-group-prepend'>
         <%= render 'shared/search' %>
   </div>
 
+  <%= link_to :back do %><i class="fas fa-reply"></i><% end %>
+  <%= link_to recruits_path do %><i class="fas fa-share"></i><% end %>
 
   <table>
     <thead>
@@ -26,14 +29,13 @@
           <td><%= athlete.first_name %> <%= athlete.last_name %></td>
           <td class="text-center"><%= athlete.grad_year %></td>
           <td class="text-center"><%= athlete.nationality %></td>
-          <td class="text-center"><%= athlete.team %></td>
-          <td class="text-center"><%= athlete.team_url %></td>
+          <td class="text-center"><%= athlete.athlete_team %></td>
+          <td class="text-center"><%= athlete.athlete_team_url %></td>
           <td class="text-center"><%= athlete.rating %></td>
           <td><%= link_to 'VIEW', athlete %></td>
-          <!-- <td> --><%#= link_to '➕', () %><!-- </td> -->
+          <td><%= link_to athlete_recruits_path(athlete), method: :post, remote: true do %><i class="fas fa-plus"></i><% end %>
         </tr>
       <% end %>
     </tbody>
   </table>
-
 </div>

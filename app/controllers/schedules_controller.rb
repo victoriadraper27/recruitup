@@ -10,6 +10,16 @@ class SchedulesController < ApplicationController
     @events = policy_scope(Event)
   end
 
+  def select
+    @schedule = Schedule.find(params[:id])
+    current_user.selected_schedule = @schedule
+    if current_user.save
+      redirect_to dashboard_path
+    else
+      render :show
+    end
+  end
+
   # def edit
   # end
 
