@@ -1,6 +1,7 @@
 class ScheduleEventsController < ApplicationController
   before_action :schedule_event
   after_action :authorize_schedule_event
+  
   def update
     @schedule_event = ScheduleEvent.find(params[:id])
     @schedule_event.update(schedule_event_params)

@@ -1,12 +1,13 @@
 class RecruitsController < ApplicationController
-  before_action :set_recruit, only: :destroy
+  before_action :set_recruit, only: [:show, :destroy]
   after_action :authorize_recruit, except: :index
 
   def index
     @recruits = policy_scope(Recruit).order(created_at: :desc)
   end
 
-  # def show; end
+  def show
+  end
 
   def create
     @athlete = Athlete.find(params[:athlete_id])

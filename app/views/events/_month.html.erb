@@ -4,9 +4,6 @@
 
     <% events.each do |event| %>
 
-      <% if event.class == UnavailableDay %>
-        <%= event.user.first_name %>
-      <% else %>
       <% event.recruits.each do |recruit| %>
 
       <% if recruit.athlete.grad_year == 2022 %>
@@ -32,7 +29,6 @@
       <% end %>
     <% end %>
     <% end %>
-  <% end %>
   <% end %>
 </div>
 
