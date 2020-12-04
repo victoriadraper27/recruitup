@@ -27,7 +27,7 @@ import "bootstrap";
 import "../plugins/init_flatpickr";
 
 // Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
+import { initSelect2 } from '../plugins/init_select2';
 import { initFlatpickr } from "../plugins/init_flatpickr";
 // import { initSweetalert } from '../plugins/init_sweetalert';
 
@@ -35,7 +35,7 @@ import { initChatroomCable} from '../channels/chatroom_channel';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
-  // initSelect2();
+  initSelect2();
 
   initChatroomCable();
 
