@@ -14,11 +14,11 @@
 <!--         <li class="nav-item active">
           <%#= link_to "Home", root_path, class: "nav-link" %>
         </li> -->
-<!--         <li class="nav-item">
-          <%#= link_to "Messages", "#", class: "nav-link" %>
-        </li> -->
         <li class="nav-item">
           <%= link_to 'All Athletes', athletes_path, class: "nav-link mr-2" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Messages", chatroom_path(current_user.team.chatroom_id), class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "icon.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
