@@ -13,6 +13,7 @@ class PagesController < ApplicationController
     @team = current_user.team
     # @schedule = @team.selected_schedule
     # @events = @team.selected_schedule.events
+    @athletes = policy_scope(Athlete)
     @recruits = @team.recruits.all
     @unavailable_day = UnavailableDay.new
     @unavailable_days = policy_scope(Event).order(created_at: :desc)
