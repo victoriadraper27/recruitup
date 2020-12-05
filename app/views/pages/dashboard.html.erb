@@ -18,7 +18,12 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xl-11">
+    <div class="col-xl-9">
+      <%= render partial: 'schedules/tri_month', locals: { schedule: @schedule, schedule_event: @schedule_event }   %>
+
+      <%= render partial: 'week', locals: { schedule: @schedule, schedule_event: @schedule_event }   %>
+    </div>
+    <div class='col-xl-3'>
       <%= render partial: 'week', locals: { schedule: @schedule, schedule_event: @schedule_event }   %>
     </div>
      <div class="my-5 py-5"></div>
