@@ -12,6 +12,23 @@
 }
 
 
+.card {
+    .table {
+        margin-bottom: 0;
+
+        td,
+        th {
+            padding-left: $card-spacer-x;
+            padding-right: $card-spacer-x;
+        }
+    }
+}
+
+
+// <div class="card">
+//   <div class="card-header border-0">
+
+
 $card-spacer-y:                     1.25rem !default;
 $card-spacer-x:                     1.5rem !default;
 $card-border-width:                 $border-width !default;

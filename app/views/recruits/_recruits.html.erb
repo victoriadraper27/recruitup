@@ -1,0 +1,109 @@
+<div class=" mt-5 recruit-index-card">
+<div class="mt-1 container recruit-index-table">
+
+ <!--  <div class="table-responsive"> -->
+
+  <h1>My Recruits</h1>
+
+    <div class="table-responsive">
+
+    <table class="table table-boredered table-hover">
+
+      <div class="recruit-index-top-table container d-flex justify-content-between">
+        <!-- <div class="d-flex justify-content-between mb-3"> -->
+        <div class="btn-group align-items-center w-70">
+          <%= link_to 'Gen. Sched.', schedules_path, class: "gen-sch btn-sm p-2" %>
+          <%= link_to 'Full List', recruits_path, class: "full-li btn-sm p-2" %>
+        </div>
+        <div class='input-group-prepend recruit-index-search '>
+            <%= render 'shared/search' %>
+        </div>
+        <!-- </div> -->
+      </div>
+
+      <thead>
+        <tr class="athlete-table-header pt-3">
+          <th scope='col' class="text-left sort" data-sort='name' >Name</th>
+          <th scope='col' class="text-center sort" data-sort='grad_year' >Graduation Year</th>
+          <th scope='col' class="text-center sort" data-sort='grad_year' ></th>
+        </tr>
+      </thead>
+    <div class="table-wrapper-scroll-y table-custom-scrollbar">
+      <tbody>
+        <% @recruits.each do |recruit| %>
+
+          <% case recruit.athlete.grad_year %>
+          <% when 2022 %>
+
+          <tr class="recruit-table-content table-danger">
+            <th scope='row'>
+            <%= link_to athlete_path(recruit.athlete) do %>
+              <div class='d-flex justify-content-start'>
+                <%= image_tag "icon.png", class: 'avatar-small' %>
+                <span class='name d-flex ml-4'>
+                  <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
+                </span>
+              </div>
+            <% end %>
+            </th>
+            <td class="text-center grad_year"><%= recruit.athlete.grad_year %></td>
+            <td><%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %><i class="fas fa-trash-alt"></i><% end %></td>
+          </tr>
+
+          <% when 2023 %>
+
+          <tr class="recruit-table-content table-primary">
+            <th scope='row'>
+            <%= link_to athlete_path(recruit.athlete) do %>
+              <div class='d-flex justify-content-start'>
+                <%= image_tag "icon.png", class: 'avatar-small' %>
+                <span class='name d-flex ml-4'>
+                  <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
+                </span>
+              </div>
+            <% end %>
+            </th>
+            <td class="text-center grad_year"><%= recruit.athlete.grad_year %></td>
+            <td><%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %><i class="fas fa-trash-alt"></i><% end %></td>
+          </tr>
+
+          <% when 2024 %>
+
+          <tr class="recruit-table-content table-info">
+            <th scope='row'>
+            <%= link_to athlete_path(recruit.athlete) do %>
+              <div class='d-flex justify-content-start'>
+                <%= image_tag "icon.png", class: 'avatar-small' %>
+                <span class='name d-flex ml-4'>
+                  <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
+                </span>
+              </div>
+            <% end %>
+            </th>
+            <td class="text-center grad_year"><%= recruit.athlete.grad_year %></td>
+            <td><%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %><i class="fas fa-trash-alt"></i><% end %></td>
+          </tr>
+
+          <% when 2025 %>
+
+          <tr class="recruit-table-content table-success">
+            <th scope='row'>
+            <%= link_to athlete_path(recruit.athlete) do %>
+              <div class='d-flex justify-content-start'>
+                <%= image_tag "icon.png", class: 'avatar-small' %>
+                <span class='name d-flex ml-4'>
+                  <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
+                </span>
+              </div>
+            <% end %>
+            </th>
+            <td class="text-center grad_year"><%= recruit.athlete.grad_year %></td>
+            <td><%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %><i class="fas fa-trash-alt"></i><% end %></td>
+          </tr>
+          <% end %>
+          <% end %>
+        </tbody>
+      </div>
+    </table>
+    </div>
+</div>
