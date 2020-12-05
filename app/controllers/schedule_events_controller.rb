@@ -4,7 +4,8 @@ class ScheduleEventsController < ApplicationController
 
   def update
     @schedule_event = ScheduleEvent.find(params[:id])
-    @schedule_event.update(schedule_event_params)
+    @user = User.find_by_first_name(schedule_event_params)
+    @schedule_event.update(user: @user)
     redirect_to :back
   end
 
@@ -12,7 +13,6 @@ class ScheduleEventsController < ApplicationController
 
   def schedule_event_params
     params.require(:schedule_event).permit(:user)
-    current_user.team.users.find { |user| user.first_name == params }
   end
 
   def authorize_schedule_event
