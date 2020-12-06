@@ -77,3 +77,56 @@
 
 
 <!--   Old Recruits Index Page -->
+
+
+<div class="mt-5 container recruit-index">
+
+  <h1>My Recruits</h1>
+
+    <div class="recruit-index-top">
+      <div class="d-flex justify-content-center mb-3">
+        <%= link_to 'Generate Schedules', schedules_path, class: "p-3" %>
+      </div>
+      <div class='input-group-prepend recruit-index-search'>
+          <%= render 'shared/search' %>
+      </div>
+    </div>
+
+    <div class="list-group">
+        <% @recruits.each do |recruit| %>
+          <% if recruit.athlete.grad_year == 2022 %>
+            <li class="list-group-item list-group-item-action list-group-item-danger d-flex justify-content-between">
+                <%= link_to athlete_path(recruit.athlete) do %> <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
+                (<%= recruit.athlete.grad_year %>)
+                <% end %>
+
+                <%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %><i class="fas fa-trash-alt"></i><% end %>
+            </li>
+          <% elsif recruit.athlete.grad_year == 2023 %>
+            <li class="list-group-item list-group-item-action list-group-item-primary d-flex justify-content-between">
+                <%= link_to athlete_path(recruit.athlete) do %> <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
+                (<%= recruit.athlete.grad_year %>)
+                <% end %>
+
+                <%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %><i class="fas fa-trash-alt"></i><% end %>
+            </li>
+          <% elsif recruit.athlete.grad_year == 2024 %>
+            <li class="list-group-item list-group-item-action list-group-item-info d-flex justify-content-between">
+                <%= link_to athlete_path(recruit.athlete) do %> <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
+                (<%= recruit.athlete.grad_year %>)
+                <% end %>
+
+                <%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %><i class="fas fa-trash-alt"></i><% end %>
+            </li>
+          <% else %>
+            <li class="list-group-item list-group-item-action list-group-item-success d-flex justify-content-between">
+                <%= link_to athlete_path(recruit.athlete) do %> <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
+                (<%= recruit.athlete.grad_year %>)
+                <% end %>
+
+                <%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %><i class="fas fa-trash-alt"></i><% end %>
+            </li>
+          <% end %>
+        <% end %>
+    </div>
+</div>
