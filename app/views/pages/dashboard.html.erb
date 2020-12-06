@@ -14,6 +14,7 @@
       <%= render 'athletes/athletes'%>
     </div>
     <div class="col-xl-5">
+      <%= render partial: 'schedules/upcoming_event', locals: { event: @event, athlete: @athlete }   %>
       <%= render 'recruits/recruits' %>
     </div>
   </div>
@@ -24,7 +25,7 @@
       <%= render partial: 'schedules/week', locals: { schedule: @schedule, schedule_event: @schedule_event }   %>
     </div>
     <div class='col-xl-3'>
-      <%= render partial: 'week', locals: { schedule: @schedule, schedule_event: @schedule_event }   %>
+      <%= render partial: 'schedules/upcoming_event', locals: { event: @event, athlete: @athlete }   %>
     </div>
      <div class="my-5 py-5"></div>
   </div>
