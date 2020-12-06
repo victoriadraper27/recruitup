@@ -14,7 +14,8 @@ class RecruitsController < ApplicationController
     @recruit = Recruit.new
     @recruit.athlete = @athlete
     @recruit.team = current_user.team
-    if @recruit.save
+    if @recruits.exclude?(@recruit)
+      @recruit.save
       redirect_to recruits_path
     else
       render 'athletes/show'
