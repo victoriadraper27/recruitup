@@ -1,9 +1,10 @@
 <div class="my-5 schedule-index">
   <h1 class="mb-5">Available Schedules</h1>
 
-  <ul class="mr-5 d-flex justify-content-between">
+  <ul class="d-flex justify-content-around">
     <% @schedules.each do |schedule| %>
       <li>
+        <div class="calendar-card">
         <div class="d-flex justify-content-center">
           <%= link_to 'SELECT', select_schedule_path(schedule), method: :post, class: "select-calendar-link px-4 py-2" %>
         </div>
@@ -36,6 +37,7 @@
               <% end %>
           <% end %>
         </div>
+      </div>
       </li>
     <% end %>
   </ul>
