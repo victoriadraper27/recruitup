@@ -1,0 +1,46 @@
+.card-stats {
+    .card-body {
+        padding: 1rem 1.5rem;
+    }
+
+    .card-status-bullet {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(50%, -50%);
+    }
+}
+
+
+.card {
+    .table {
+        margin-bottom: 0;
+
+        td,
+        th {
+            padding-left: $card-spacer-x;
+            padding-right: $card-spacer-x;
+        }
+    }
+}
+
+
+// <div class="card">
+//   <div class="card-header border-0">
+
+
+$card-spacer-y:                     1.25rem !default;
+$card-spacer-x:                     1.5rem !default;
+$card-border-width:                 $border-width !default;
+$card-border-radius:                $border-radius !default;
+$card-border-color:                 rgba($black, .05) !default;
+$card-inner-border-radius:          calc(#{$card-border-radius} - #{$card-border-width}) !default;
+$card-cap-bg:                       $white !default;
+$card-bg:                           $white !default;
+$card-box-shadow:                   $box-shadow !default;
+
+$card-img-overlay-padding:          1.25rem !default;
+
+$card-columns-count:                3 !default;
+$card-columns-gap:                  1.25rem !default;
+$card-columns-margin:               $card-spacer-y !default;

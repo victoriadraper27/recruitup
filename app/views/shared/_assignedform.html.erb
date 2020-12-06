@@ -1,6 +1,7 @@
+<%= simple_form_for(schedule_event, url: assign_event_path(schedule_event), method: :patch, remote: true, html: {class: "form-inline"}) do |f| %>
 <div>
-<%= simple_form_for(schedule_event, url: assign_event_path(schedule_event), method: :patch) do |f| %>
-  <%= f.input :user_id, collection: current_user.team.users, input_html: { class: 'select2' }, label: false, class: 'form-inputs' %>
-  <%= f.submit "Assign Event", class: "btn" %>
+  <%= f.input :user, collection: team_members, input_html: { class: 'select2' }, label: 'Assign to:', class: 'assigned-input' %>
+  <%= f.submit 'Submit', html: {class: 'hide.bs.dropdown'}, class: "assigned-btn" %>
+</div>
 <% end %>
-<div>
+

@@ -1,11 +1,11 @@
+
 .text-center {
   text-align: center;
 }
 
 .athlete-index {
-
   h1 {
-    font-size: 70px;
+    font-size: 90px;
     text-align: center;
     margin-bottom: 20px;
   }
@@ -42,3 +42,40 @@
   }
 }
 
+.athlete-index-table {
+  background-color: transparent;
+
+  h1 {
+    font-size: 70px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  table {
+    margin: auto;
+    border: 1px;
+    background-color: transparent;
+  }
+  .athlete-table-header {
+    td {
+    font-weight: bold;
+    font-size: 20px;
+    color: #aa4a30;
+    padding-right: 20px;
+    padding-bottom: 15px;
+    }
+  }
+}
+
+.athlete-index-card {
+  border-radius: 20px;
+  background-color: $baby-powder;
+  padding: 4px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.emoji_flag {
+  font-size: 20px;
+  margin: -20px;
+  padding: 10px;
+}

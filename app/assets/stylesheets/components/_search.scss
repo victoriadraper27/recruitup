@@ -1,8 +1,12 @@
 .search-form {
   margin: auto;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 
   .btn-flat {
     background-color: #e89f71;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
   }
 
   input {
@@ -14,4 +18,35 @@
       color: $light-gray;
     }
   }
+}
+
+
+ .table .recruit-index-search .search-form {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+
+  .btn-flat {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    font-size: 0.875rem;
+    background-color: #d57149;
+    color: #fff5ea;
+    text-align: center;
+
+    &:hover {
+      background-color: #e89f71;
+      }
+}
+}
+
+  .table .recruit-index-search .search-form-control .form-input {
+    color: -internal-light-dark($light-gray);
+    border-color: -internal-light-dark($light-gray, $gray);
+    padding: 0;
+
+    .placeholder-design {
+      color: $light-gray;
+      font-size: 0.875rem;
+      padding: 0;
+      }
 }
