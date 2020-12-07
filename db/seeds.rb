@@ -46,7 +46,7 @@ user_attributes = {
   email: 'coachie@email.com',
   password: 'coachiecoach',
   first_name: 'Pia',
-  last_name: 'Nilsson',
+  last_name: 'Nilsson'
 }
 
 user2_attributes = {
