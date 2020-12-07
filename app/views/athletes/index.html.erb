@@ -32,7 +32,8 @@
         <tr class="athlete-table-content">
           <th scope='row'>
             <div class='d-flex justify-content-start'>
-              <%= image_tag "icon.png", class: 'avatar-small' %>
+              <% number = (5..18).to_a.sample %>
+              <%= cl_image_tag "athlete#{number}.jpg", class: 'avatar' %>
             <span class='name d-flex ml-4'>
                 <%= athlete.first_name %> <%= athlete.last_name %>
             </span>

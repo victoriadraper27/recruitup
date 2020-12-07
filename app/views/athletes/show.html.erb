@@ -10,7 +10,8 @@
        <!--  <%#= link_to athlete_recruit_path(@athlete.recruit.id.to_i - 1) do %><i class="fas fa-reply">Previous Athlete</i><%# end %> -->
 
         <div>
-          <%= image_tag "golf_girl.png", class: "card-img-top" %>
+          <% number = (1..18).to_a.sample %>
+          <%= cl_image_tag "athlete#{number}.jpg", class: "card-img-top" %>
         </div>
 
         <div>

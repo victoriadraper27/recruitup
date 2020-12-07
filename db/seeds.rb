@@ -85,20 +85,23 @@ puts "Generated #{user2.first_name} #{user2.last_name} user"
 
 schedule = Schedule.create!(team: team)
 
-
+athletes = []
 25.times do
-  athlete_team_name = Faker::Team.name
+  athlete_team_name = Faker::University.name
   athlete = Athlete.create!( first_name: Faker::Name.female_first_name,
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
-                  athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/, '')}.com",
+                  athlete_team_url: "#{athlete_team_name.gsub(/\s+/,'')}.com",
                   nationality: Faker::WorldCup.team,
-                  rating: Faker::Number.decimal(l_digits: 3, r_digits: 3))
+                  rating: Faker::Number.decimal(l_digits: 3, r_digits: 3),
+                  )
+  athletes << athlete
   puts "Generated #{athlete.first_name} #{athlete.last_name}"
 end
 
 puts "Generated #{Athlete.count} athletes"
+
 
 
 athlete1 = Athlete.first
@@ -106,6 +109,8 @@ athlete2 = Athlete.second
 athlete3 = Athlete.third
 athlete4 = Athlete.fourth
 athlete5 = Athlete.fifth
+
+athletes_2 = [athlete1, athlete2, athlete3, athlete4, athlete5]
 
 
 # events = []
@@ -116,6 +121,27 @@ athlete5 = Athlete.fifth
 # end
 
 # appearence = Appearance.create!(event: events.sample, recruit: recruits.sample)
+
+athletes_3 = athletes - athletes_2
+
+athletes_3.each do |athlete|
+  3.times do
+  event = Event.create!(start_date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
+                        address: "2000 Visalia Row, Coronado, CA 92118, United States",
+                        start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
+  athlete_event = AthleteEvent.create!(event: event, athlete: athlete)
+  end
+end
+
+athletes_3.each do |athlete|
+  2.times do
+  event = Event.create!(start_date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
+                        address: "2000 Visalia Row, Coronado, CA 92118, United States",
+                        start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
+  athlete_event = AthleteEvent.create!(event: event, athlete: athlete)
+  end
+end
+
 
 
 recruit1 = Recruit.create!(athlete: athlete1, team: team)
