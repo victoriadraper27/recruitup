@@ -65,13 +65,13 @@ user2 = User.new(user2_attributes)
 user2.team = team
 user2.save!
 
-5.times do
+3.times do
   udays = UnavailableDay.create!(
           date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
           user: user )
 end
 
-5.times do
+3.times do
   udays2 = UnavailableDay.create!(
           date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
           user: user2 )
