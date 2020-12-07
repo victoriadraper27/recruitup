@@ -26,8 +26,8 @@ Sport.destroy_all
 puts "Generating the Chatroom"
 puts "Generating Coaches & Athletes"
 
-masters = Organization.create!(
-  name: 'Masters'
+lpga = Organization.create!(
+  name: 'Ladies Professional Golf Association'
   )
 
 golf = Sport.create!(
@@ -36,8 +36,8 @@ golf = Sport.create!(
 
 chatroom = Chatroom.create!(name: "Chat")
 
-team = Team.new(name: 'Swingers')
-team.organization = masters
+team = Team.new(name: 'Legacy')
+team.organization = lgpa
 team.sport = golf
 team.chatroom = chatroom
 team.save!
@@ -45,15 +45,15 @@ team.save!
 user_attributes = {
   email: 'coachie@email.com',
   password: 'coachiecoach',
-  first_name: 'Butch',
-  last_name: 'Harmon',
+  first_name: 'Pia',
+  last_name: 'Nilsson',
 }
 
 user2_attributes = {
   email: 'assist@email.com',
   password: 'assistant',
-  first_name: 'Pia',
-  last_name: 'Nilsson',
+  first_name: 'Lynn',
+  last_name: 'Marriot',
   role: 'Assistant Coach'
 }
 
@@ -64,6 +64,19 @@ user.save!
 user2 = User.new(user2_attributes)
 user2.team = team
 user2.save!
+
+5.times do
+  udays = UnavailableDay.create!(
+          date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
+          user: user )
+end
+
+5.times do
+  udays2 = UnavailableDay.create!(
+          date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
+          user: user2 )
+end
+
 
 
 puts "Generated #{user.first_name} #{user.last_name} user"
