@@ -11,17 +11,17 @@
 </ul>
 <div class="tab-content vh-100" id="pills-tabContent">
   <div class="tab-pane fade show active" id="pills-weekly" role="tabpanel" aria-labelledby="pills-weekly-tab">
-    <div class="mx-3">
+    <div class="mx-3" id="events_calendar">
       <%= render partial: 'schedules/week', locals: { schedule: @schedule, schedule_event: @schedule_event }   %>
     </div>
   </div>
   <div class="tab-pane fade" id="pills-monthly" role="tabpanel" aria-labelledby="pills-monthly-tab">
-    <div class="mx-3 mb-5 pb-5">
+    <div class="mx-3 mb-5 pb-5" id="events_calendar">
      <%= render partial: 'events/month', locals: { schedule: @schedule, schedule_event: @schedule_event }  %>
     </div>
   </div>
   <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-    <div class="mx-3 mb-5 pb-5">
+    <div class="mx-3 mb-5 pb-5" id="events_calendar">
       <%= render partial: 'schedules/tri_month', locals: { schedule: @schedule, schedule_event: @schedule_event }   %>
     </div>
   </div>

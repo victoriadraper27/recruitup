@@ -34,6 +34,8 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 import { initChatroomCable} from '../channels/chatroom_channel';
 
+// import { initDashboard } from '../plugins/init_dashboard';
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initSelect2();
@@ -43,6 +45,8 @@ document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
 
   initMapbox();
+
+  // initDashboard();
 
 });
 
