@@ -24,6 +24,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import $ from 'jquery';
 // import "../plugins/init_flatpickr";
 
 // Internal imports, e.g:
@@ -43,6 +44,10 @@ document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
 
   initMapbox();
+
+//   $('.dropdown-menu').on('hidden.bs.dropdown', function (event) {
+//     console.log(event)
+// })
 
 });
 

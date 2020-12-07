@@ -6,7 +6,7 @@
       <% schedule_event = ScheduleEvent.find_by event: event, schedule: schedule %>
       <% team_members = [] %>
       <% current_user.team.users.each do |user| %>
-      <% team_members << (@user = user.first_name) if user.unavailable_days.exclude?(event.start_date) %>
+      <% (team_members << (@user = user.first_name)) if user.unavailable_days.exclude?(event.start_date) %>
       <% end %>
 
       <% event.recruits.each do |recruit| %>
@@ -16,49 +16,69 @@
         <a href="/events/<%= event.id %>" class="calendar btn-sm list-group-item list-group-item-action list-group-item-danger d-flex justify-content-between" type='button'>
           <%= event.start_time.to_s(:time) %>-<%= recruit.athlete.first_name %>
         </a>
-          <button type="button" class="btn btn-sm dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class='d-block text-center'>
+        <div class='dropdown'>
+          <button type="button" class="btn btn-sm dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdownMenuButton">
             <span class="sr-only"></span>
           </button>
-          <div class="dropdown-menu">
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <%= render partial: 'shared/assignedform', locals: { schedule_event: schedule_event, team_members: team_members } %>
           </div>
         </div>
+          <p class="coach-assigned"><%= schedule_event.user.first_name if schedule_event.user %></p>
+        </div>
+      </div>
       <% elsif recruit.athlete.grad_year == 2023 %>
         <div class="btn-group bg-primary">
         <a href="/events/<%= event.id %>" class="calendar btn-sm list-group-item list-group-item-action list-group-item-primary d-flex justify-content-between" type='button'>
           <%= event.start_time.to_s(:time) %>-<%= recruit.athlete.first_name %>
         </a>
-          <button type="button" class="btn btn-sm dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class='d-block text-center'>
+        <div class='dropdown'>
+          <button type="button" class="btn btn-sm dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdownMenuButton">
             <span class="sr-only"></span>
           </button>
-          <div class="dropdown-menu">
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <%= render partial: 'shared/assignedform', locals: { schedule_event: schedule_event, team_members: team_members } %>
           </div>
         </div>
+          <p class="coach-assigned"><%= schedule_event.user.first_name if schedule_event.user %></p>
+        </div>
+      </div>
       <% elsif recruit.athlete.grad_year == 2024 %>
         <div class="btn-group bg-info">
         <a href="/events/<%= event.id %>" class="calendar btn-sm list-group-item list-group-item-action list-group-item-info d-flex justify-content-between" type='button'>
           <%= event.start_time.to_s(:time) %>-<%= recruit.athlete.first_name %>
         </a>
-          <button type="button" class="btn btn-sm dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class='d-block text-center'>
+        <div class='dropdown'>
+          <button type="button" class="btn btn-sm dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdownMenuButton">
             <span class="sr-only"></span>
           </button>
-          <div class="dropdown-menu">
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <%= render partial: 'shared/assignedform', locals: { schedule_event: schedule_event, team_members: team_members } %>
           </div>
+        </div>
+          <p class="coach-assigned"><%= schedule_event.user.first_name if schedule_event.user %></p>
+        </div>
         </div>
       <% else %>
         <div class="btn-group bg-success">
         <a href="/events/<%= event.id %>" class="calendar btn-sm list-group-item list-group-item-action list-group-item-success d-flex justify-content-between" type='button'>
           <%= event.start_time.to_s(:time) %>-<%= recruit.athlete.first_name %>
         </a>
-          <button type="button" class="btn btn-sm dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class='d-block text-center'>
+        <div class='dropdown'>
+          <button type="button" class="btn btn-sm dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdownMenuButton">
             <span class="sr-only"></span>
           </button>
-          <div class="dropdown-menu">
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <%= render partial: 'shared/assignedform', locals: { schedule_event: schedule_event, team_members: team_members } %>
           </div>
         </div>
+          <p class="coach-assigned"><%= schedule_event.user.first_name if schedule_event.user %></p>
+        </div>
+      </div>
       <% end %>
     <% end %>
     <% end %>
