@@ -1,5 +1,5 @@
 <div class="calendar-card">
-  <%= month_calendar(attribute: :start_date, events: schedule.events) do |date, events| %>
+  <%= month_calendar(number_of_months: 1, attribute: :start_date, events: schedule.events) do |date, events| %>
     <%= date.day %>
 
     <% events.each do |event| %>
@@ -64,5 +64,3 @@
     <% end %>
   <% end %>
 </div>
-
-<!-- , attribute: :date,  events: @unavailable_days  -->

@@ -12,8 +12,8 @@ class EventsController < ApplicationController
     @athlete = policy_scope(Athlete).sample
 
     @marker = [{
-      lng: @event.longitude,
-      lat: @event.latitude
+      lat: @event.latitude,
+      lng: @event.longitude
     }]
   end
 

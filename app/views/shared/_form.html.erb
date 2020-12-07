@@ -1,4 +1,6 @@
 <!-- <div data-controller="sweetalert"> -->
+<div class="mt-5 p-3 unavailable-card">
+  <h3>Unavailable Days</h3>
 <%= simple_form_for(@unavailable_day) do |f| %>
   <%= f.input :date, as: :string, required: true, input_html: {class: "datepicker"} %>
     <%#= w.input :photos, as: :file, input_html: { multiple: true } %>

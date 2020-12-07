@@ -1,38 +1,32 @@
-<div class="mt-5 pt-5 container dashboard">
-
+<%= render 'shared/header' %>
+<%#= render 'sidenav' %>
+<div class="container-fluid mt--6">
   <div class="row">
-    <div class="col-2">
-      <div class="nav flex-column nav-pills color" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <a class="nav-link active color" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
-        <a class="nav-link color" id="v-pills-schedule-tab" data-toggle="pill" href="#v-pills-schedule" role="tab" aria-controls="v-pills-schedule" aria-selected="false">Schedule</a>
-  <!--  <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
-        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a> -->
-      </div>
+    <div class="col-xl-10">
+      <%= render partial: 'events/month', locals: { schedule: @schedule, schedule_event: @schedule_event }  %>
     </div>
-    <div class="col-10">
-      <div class="tab-content" id="v-pills-tabContent">
-
-        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-          <div class="d-flex">
-            <div class="mr-5">
-              <%= image_tag("https://cascatagolf.com/wp-content/uploads/2020/02/Butch-Harmon-Head-Shot.jpg") %>
-            </div>
-            <div>
-              <h1><%= current_user.first_name %> <%= current_user.last_name %></h1>
-              <p>Role: <%= current_user.role %></p>
-              <p>Sport: <%= current_user.team.sport.name %></p>
-              <p>Organization: <%= current_user.team.organization.name %></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="tab-pane fade" id="v-pills-schedule" role="tabpanel" aria-labelledby="v-pills-schedule-tab">
-          <%= render partial: 'events/month', locals: { schedule: @schedule, schedule_event: @schedule_event }  %>
-          <%= render 'shared/form' %>
-        </div>
-  <!--  <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
-        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div> -->
-      </div>
+    <div class="col-xl-2">
+      <%= render 'shared/form' %>
     </div>
+  </div>
+  <div class="row">
+    <div class="col-xl-7">
+      <%= render 'athletes/athletes'%>
+    </div>
+    <div class="col-xl-5">
+      <%= render partial: 'schedules/upcoming_event', locals: { event: @event, athlete: @athlete }   %>
+      <%= render 'recruits/recruits' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xl-9">
+      <%= render partial: 'schedules/tri_month', locals: { schedule: @schedule, schedule_event: @schedule_event }   %>
+
+      <%= render partial: 'schedules/week', locals: { schedule: @schedule, schedule_event: @schedule_event }   %>
+    </div>
+    <div class='col-xl-3'>
+      <%= render partial: 'schedules/upcoming_event', locals: { event: @event, athlete: @athlete }   %>
+    </div>
+     <div class="my-5 py-5"></div>
   </div>
 </div>

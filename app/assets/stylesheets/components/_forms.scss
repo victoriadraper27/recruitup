@@ -24,3 +24,16 @@
 .form-inputs {
   color: #c5bca675;
 }
+
+.assigned-form {
+  width: 20%;
+
+}
+
+.unavailable-card {
+  border-radius: 20px;
+  background-color: $baby-powder;
+  padding: 4px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+

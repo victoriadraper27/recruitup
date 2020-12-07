@@ -15,6 +15,7 @@ Event.destroy_all
 Recruit.destroy_all
 Athlete.destroy_all
 Message.destroy_all
+UnavailableDay.destroy_all
 User.destroy_all
 Team.destroy_all
 Chatroom.destroy_all
@@ -73,12 +74,13 @@ schedule = Schedule.create!(team: team)
 
 
 25.times do
+  athlete_team_name = Faker::Team.name
   athlete = Athlete.create!( first_name: Faker::Name.female_first_name,
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
-                  athlete_team: Faker::Team.name,
-                  athlete_team_url: "www.#{Faker::Team.name}.com",
-                  nationality: Faker::Nation.nationality,
+                  athlete_team: athlete_team_name,
+                  athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/, '')}.com",
+                  nationality: Faker::WorldCup.team,
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3))
   puts "Generated #{athlete.first_name} #{athlete.last_name}"
 end
