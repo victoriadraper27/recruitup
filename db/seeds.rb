@@ -37,7 +37,7 @@ golf = Sport.create!(
 chatroom = Chatroom.create!(name: "Chat")
 
 team = Team.new(name: 'Legacy')
-team.organization = lgpa
+team.organization = lpga
 team.sport = golf
 team.chatroom = chatroom
 team.save!
