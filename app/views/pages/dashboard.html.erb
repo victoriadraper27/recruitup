@@ -1,32 +1,45 @@
-<%= render 'shared/header' %>
-<%#= render 'sidenav' %>
-<div class="container-fluid mt--6">
-  <div class="row">
-    <div class="col-xl-10">
-      <%= render partial: 'events/month', locals: { schedule: @schedule, schedule_event: @schedule_event }  %>
-    </div>
-    <div class="col-xl-2">
-      <%= render 'shared/form' %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xl-7">
-      <%= render 'athletes/athletes'%>
-    </div>
-    <div class="col-xl-5">
-      <%= render partial: 'schedules/upcoming_event', locals: { event: @event, athlete: @athlete }   %>
-      <%= render 'recruits/recruits' %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xl-9">
-      <%= render partial: 'schedules/tri_month', locals: { schedule: @schedule, schedule_event: @schedule_event }   %>
+<div class="mt-5 pb-5">
+  <div class="dashboard p-3">
+    <ul class="nav nav-tabs justify-content-center nav-fill" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="calendars-tab" data-toggle="tab" href="#calendars" role="tab" aria-controls="calendars" aria-selected="false">Calendars</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="athlete-recruit-tab" data-toggle="tab" href="#athlete-recruit" role="tab" aria-controls="athlete-recruit" aria-selected="false">Athletes & Recruits</a>
+      </li>
+    </ul>
 
-      <%= render partial: 'schedules/week', locals: { schedule: @schedule, schedule_event: @schedule_event }   %>
+    <div class="tab-content vh-100 pb-5" id="myTabContent" style="background-color: white;">
+
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div class="row py-3">
+          <div class="col-xl-7">
+            <%= render partial: 'events/month', locals: { schedule: @schedule, schedule_event: @schedule_event }  %>
+          </div>
+          <div class="col-xl-5">
+            <%= render partial: 'schedules/upcoming_event', locals: { event: @event, athlete: @athlete }   %>
+            <%= render 'shared/form' %>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="calendars" role="tabpanel" aria-labelledby="calendars-tab">
+        <%= render 'dashboardcalendars' %>
+      </div>
+
+      <div class="tab-pane fade" id="athlete-recruit" role="tabpanel" aria-labelledby="athlete-recruit-tab">
+        <div class="row">
+          <div class="col-xl-7 dashboard-athlete">
+            <%= render 'athletes/athletes'%>
+          </div>
+          <div class="col-xl-5">
+            <%= render partial: 'recruits/recruits' %>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class='col-xl-3'>
-      <%= render partial: 'schedules/upcoming_event', locals: { event: @event, athlete: @athlete }   %>
-    </div>
-     <div class="my-5 py-5"></div>
+
   </div>
-</div>

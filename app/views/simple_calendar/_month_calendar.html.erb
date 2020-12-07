@@ -1,8 +1,8 @@
-<div class="simple-calendar mt-3 mb-5">
-  <div class="calendar-heading d-flex justify-content-between">
-    <%= link_to calendar.url_for_previous_view do %><i class="fas fa-arrow-circle-left"></i><% end %>
+<div class="simple-calendar my-3">
+  <div class="calendar-heading d-flex justify-content-around">
+    <%= link_to calendar.url_for_previous_view do %><i class="fas fa-arrow-circle-left ml-2"></i><% end %>
     <span class="calendar-title"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
-    <%= link_to calendar.url_for_next_view do %><i class="fas fa-arrow-circle-right"></i><% end %>
+    <%= link_to calendar.url_for_next_view do %><i class="fas fa-arrow-circle-right mr-2"></i><% end %>
   </div>
 
   <table class="table table-striped">

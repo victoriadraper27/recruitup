@@ -1,0 +1,50 @@
+.upcoming-event-header {
+  font-size: 30px;
+
+  h2 {
+    margin-top: 10px;
+  }
+
+  i {
+    color: #D57149;
+  }
+}
+
+.upcoming-event-address {
+  font-size: 18px;
+}
+
+.upcoming-avatar {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+
+.event-show-card-per-athlete {
+  a {
+    position: relative;
+  }
+
+  i {
+    color: #8db596;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 17px;
+  }
+
+  .upcoming-rating {
+    position: absolute;
+    right: 150px;
+  }
+
+  .text-white {
+    position: absolute;
+    right: 5px;
+  }
+}
+

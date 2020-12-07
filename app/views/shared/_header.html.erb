@@ -1,10 +1,27 @@
-<div class="header pb-5">
+<div class="p-3">
   <div class="container-fluid">
     <div class="header-body">
-      <!-- <div class="row align-items-center py-4">
-        <div class="col-lg-6 col-7">
-        </div>
-      </div> -->
+      <ul class="nav nav-tabs nav-fill">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Calendar</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Tri-month</a>
+            <a class="dropdown-item" href="#">Month</a>
+            <a class="dropdown-item" href="#">Week</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Top Athletes", dashboard_path(:anchor => 'athlete-index-card') %>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
