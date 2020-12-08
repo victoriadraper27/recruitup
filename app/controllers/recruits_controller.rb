@@ -4,6 +4,8 @@ class RecruitsController < ApplicationController
 
   def index
     @recruits = policy_scope(Recruit).order(created_at: :desc)
+    @chatroom = current_user.team.chatroom
+    @message = Message.new
   end
 
   def show
