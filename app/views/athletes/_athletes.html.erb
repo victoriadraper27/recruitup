@@ -16,12 +16,11 @@
     <tbody>
       <% @athletes.each do |athlete| %>
 
-        <tr class="athlete-table-content">
-          <td scope='row'>
+        <tr>
+          <td>
               <% number = (1..18).to_a.sample %>
-              <%= cl_image_tag "athlete#{number}.jpg", class: 'avatar-small' %>
+              <%= cl_image_tag "athlete#{number}.jpg", class: 'avatar-small mr-2' %>
               <%= athlete.first_name %> <%= athlete.last_name %>
-            </div>
           </td>
           <% case athlete.grad_year %>
           <% when 2022 %>
@@ -34,18 +33,18 @@
             <td class="text-center grad_year text-success"><%= athlete.grad_year %></td>
           <% end %>
 
-          <td class="text-center">
+          <td>
             <div class='d-flex justify-content-around'>
               <%= c = ISO3166::Country.find_country_by_name(athlete.nationality).emoji_flag if ISO3166::Country.find_country_by_name(athlete.nationality)  %>
-               <span class='nationality d-flex ml-1'>
-                 <%= athlete.nationality %>
-                </span>
+              <span class='nationality d-flex ml-1'>
+                <%= athlete.nationality %>
+              </span>
             </div>
-            </td>
+          </td>
           <!-- <td class="text-center"><%#= athlete.athlete_team %></td> -->
          <!--  <td class="text-center"><%#= athlete.athlete_team_url %></td> -->
-          <td class="text-center rating"><%= athlete.rating %></td>
-          <td><%= link_to athlete_recruits_path(athlete), method: :post, remote: true do %><i class="fas fa-plus"></i><% end %>
+          <td><%= athlete.rating %></td>
+          <td><%= link_to athlete_recruits_path(athlete), method: :post, remote: true do %><i class="fas fa-plus"></i><% end %></td>
         </tr>
       <% end %>
     </tbody>
