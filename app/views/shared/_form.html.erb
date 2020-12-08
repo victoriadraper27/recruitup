@@ -1,5 +1,9 @@
 <!-- <div data-controller="sweetalert"> -->
-<div class="mt-5 p-3 unavailable-card" data-controller='u_days'>
+
+<div class="mt-2 p-3 unavailable-card">
+
+<div class="mt-2 p-3 unavailable-card" data-controller='u_days'>
+
   <h3>Unavailable Days</h3>
 <%= simple_form_for(@unavailable_day) do |f| %>
   <%= f.input :date, as: :string, required: true, input_html: {class: "datepicker"} %>
