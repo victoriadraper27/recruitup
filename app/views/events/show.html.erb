@@ -4,7 +4,7 @@
     <div class="d-flex justify-content-center">
       <p class="event-show-header mr-4">
         <%= link_to event_path(params[:id].to_i - 1), class: "event-show-color" do %>
-         <i class="fas fa-arrow-circle-left"></i>
+        <i class="fas fa-arrow-circle-left"></i>
         <% end %>
       </p>
       <p class="event-show-header"><strong>
@@ -12,7 +12,7 @@
       </strong></p>
       <p class="event-show-header ml-4">
         <%= link_to event_path(params[:id].to_i + 1), class: "event-show-color" do %>
-          <i class="fas fa-arrow-circle-right"></i>
+        <i class="fas fa-arrow-circle-right"></i>
         <% end %>
       </p>
     </div>
@@ -23,113 +23,113 @@
       <div class="event-show-left mr-2">
         <p class="event-show-address"><%= @event.address%></p>
         <div
-          id="map"
-          style="width: 100%;
-          height: 300px;"
-          data-markers="<%= @marker.to_json %>"
-          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+        id="map"
+        style="width: 100%;
+        height: 300px;"
+        data-markers="<%= @marker.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
       </div>
 
       <div>
         <% @event.recruits.each do |recruit| %>
-          <%= link_to athlete_path(recruit.athlete) do %>
-            <% if recruit.athlete.grad_year == 2022 %>
-              <a href="/athletes/<%= recruit.athlete.id %>" class="list-group-item list-group-item-action list-group-item-danger d-flex justify-content-left">
-                <% number = (1..8).to_a.sample %>
-              <%= cl_image_tag "athlete#{number}.jpg", class: "avatar-xlarge-square mr-2" %>
-                <div>
-                  <p><%= recruit.athlete.first_name %>  <%= recruit.athlete.last_name %></p>
-                  <p class="text-white"><%= recruit.athlete.grad_year %></p>
-                  <p><i class="fa fa-arrow-up"></i> <%= recruit.athlete.rating %></p>
-                </div>
-              </a>
-            <% elsif recruit.athlete.grad_year == 2023 %>
-              <a href="/athletes/<%= recruit.athlete.id %>" class="list-group-item list-group-item-action list-group-item-primary d-flex justify-content-left">
-                <% number = (1..8).to_a.sample %>
-              <%= cl_image_tag "athlete#{number}.jpg", class: "avatar-xlarge-square mr-2" %>
-                <div>
-                  <p><%= recruit.athlete.first_name %>  <%= recruit.athlete.last_name %></p>
-                  <p class="text-white"><%= recruit.athlete.grad_year %></p>
-                  <p><i class="fa fa-arrow-up"></i> <%= recruit.athlete.rating %></p>
-                </div>
-              </a>
-            <% elsif recruit.athlete.grad_year == 2024 %>
-              <a href="/athletes/<%= recruit.athlete.id %>" class="list-group-item list-group-item-action list-group-item-info d-flex justify-content-left">
-                <% number = (1..8).to_a.sample %>
-              <%= cl_image_tag "athlete#{number}.jpg", class: "avatar-xlarge-square mr-2" %>
-                <div>
-                  <p><%= recruit.athlete.first_name %>  <%= recruit.athlete.last_name %></p>
-                  <p class="text-white"><%= recruit.athlete.grad_year %></p>
-                  <p><i class="fa fa-arrow-up"></i> <%= recruit.athlete.rating %></p>
-                </div>
-              </a>
-            <% else %>
-              <a href="/athletes/<%= recruit.athlete.id %>" class="list-group-item list-group-item-action list-group-item-success d-flex justify-content-left">
-                <% number = (1..8).to_a.sample %>
-              <%= cl_image_tag "athlete#{number}.jpg", class: "avatar-xlarge-square mr-2" %>
-                <div>
-                  <p><%= recruit.athlete.first_name %>  <%= recruit.athlete.last_name %></p>
-                  <p class="text-white"><%= recruit.athlete.grad_year %></p>
-                  <p><i class="fa fa-arrow-up"></i> <%= recruit.athlete.rating %></p>
-                </div>
-              </a>
-            <% end %>
-          <% end %>
+        <%= link_to athlete_path(recruit.athlete) do %>
+        <% if recruit.athlete.grad_year == 2022 %>
+        <a href="/athletes/<%= recruit.athlete.id %>" class="list-group-item list-group-item-action list-group-item-danger d-flex justify-content-left">
+          <% number = (1..8).to_a.sample %>
+          <%= cl_image_tag "athlete#{number}.jpg", class: "avatar-xlarge-square mr-2" %>
+          <div>
+            <p><%= recruit.athlete.first_name %>  <%= recruit.athlete.last_name %></p>
+            <p class="text-white"><%= recruit.athlete.grad_year %></p>
+            <p><i class="fa fa-arrow-up"></i> <%= recruit.athlete.rating %></p>
+          </div>
+        </a>
+        <% elsif recruit.athlete.grad_year == 2023 %>
+        <a href="/athletes/<%= recruit.athlete.id %>" class="list-group-item list-group-item-action list-group-item-primary d-flex justify-content-left">
+          <% number = (1..8).to_a.sample %>
+          <%= cl_image_tag "athlete#{number}.jpg", class: "avatar-xlarge-square mr-2" %>
+          <div>
+            <p><%= recruit.athlete.first_name %>  <%= recruit.athlete.last_name %></p>
+            <p class="text-white"><%= recruit.athlete.grad_year %></p>
+            <p><i class="fa fa-arrow-up"></i> <%= recruit.athlete.rating %></p>
+          </div>
+        </a>
+        <% elsif recruit.athlete.grad_year == 2024 %>
+        <a href="/athletes/<%= recruit.athlete.id %>" class="list-group-item list-group-item-action list-group-item-info d-flex justify-content-left">
+          <% number = (1..8).to_a.sample %>
+          <%= cl_image_tag "athlete#{number}.jpg", class: "avatar-xlarge-square mr-2" %>
+          <div>
+            <p><%= recruit.athlete.first_name %>  <%= recruit.athlete.last_name %></p>
+            <p class="text-white"><%= recruit.athlete.grad_year %></p>
+            <p><i class="fa fa-arrow-up"></i> <%= recruit.athlete.rating %></p>
+          </div>
+        </a>
+        <% else %>
+        <a href="/athletes/<%= recruit.athlete.id %>" class="list-group-item list-group-item-action list-group-item-success d-flex justify-content-left">
+          <% number = (1..8).to_a.sample %>
+          <%= cl_image_tag "athlete#{number}.jpg", class: "avatar-xlarge-square mr-2" %>
+          <div>
+            <p><%= recruit.athlete.first_name %>  <%= recruit.athlete.last_name %></p>
+            <p class="text-white"><%= recruit.athlete.grad_year %></p>
+            <p><i class="fa fa-arrow-up"></i> <%= recruit.athlete.rating %></p>
+          </div>
+        </a>
+        <% end %>
+        <% end %>
         <% end %>
 
         <h2 class="m-1" style="text-align: center;">VS.</h2>
 
         <%= link_to athlete_path(@athlete) do %>
-          <% if @athlete.grad_year == 2022 %>
-            <a href="/athletes/<%= @athlete.id %>" class="list-group-item list-group-item-action list-group-item-danger d-flex justify-content-left">
-              <% number = (9..18).to_a.sample %>
-              <%= cl_image_tag "athlete#{number}.jpg", class: "avatar-xlarge-square mr-2" %>
-              <div>
-                <p><%= @athlete.first_name %>  <%= @athlete.last_name %></p>
-                <p class="text-white"><%= @athlete.grad_year %></p>
-                <p><i class="fa fa-arrow-up"></i> <%= @athlete.rating %></p>
-              </div>
-            </a>
-          <% elsif @athlete.grad_year == 2023 %>
-            <a href="/athletes/<%= @athlete.id %>" class="list-group-item list-group-item-action list-group-item-primary d-flex justify-content-left">
-              <% number = (9..18).to_a.sample %>
-              <%= cl_image_tag "athlete#{number}.jpg", class: "avatar-xlarge-square mr-2" %>
-              <div>
-                <p><%= @athlete.first_name %>  <%= @athlete.last_name %></p>
-                <p class="text-white"><%= @athlete.grad_year %></p>
-                <p><i class="fa fa-arrow-up"></i> <%= @athlete.rating %></p>
-              </div>
-            </a>
-          <% elsif @athlete.grad_year == 2024 %>
-            <a href="/athletes/<%= @athlete.id %>" class="list-group-item list-group-item-action list-group-item-info d-flex justify-content-left">
-              <% number = (9..18).to_a.sample %>
-              <%= cl_image_tag "athlete#{number}.jpg", class: "avatar-xlarge-square mr-2" %>
-              <div>
-                <p><%= @athlete.first_name %>  <%= @athlete.last_name %></p>
-                <p class="text-white"><%= @athlete.grad_year %></p>
-                <p><i class="fa fa-arrow-up"></i> <%= @athlete.rating %></p>
-              </div>
-            </a>
-          <% else %>
-            <a href="/athletes/<%= @athlete.id %>" class="list-group-item list-group-item-action list-group-item-success d-flex justify-content-left">
-              <% number = (9..18).to_a.sample %>
-              <%= cl_image_tag "athlete#{number}.jpg", class: "avatar-xlarge-square mr-2" %>
-              <div>
-                <p><%= @athlete.first_name %>  <%= @athlete.last_name %></p>
-                <p class="text-white"><%= @athlete.grad_year %></p>
-                <p><i class="fa fa-arrow-up"></i> <%= @athlete.rating %></p>
-              </div>
-            </a>
-          <% end %>
+        <% if @athlete.grad_year == 2022 %>
+        <a href="/athletes/<%= @athlete.id %>" class="list-group-item list-group-item-action list-group-item-danger d-flex justify-content-left">
+          <% number = (9..18).to_a.sample %>
+          <%= cl_image_tag "athlete#{number}.jpg", class: "avatar-xlarge-square mr-2" %>
+          <div>
+            <p><%= @athlete.first_name %>  <%= @athlete.last_name %></p>
+            <p class="text-white"><%= @athlete.grad_year %></p>
+            <p><i class="fa fa-arrow-up"></i> <%= @athlete.rating %></p>
+          </div>
+        </a>
+        <% elsif @athlete.grad_year == 2023 %>
+        <a href="/athletes/<%= @athlete.id %>" class="list-group-item list-group-item-action list-group-item-primary d-flex justify-content-left">
+          <% number = (9..18).to_a.sample %>
+          <%= cl_image_tag "athlete#{number}.jpg", class: "avatar-xlarge-square mr-2" %>
+          <div>
+            <p><%= @athlete.first_name %>  <%= @athlete.last_name %></p>
+            <p class="text-white"><%= @athlete.grad_year %></p>
+            <p><i class="fa fa-arrow-up"></i> <%= @athlete.rating %></p>
+          </div>
+        </a>
+        <% elsif @athlete.grad_year == 2024 %>
+        <a href="/athletes/<%= @athlete.id %>" class="list-group-item list-group-item-action list-group-item-info d-flex justify-content-left">
+          <% number = (9..18).to_a.sample %>
+          <%= cl_image_tag "athlete#{number}.jpg", class: "avatar-xlarge-square mr-2" %>
+          <div>
+            <p><%= @athlete.first_name %>  <%= @athlete.last_name %></p>
+            <p class="text-white"><%= @athlete.grad_year %></p>
+            <p><i class="fa fa-arrow-up"></i> <%= @athlete.rating %></p>
+          </div>
+        </a>
+        <% else %>
+        <a href="/athletes/<%= @athlete.id %>" class="list-group-item list-group-item-action list-group-item-success d-flex justify-content-left">
+          <% number = (9..18).to_a.sample %>
+          <%= cl_image_tag "athlete#{number}.jpg", class: "avatar-xlarge-square mr-2" %>
+          <div>
+            <p><%= @athlete.first_name %>  <%= @athlete.last_name %></p>
+            <p class="text-white"><%= @athlete.grad_year %></p>
+            <p><i class="fa fa-arrow-up"></i> <%= @athlete.rating %></p>
+          </div>
+        </a>
+        <% end %>
         <% end %>
       </div>
     </div>
 
     <ul>
       <% @notes.each do |note| %>
-        <li class="note-list">
-          <strong class="username-note"><%= note.user.first_name.upcase %> <%= note.user.last_name.upcase %>:</strong> <%= note.content %>
-        </li>
+      <li class="note-list">
+        <strong class="username-note"><%= note.user.first_name.upcase %> <%= note.user.last_name.upcase %>:</strong> <%= note.content %>
+      </li>
       <% end %>
     </ul>
 
@@ -138,6 +138,15 @@
       <%= f.input :content, label: "NOTES" %>
       <%= f.submit "Add Notes", class: "btn notes-btn" %>
       <% end %>
+    </div>
+
+    <div class="assignedform pb-5">
+      <% schedule_event = ScheduleEvent.find_by event: @event, schedule: @schedule %>
+      <% team_members = [] %>
+      <% current_user.team.users.each do |user| %>
+      <% team_members << (@user = user.first_name) if user.unavailable_days.map { |ud_hash| ud_hash[:date] }.exclude?(@event.start_date) %>
+      <% end %>
+      <%= render partial: 'shared/assignedform', locals: { event: @event, schedule: @schedule, schedule_event: schedule_event, team_members: team_members} %>
     </div>
   </div>
 </div>
