@@ -3,11 +3,15 @@ class SchedulesController < ApplicationController
 
   def index
     @schedules = policy_scope(Schedule).order(created_at: :desc)
+    @chatroom = current_user.team.chatroom
+    @message = Message.new
   end
 
   def show
     @schedule = Schedule.find(params[:id])
     @events = policy_scope(Event)
+    @chatroom = current_user.team.chatroom
+    @message = Message.new
   end
 
   def select

@@ -4,11 +4,17 @@ class AthletesController < ApplicationController
   def index
     @athletes = policy_scope(Athlete).order(created_at: :desc)
     @athletes = Athlete.search(params[:query]) if params[:query].present?
+    chat_id = current_user.team.chatroom_id
+    @chatroom = Chatroom.find_by_id(chat_id)
+    @message = Message.new
   end
 
   def show
     @athlete = Athlete.find(params[:id])
     @recruit = Recruit.new
+    chat_id = current_user.team.chatroom_id
+    @chatroom = Chatroom.find_by_id(chat_id)
+    @message = Message.new
   end
 
   private

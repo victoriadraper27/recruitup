@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
+    <%= render partial: 'shared/navbar', locals: { chatroom: @chatroom, message: @message } %>
     <%= render 'shared/flashes' %>
 
     <%= yield %>

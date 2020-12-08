@@ -1,0 +1,31 @@
+<div class="messages-show">
+  <!-- <div class="p-1">
+ -->
+    <div class="chatroom p-3">
+      <h1><%= chatroom.name %></h1>
+      <div class='show.bs.dropdown'>
+      <div class="scroll-touch p-3" id="messages" data-chatroom-id="<%= @chatroom.id %>">
+        <% chatroom.messages.each do |message| %>
+          <div class="message-container" id="message-<%= message.id %>">
+            <%= render 'messages/message', message: message %>
+          </div>
+        <% end %>
+      </div>
+      <div class='show.bs.dropdown'>
+      <div class="messages-form mt-2">
+        <%= simple_form_for([ @chatroom, message ], url: chatroom_messages_path(@chatroom), method: :post, remote: true) do |f| %>
+        <div class='show.bs.dropdown'>
+          <%= f.input :content, label: false, placeholder: "Write your Message here...", html: {class: 'show.bs.dropdown'} %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+<!--
+      <h1> Messages: </h1> -->
+<!--       <%#= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+        <%#= f.input :content, label: false, placeholder: "Write your Message here" %>
+      <%# end %> -->
+    </div>
+  </div>
+ <!--  </div> -->
+</div>

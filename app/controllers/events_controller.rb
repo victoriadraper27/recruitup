@@ -17,6 +17,8 @@ class EventsController < ApplicationController
       lat: @event.latitude,
       lng: @event.longitude
     }]
+    @chatroom = current_user.team.chatroom
+    @message = Message.new
   end
 
   # def edit

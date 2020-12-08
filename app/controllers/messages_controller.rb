@@ -1,6 +1,8 @@
 class MessagesController < ApplicationController
+
   def create
-    @chatroom = Chatroom.find(params[:chatroom_id])
+    # @chatroom = Chatroom.find(params[:chatroom_id])
+    @chatroom = current_user.team.chatroom
     @message = Message.new(message_params)
     @message.chatroom = @chatroom
     @message.user = current_user
@@ -10,9 +12,11 @@ class MessagesController < ApplicationController
         @chatroom,
         render_to_string(partial: "message", locals: { message: @message })
       )
-      redirect_to chatroom_path(@chatroom, anchor: "message-#{@message.id}")
+      # redirect_to chatroom_path(@chatroom, anchor: "message-#{@message.id}")
+      redirect_to request.referrer
     else
-      render "chatrooms/show"
+      redirect_to request.referrer
+      # render "chatrooms/show"
     end
   end
 
