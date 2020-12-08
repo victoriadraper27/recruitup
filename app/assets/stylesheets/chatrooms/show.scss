@@ -1,14 +1,14 @@
 .scroll-touch {
   overflow: auto;
-  height: 300px;
+  height: 200px;
   background-color: #fff;
   border-radius: 5px;
+  font-size: 0.875rem;
 }
 
 .messages-show {
   margin: auto;
-  width: 70%;
-  height: 100%;
+  width: 100%;
 
   h1{
     color: #fff5ea;
@@ -17,5 +17,21 @@
 
 .chatroom {
   background-color: #fc8621;
-  border-radius: 5px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.messages-dropdown {
+  padding: 0;
+  width: 100%;
+}
+
+.messages-dropdown-menu {
+  padding: 0;
+  border-radius: 8px;
+  width: 300px;
+}
+
+.message-container {
+  line-height: 1;
 }
