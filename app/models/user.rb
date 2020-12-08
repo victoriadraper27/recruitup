@@ -8,5 +8,5 @@ class User < ApplicationRecord
   has_many :schedule_events
   has_many :unavailable_days
   has_many :notes
-  has_many :notifications, as: :recipient
+  has_one_attached :photo
 end

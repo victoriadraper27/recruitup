@@ -258,6 +258,7 @@ GEM
       turbolinks-source (~> 5.1)
     tzinfo (1.2.8)
       thread_safe (~> 0.1)
+    ui_faces (0.1.4)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.7)
@@ -319,6 +320,7 @@ DEPENDENCIES
   turbolinks (~> 5)
   turbolinks_render
   tzinfo-data
+  ui_faces
   web-console (>= 3.3.0)
   webdrivers
   webpacker (~> 4.0)
