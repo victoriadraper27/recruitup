@@ -6,7 +6,7 @@
       <% schedule_event = ScheduleEvent.find_by event: event, schedule: schedule %>
       <% team_members = [] %>
       <% current_user.team.users.each do |user| %>
-      <% (team_members << (@user = user.first_name)) if user.unavailable_days.exclude?(event.start_date) %>
+      <% team_members << (@user = user.first_name) if user.unavailable_days.map { |ud_hash| ud_hash[:date] }.exclude?(event.start_date) %>
       <% end %>
 
       <% event.recruits.each do |recruit| %>

@@ -37,7 +37,8 @@
               <th scope='row'>
               <%= link_to athlete_path(recruit.athlete) do %>
                 <div class='d-flex justify-content-start'>
-                  <%= image_tag "icon.png", class: 'avatar-small' %>
+                  <% number = (1..8).to_a.sample %>
+                  <%= cl_image_tag "athlete#{number}.jpg", class: 'avatar-small' %>
                   <span class='name d-flex ml-4'>
                     <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
                   </span>
@@ -58,7 +59,8 @@
               <th scope='row'>
               <%= link_to athlete_path(recruit.athlete) do %>
                 <div class='d-flex justify-content-start'>
-                  <%= image_tag "icon.png", class: 'avatar-small' %>
+                  <% number = (1..8).to_a.sample %>
+                  <%= cl_image_tag "athlete#{number}.jpg", class: 'avatar-small' %>
                   <span class='name d-flex ml-4'>
                     <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
                   </span>
@@ -80,7 +82,8 @@
               <th scope='row'>
               <%= link_to athlete_path(recruit.athlete) do %>
                 <div class='d-flex justify-content-start'>
-                  <%= image_tag "icon.png", class: 'avatar-small' %>
+                  <% number = (1..8).to_a.sample %>
+                  <%= cl_image_tag "athlete#{number}.jpg", class: 'avatar-small' %>
                   <span class='name d-flex ml-4'>
                     <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
                   </span>
@@ -101,7 +104,8 @@
             <th scope='row'>
             <%= link_to athlete_path(recruit.athlete) do %>
               <div class='d-flex justify-content-start'>
-                <%= image_tag "icon.png", class: 'avatar-small' %>
+                <% number = (1..8).to_a.sample %>
+                <%= cl_image_tag "athlete#{number}.jpg", class: 'avatar-small' %>
                 <span class='name d-flex ml-4'>
                   <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
                 </span>

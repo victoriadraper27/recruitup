@@ -35,7 +35,8 @@
           <%= link_to athlete_path(recruit.athlete) do %>
             <% if recruit.athlete.grad_year == 2022 %>
               <a href="/athletes/<%= recruit.athlete.id %>" class="list-group-item list-group-item-action list-group-item-danger d-flex justify-content-left">
-                <%= image_tag "golf_girl.png", class: "avatar-xlarge-square mr-2" %>
+                <% number = (1..8).to_a.sample %>
+              <%= cl_image_tag "athlete#{number}.jpg", class: "avatar-xlarge-square mr-2" %>
                 <div>
                   <p><%= recruit.athlete.first_name %>  <%= recruit.athlete.last_name %></p>
                   <p class="text-white"><%= recruit.athlete.grad_year %></p>
@@ -44,7 +45,8 @@
               </a>
             <% elsif recruit.athlete.grad_year == 2023 %>
               <a href="/athletes/<%= recruit.athlete.id %>" class="list-group-item list-group-item-action list-group-item-primary d-flex justify-content-left">
-                <%= image_tag "golf_girl.png", class: "avatar-xlarge-square mr-2" %>
+                <% number = (1..8).to_a.sample %>
+              <%= cl_image_tag "athlete#{number}.jpg", class: "avatar-xlarge-square mr-2" %>
                 <div>
                   <p><%= recruit.athlete.first_name %>  <%= recruit.athlete.last_name %></p>
                   <p class="text-white"><%= recruit.athlete.grad_year %></p>
@@ -53,7 +55,8 @@
               </a>
             <% elsif recruit.athlete.grad_year == 2024 %>
               <a href="/athletes/<%= recruit.athlete.id %>" class="list-group-item list-group-item-action list-group-item-info d-flex justify-content-left">
-                <%= image_tag "golf_girl.png", class: "avatar-xlarge-square mr-2" %>
+                <% number = (1..8).to_a.sample %>
+              <%= cl_image_tag "athlete#{number}.jpg", class: "avatar-xlarge-square mr-2" %>
                 <div>
                   <p><%= recruit.athlete.first_name %>  <%= recruit.athlete.last_name %></p>
                   <p class="text-white"><%= recruit.athlete.grad_year %></p>
@@ -62,7 +65,8 @@
               </a>
             <% else %>
               <a href="/athletes/<%= recruit.athlete.id %>" class="list-group-item list-group-item-action list-group-item-success d-flex justify-content-left">
-                <%= image_tag "golf_girl.png", class: "avatar-xlarge-square mr-2" %>
+                <% number = (1..8).to_a.sample %>
+              <%= cl_image_tag "athlete#{number}.jpg", class: "avatar-xlarge-square mr-2" %>
                 <div>
                   <p><%= recruit.athlete.first_name %>  <%= recruit.athlete.last_name %></p>
                   <p class="text-white"><%= recruit.athlete.grad_year %></p>
@@ -78,7 +82,8 @@
         <%= link_to athlete_path(@athlete) do %>
           <% if @athlete.grad_year == 2022 %>
             <a href="/athletes/<%= @athlete.id %>" class="list-group-item list-group-item-action list-group-item-danger d-flex justify-content-left">
-              <%= image_tag "golf_girl.png", class: "avatar-xlarge-square mr-2" %>
+              <% number = (9..18).to_a.sample %>
+              <%= cl_image_tag "athlete#{number}.jpg", class: "avatar-xlarge-square mr-2" %>
               <div>
                 <p><%= @athlete.first_name %>  <%= @athlete.last_name %></p>
                 <p class="text-white"><%= @athlete.grad_year %></p>
@@ -87,7 +92,8 @@
             </a>
           <% elsif @athlete.grad_year == 2023 %>
             <a href="/athletes/<%= @athlete.id %>" class="list-group-item list-group-item-action list-group-item-primary d-flex justify-content-left">
-              <%= image_tag "golf_girl.png", class: "avatar-xlarge-square mr-2" %>
+              <% number = (9..18).to_a.sample %>
+              <%= cl_image_tag "athlete#{number}.jpg", class: "avatar-xlarge-square mr-2" %>
               <div>
                 <p><%= @athlete.first_name %>  <%= @athlete.last_name %></p>
                 <p class="text-white"><%= @athlete.grad_year %></p>
@@ -96,7 +102,8 @@
             </a>
           <% elsif @athlete.grad_year == 2024 %>
             <a href="/athletes/<%= @athlete.id %>" class="list-group-item list-group-item-action list-group-item-info d-flex justify-content-left">
-              <%= image_tag "golf_girl.png", class: "avatar-xlarge-square mr-2" %>
+              <% number = (9..18).to_a.sample %>
+              <%= cl_image_tag "athlete#{number}.jpg", class: "avatar-xlarge-square mr-2" %>
               <div>
                 <p><%= @athlete.first_name %>  <%= @athlete.last_name %></p>
                 <p class="text-white"><%= @athlete.grad_year %></p>
@@ -105,7 +112,8 @@
             </a>
           <% else %>
             <a href="/athletes/<%= @athlete.id %>" class="list-group-item list-group-item-action list-group-item-success d-flex justify-content-left">
-              <%= image_tag "golf_girl.png", class: "avatar-xlarge-square mr-2" %>
+              <% number = (9..18).to_a.sample %>
+              <%= cl_image_tag "athlete#{number}.jpg", class: "avatar-xlarge-square mr-2" %>
               <div>
                 <p><%= @athlete.first_name %>  <%= @athlete.last_name %></p>
                 <p class="text-white"><%= @athlete.grad_year %></p>
