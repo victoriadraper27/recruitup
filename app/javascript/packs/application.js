@@ -49,6 +49,22 @@ document.addEventListener('turbolinks:load', () => {
 
   initMapbox();
 
+  $('#dashboard_athlete').DataTable( {
+        "scrollY":        "200px",
+        "scrollCollapse": true,
+        "paging":         false
+  });
+  $('#dashboard_recruit').DataTable( {
+        "scrollY":        "200px",
+        "scrollCollapse": true,
+        "paging":         false
+  });
+  $('#recruit-index').DataTable( {
+        "scrollY":        "200px",
+        "scrollCollapse": true,
+        "paging":         false
+  });
+  $('#athlete-index').DataTable();
 
 });
 
