@@ -1,4 +1,4 @@
-.btn-ghost {
+..btn-ghost {
   color: #4A4A4A;
   border: 1px solid #4A4A4A;
   padding: 8px 24px;
@@ -40,31 +40,6 @@
   color: white;
 }
 
-  .gen-sch {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    font-size: 0.875rem;
-    background-color: #d57149;
-    color: #fff5ea;
-    text-align: center;
-
-    &:hover {
-      background-color: #e89f71;
-  }
-}
-
-  .full-li {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    font-size: 0.875rem;
-    background-color: #d57149;
-    color: #fff5ea;
-    text-align: center;
-
-    &:hover {
-      background-color: #e89f71;
-      }
-    }
 
 
   .recruit-index-top-table .btn-flat {
