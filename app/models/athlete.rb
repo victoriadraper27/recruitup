@@ -3,6 +3,7 @@ class Athlete < ApplicationRecord
   has_many :events, through: :athlete_events
   has_many :recruits
   has_many :teams, through: :recruits
+  has_one_attached :photo
 
   include PgSearch::Model
   pg_search_scope :search,

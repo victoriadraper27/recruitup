@@ -26,11 +26,13 @@
         <% @recruits.each do |recruit| %>
 
           <% case recruit.athlete.grad_year %>
+
             <% when 2022 %>
               <tr class="recruit-table-content table-danger">
                 <%= link_to athlete_path(recruit.athlete) do %>
                 <td>
-                  <%= image_tag "icon.png", class: 'avatar-small' %>
+                  <% number = (1..8).to_a.sample %>
+                  <%= cl_image_tag "athlete#{number}.jpg", class: 'avatar-small' %>
                   <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
                 </td>
                 <% end %>
@@ -53,7 +55,8 @@
               <tr class="recruit-table-content table-primary">
                 <%= link_to athlete_path(recruit.athlete) do %>
                 <td>
-                  <%= image_tag "icon.png", class: 'avatar-small' %>
+                  <% number = (1..8).to_a.sample %>
+                  <%= cl_image_tag "athlete#{number}.jpg", class: 'avatar-small' %>
                   <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
                 </td>
                 <% end %>
@@ -72,11 +75,13 @@
                 <td><%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %><i class="fas fa-trash-alt"></i><% end %></td>
               </tr>
 
+
             <% when 2024 %>
               <tr class="recruit-table-content table-info">
                 <%= link_to athlete_path(recruit.athlete) do %>
                   <td>
-                    <%= image_tag "icon.png", class: 'avatar-small' %>
+                   <% number = (1..8).to_a.sample %>
+                  <%= cl_image_tag "athlete#{number}.jpg", class: 'avatar-small' %>
                     <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
                   </td>
                 <% end %>
@@ -95,12 +100,14 @@
                 <td><%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %><i class="fas fa-trash-alt"></i><% end %></td>
               </tr>
 
+
             <% when 2025 %>
               <tr class="recruit-table-content table-success">
                 <%= link_to athlete_path(recruit.athlete) do %>
                   <td>
-                    <%= image_tag "icon.png", class: 'avatar-small' %>
-                    <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
+                   <% number = (1..8).to_a.sample %>
+                  <%= cl_image_tag "athlete#{number}.jpg", class: 'avatar-small' %>
+                  <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
                   </td>
                 <% end %>
               <td class="text-center grad_year"><%= recruit.athlete.grad_year %></td>
@@ -117,6 +124,7 @@
               <td class="text-center rating"><%= recruit.athlete.rating %></td>
               <td><%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %><i class="fas fa-trash-alt"></i><% end %></td>
             </tr>
+
         <% end %>
         <% end %>
       </tbody>

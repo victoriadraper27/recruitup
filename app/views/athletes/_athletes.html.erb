@@ -15,12 +15,19 @@
 
     <tbody>
       <% @athletes.each do |athlete| %>
-      <tr>
-        <td>
-          <%= image_tag "icon.png", class: 'avatar-small' %>
-          <%= athlete.first_name %> <%= athlete.last_name %>
-        </td>
-        <% case athlete.grad_year %>
+      
+        <tr class="athlete-table-content">
+          <th scope='row'>
+            <div class='d-flex justify-content-start'>
+              <% number = (1..18).to_a.sample %>
+              <%= cl_image_tag "athlete#{number}.jpg", class: 'avatar-small' %>
+            <span class='name d-flex ml-4'>
+                <%= athlete.first_name %> <%= athlete.last_name %>
+            </span>
+            </div>
+          </th>
+          <% case athlete.grad_year %>
+          
           <% when 2022 %>
             <td class="text-center grad_year text-danger"><%= athlete.grad_year %></td>
           <% when 2023 %>

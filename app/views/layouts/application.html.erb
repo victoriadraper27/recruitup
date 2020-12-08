@@ -15,7 +15,8 @@
   </head>
 
   <body style="background-color: #ECECEC;">
-    <%= render 'shared/navbar' %>
+  <body>
+    <%= render partial: 'shared/navbar', locals: { chatroom: @chatroom, message: @message } %>
     <%= render 'shared/flashes' %>
 
     <%= yield %>

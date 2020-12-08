@@ -28,6 +28,7 @@ global.$ = jQuery;
 
 // External imports
 import "bootstrap";
+import $ from 'jquery';
 // import "../plugins/init_flatpickr";
 
 // Internal imports, e.g:
@@ -65,6 +66,10 @@ document.addEventListener('turbolinks:load', () => {
         "paging":         false
   });
   $('#athlete-index').DataTable();
+  
+//   $('.dropdown-menu').on('hidden.bs.dropdown', function (event) {
+//     console.log(event)
+// })
 
 });
 

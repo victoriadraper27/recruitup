@@ -10,11 +10,15 @@ class EventsController < ApplicationController
     @note = Note.new
     @notes = @event.notes.order(created_at: :desc)
     @athlete = policy_scope(Athlete).sample
+    @schedules = current_user.team.schedules
+    @schedule = current_user.team.selected_schedule || @schedules.first
 
     @marker = [{
       lat: @event.latitude,
       lng: @event.longitude
     }]
+    @chatroom = current_user.team.chatroom
+    @message = Message.new
   end
 
   # def edit

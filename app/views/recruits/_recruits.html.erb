@@ -15,12 +15,12 @@
 
       <table class="table table-striped table-hover table-sm" id="dashboard_recruit">
 
-
         <thead>
           <tr class="athlete-table-header">
             <th>Name</th>
             <th>Graduation Year</th>
             <th>Remove</th>
+            
           </tr>
         </thead>
         <tbody>
@@ -32,7 +32,8 @@
                   <td>
                     <%= link_to athlete_path(recruit.athlete) do %>
                       <div class='d-flex justify-content-start'>
-                        <%= image_tag "icon.png", class: 'avatar-small' %>
+                        <% number = (1..8).to_a.sample %>
+                          <%= cl_image_tag "athlete#{number}.jpg", class: 'avatar-small' %>
                         <span class='name d-flex ml-4'>
                           <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
                         </span>
@@ -42,13 +43,14 @@
                   <td class="text-center grad_year"><%= recruit.athlete.grad_year %></td>
                   <td><%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %><i class="fas fa-trash-alt"></i><% end %></td>
                 </tr>
-
+          
               <% when 2023 %>
                 <tr class="recruit-table-content table-primary">
                   <td>
                   <%= link_to athlete_path(recruit.athlete) do %>
                     <div class='d-flex justify-content-start'>
-                      <%= image_tag "icon.png", class: 'avatar-small' %>
+                      <% number = (1..8).to_a.sample %>
+                      <%= cl_image_tag "athlete#{number}.jpg", class: 'avatar-small' %>
                       <span class='name d-flex ml-4'>
                         <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
                       </span>
@@ -64,7 +66,8 @@
                   <td>
                   <%= link_to athlete_path(recruit.athlete) do %>
                     <div class='d-flex justify-content-start'>
-                      <%= image_tag "icon.png", class: 'avatar-small' %>
+                      <% number = (1..8).to_a.sample %>
+                      <%= cl_image_tag "athlete#{number}.jpg", class: 'avatar-small' %>
                       <span class='name d-flex ml-4'>
                         <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
                       </span>
@@ -80,7 +83,8 @@
                   <td>
                   <%= link_to athlete_path(recruit.athlete) do %>
                     <div class='d-flex justify-content-start'>
-                      <%= image_tag "icon.png", class: 'avatar-small' %>
+                      <% number = (1..8).to_a.sample %>
+                      <%= cl_image_tag "athlete#{number}.jpg", class: 'avatar-small' %>
                       <span class='name d-flex ml-4'>
                         <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
                       </span>
@@ -90,7 +94,6 @@
                   <td class="text-center grad_year"><%= recruit.athlete.grad_year %></td>
                   <td><%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %><i class="fas fa-trash-alt"></i><% end %></td>
                 </tr>
-
             <% end %>
           <% end %>
         </tbody>

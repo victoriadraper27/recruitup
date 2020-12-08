@@ -1,7 +1,10 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
-  def home; end
+  def home
+    @chatroom = current_user.team.chatroom
+    @message = Message.new
+  end
 
   def dashboard
     @user = current_user
@@ -19,5 +22,7 @@ class PagesController < ApplicationController
     @recruits = @team.recruits.all
     @unavailable_day = UnavailableDay.new
     @unavailable_days = policy_scope(Event).order(created_at: :desc)
+    @chatroom = current_user.team.chatroom
+    @message = Message.new
   end
 end
