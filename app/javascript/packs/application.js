@@ -7,10 +7,6 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-require('datatables.net-bs4')
-
-import $ from 'jquery';
-global.$ = jQuery;
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -39,7 +35,6 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 import { initChatroomCable} from '../channels/chatroom_channel';
 
-
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initSelect2();
@@ -50,23 +45,6 @@ document.addEventListener('turbolinks:load', () => {
 
   initMapbox();
 
-  $('#dashboard_athlete').DataTable( {
-        "scrollY":        "200px",
-        "scrollCollapse": true,
-        "paging":         false
-  });
-  $('#dashboard_recruit').DataTable( {
-        "scrollY":        "200px",
-        "scrollCollapse": true,
-        "paging":         false
-  });
-  $('#recruit-index').DataTable( {
-        "scrollY":        "200px",
-        "scrollCollapse": true,
-        "paging":         false
-  });
-  $('#athlete-index').DataTable();
-  
 //   $('.dropdown-menu').on('hidden.bs.dropdown', function (event) {
 //     console.log(event)
 // })

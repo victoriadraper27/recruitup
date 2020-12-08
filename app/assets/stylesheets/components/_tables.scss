@@ -1,0 +1,15 @@
+.table-custom-scrollbar {
+position: relative;
+height: 200px;
+overflow: auto;
+}
+.table-wrapper-scroll-y {
+display: block;
+}
+
+.athlete-index-card {
+  border-radius: 20px;
+  background-color: $baby-powder;
+  padding: 4px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
