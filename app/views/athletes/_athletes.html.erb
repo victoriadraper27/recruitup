@@ -18,7 +18,7 @@
 
           <tr>
             <td>
-                <%= cl_image_tag athlete.photo, class: 'avatar-small mr-2' %>
+                <%= image_tag athlete.photo, class: 'avatar-small mr-2' %>
                 <%= athlete.first_name %> <%= athlete.last_name %>
             </td>
             <% case athlete.grad_year %>
