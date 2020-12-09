@@ -30,8 +30,7 @@
                 <tr class="recruit-table-content table-danger">
                   <%= link_to athlete_path(recruit.athlete) do %>
                   <td>
-                    <% number = (1..8).to_a.sample %>
-                    <%= cl_image_tag "athlete#{number}.jpg", class: 'avatar-small' %>
+                    <%= cl_image_tag recruit.athlete.photo, class: 'avatar-small' %>
                     <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
                   </td>
                   <% end %>
@@ -54,8 +53,7 @@
                 <tr class="recruit-table-content table-primary">
                   <%= link_to athlete_path(recruit.athlete) do %>
                   <td>
-                    <% number = (1..8).to_a.sample %>
-                    <%= cl_image_tag "athlete#{number}.jpg", class: 'avatar-small' %>
+                    <%= cl_image_tag recruit.athlete.photo, class: 'avatar-small' %>
                     <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
                   </td>
                   <% end %>
@@ -79,8 +77,7 @@
                 <tr class="recruit-table-content table-info">
                   <%= link_to athlete_path(recruit.athlete) do %>
                     <td>
-                     <% number = (1..8).to_a.sample %>
-                    <%= cl_image_tag "athlete#{number}.jpg", class: 'avatar-small' %>
+                    <%= cl_image_tag recruit.athlete.photo, class: 'avatar-small' %>
                       <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
                     </td>
                   <% end %>
@@ -104,8 +101,7 @@
                 <tr class="recruit-table-content table-success">
                   <%= link_to athlete_path(recruit.athlete) do %>
                     <td>
-                     <% number = (1..8).to_a.sample %>
-                    <%= cl_image_tag "athlete#{number}.jpg", class: 'avatar-small' %>
+                    <%= cl_image_tag recruit.athlete.photo, class: 'avatar-small' %>
                     <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
                     </td>
                   <% end %>
