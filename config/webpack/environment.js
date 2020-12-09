@@ -6,4 +6,6 @@ environment.plugins.append('Provide', new webpack.ProvidePlugin({
   jQuery: 'jquery'
 }))
 
+environment.loaders.delete('nodeModules');
+
 module.exports = environment
