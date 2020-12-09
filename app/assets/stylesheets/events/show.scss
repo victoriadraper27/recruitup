@@ -36,12 +36,13 @@
   font-size: 45px;
 
   .event-show-color {
-    color: #682c0e;
+    color: #d57149;;
   }
 }
 
 .event-show-middle {
-  border: 1px #682c0e solid;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px #d57149 solid;
   border-radius: 5px;
   box-shadow: 0 0 2px #321f28;
 }
@@ -67,7 +68,7 @@
 }
 
 .notes-btn {
-  background-color: #321f28;
+  background-color: #d57149;
   color: #fff5ea;
   box-shadow: 0 0 2px #321f28;
   position: absolute;
