@@ -6,7 +6,7 @@ class ScheduleEventsController < ApplicationController
     @user = User.find_by_first_name(schedule_event_params[:user])
     @schedule_event.update(user: @user)
     # render json: { status: 'ok' }
-    redirect_to '/dashboard'
+    redirect_to request.referrer
   end
 
   private

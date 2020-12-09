@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
   def home
-    @chatroom = current_user.team.chatroom
+    @chatroom = current_user.team.chatroom if user_signed_in?
     @message = Message.new
   end
 
@@ -18,7 +18,9 @@ class PagesController < ApplicationController
     # @events = @team.selected_schedule.events
     @event = @schedule.events.first
     @athletes = policy_scope(Athlete)
-    @athlete = (policy_scope(Athlete).where(!policy_scope(Recruit))).sample
+    @athlete = policy_scope(Athlete).sample
+    recruits = policy_scope(Recruit).map { |rec_hash| rec_hash[:athlete_id] }
+    recruits.exclude?(@athlete.id) ? @athlete : @athlete = policy_scope(Athlete).last
     @recruits = @team.recruits.all
     @unavailable_day = UnavailableDay.new
     @unavailable_days = policy_scope(Event).order(created_at: :desc)

@@ -22,4 +22,8 @@ class AthletesController < ApplicationController
   def authorize_athlete
     authorize @athlete
   end
+
+  def athlete_params
+    params.require(:athlete).permit(:photo)
+  end
 end
