@@ -61,13 +61,20 @@ document.addEventListener('turbolinks:load', () => {
           "paging":         false
     })
   }, 2000)
-  // $('#recruit-index').DataTable( {
-  //       "scrollY":        "200px",
-  //       "scrollCollapse": true,
-  //       "paging":         false
-  // });
-  // $('#athlete-index').DataTable();
-
+  setTimeout(()=>{
+    $('#recruit-index').DataTable( {
+          "scrollY":        "400px",
+          "scrollCollapse": true,
+          "paging":         false
+    });
+  }, 2000)
+  setTimeout(()=>{
+    $('#athlete-index').DataTable({
+          "scrollY":        "400px",
+          "scrollCollapse": true,
+          "paging":         false
+    })
+   }, 2000)
 //   $('.dropdown-menu').on('hidden.bs.dropdown', function (event) {
 //     console.log(event)
 // })
