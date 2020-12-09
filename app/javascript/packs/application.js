@@ -52,13 +52,15 @@ document.addEventListener('turbolinks:load', () => {
       "scrollCollapse": true,
       "paging":         false
     })
-  }, 3000)
+  }, 2000)
 
-  // $('#dashboard_recruit').DataTable( {
-  //       "scrollY":        "200px",
-  //       "scrollCollapse": true,
-  //       "paging":         false
-  // });
+  setTimeout(()=>{
+    $('#dashboard_recruit').DataTable( {
+          "scrollY":        "200px",
+          "scrollCollapse": true,
+          "paging":         false
+    })
+  }, 2000)
   // $('#recruit-index').DataTable( {
   //       "scrollY":        "200px",
   //       "scrollCollapse": true,
