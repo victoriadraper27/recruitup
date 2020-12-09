@@ -16,10 +16,10 @@
 
       <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <div class="row py-3">
-          <div class="col-xl-7">
+          <div class="col-xl-8">
             <%= render partial: 'events/month', locals: { schedule: @schedule, schedule_event: @schedule_event }  %>
           </div>
-          <div class="col-xl-5">
+          <div class="col-xl-4">
             <%= render partial: 'events/upcomingevent', locals: { event: @event, athlete: @athlete }   %>
             <%= render 'shared/form' %>
           </div>
