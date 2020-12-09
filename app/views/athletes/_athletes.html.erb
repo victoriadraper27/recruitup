@@ -18,8 +18,7 @@
 
           <tr>
             <td>
-                <% number = (1..18).to_a.sample %>
-                <%= cl_image_tag "athlete#{number}.jpg", class: 'avatar-small mr-2' %>
+                <%= cl_image_tag athlete.photo, class: 'avatar-small mr-2' %>
                 <%= athlete.first_name %> <%= athlete.last_name %>
             </td>
             <% case athlete.grad_year %>
