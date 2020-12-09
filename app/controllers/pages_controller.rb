@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
   def home
-    @chatroom = current_user.team.chatroom
+    @chatroom = current_user.team.chatroom if user_signed_in?
     @message = Message.new
   end
 

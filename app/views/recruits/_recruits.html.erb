@@ -31,8 +31,7 @@
                   <td>
                     <%= link_to athlete_path(recruit.athlete) do %>
                       <div class='d-flex justify-content-start'>
-                        <% number = (1..8).to_a.sample %>
-                          <%= cl_image_tag "athlete#{number}.jpg", class: 'avatar-small' %>
+                          <%= image_tag recruit.athlete.photo, class: 'avatar-small' %>
                         <span class='name d-flex ml-4'>
                           <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
                         </span>
@@ -48,8 +47,7 @@
                   <td>
                   <%= link_to athlete_path(recruit.athlete) do %>
                     <div class='d-flex justify-content-start'>
-                      <% number = (1..8).to_a.sample %>
-                      <%= cl_image_tag "athlete#{number}.jpg", class: 'avatar-small' %>
+                      <%= image_tag recruit.athlete.photo, class: 'avatar-small' %>
                       <span class='name d-flex ml-4'>
                         <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
                       </span>
@@ -65,8 +63,7 @@
                   <td>
                   <%= link_to athlete_path(recruit.athlete) do %>
                     <div class='d-flex justify-content-start'>
-                      <% number = (1..8).to_a.sample %>
-                      <%= cl_image_tag "athlete#{number}.jpg", class: 'avatar-small' %>
+                      <%= image_tag recruit.athlete.photo, class: 'avatar-small' %>
                       <span class='name d-flex ml-4'>
                         <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
                       </span>
@@ -82,8 +79,7 @@
                   <td>
                   <%= link_to athlete_path(recruit.athlete) do %>
                     <div class='d-flex justify-content-start'>
-                      <% number = (1..8).to_a.sample %>
-                      <%= cl_image_tag "athlete#{number}.jpg", class: 'avatar-small' %>
+                      <%= image_tag recruit.athlete.photo, class: 'avatar-small' %>
                       <span class='name d-flex ml-4'>
                         <%= recruit.athlete.first_name %> <%= recruit.athlete.last_name %>
                       </span>
