@@ -20,7 +20,7 @@
             <%= render partial: 'events/month', locals: { schedule: @schedule, schedule_event: @schedule_event }  %>
           </div>
           <div class="col-xl-5">
-            <%= render partial: 'schedules/upcoming_event', locals: { event: @event, athlete: @athlete }   %>
+            <%= render partial: 'events/upcomingevent', locals: { event: @event, athlete: @athlete }   %>
             <%= render 'shared/form' %>
           </div>
         </div>
