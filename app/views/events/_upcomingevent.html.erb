@@ -86,7 +86,7 @@
               </a>
             <% elsif @athlete.grad_year == 2024 %>
               <a href="/athletes/<%= @athlete.id %>" class="calendar list-group-item list-group-item-action list-group-item-info d-flex justify-content-left">
-                <%= image_tag athete.photo, class: "upcoming-avatar mr-3" %>
+                <%= image_tag athlete.photo, class: "upcoming-avatar mr-3" %>
                 <p><%= @athlete.first_name %>  <%= @athlete.last_name %></p>
                 <p class="upcoming-rating"><i class="fa fa-arrow-up"></i> <%= @athlete.rating %></p>
                 <p class="text-white"><%= @athlete.grad_year %></p>
