@@ -59,12 +59,16 @@ user2_attributes = {
   role: 'Assistant Coach'
 }
 
+file_pia = URI.open('https://res.cloudinary.com/jvr-projects/image/upload/v1607481093/pia_nilsson_copy_gkxkjf.png')
 user = User.new(user_attributes)
 user.team = team
+user.photo.attach(io: file_pia, filename: 'pia.png', content_type: 'image/png')
 user.save!
 
+file_lynn = URI.open('https://res.cloudinary.com/jvr-projects/image/upload/v1607481106/lynn_marriot_copy_mwhnl4.png')
 user2 = User.new(user2_attributes)
 user2.team = team
+user2.photo.attach(io: file_lynn, filename: 'lynn.png', content_type: 'image/png')
 user2.save!
 
 3.times do
