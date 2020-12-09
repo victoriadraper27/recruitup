@@ -127,7 +127,7 @@ athletes = []
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
-                  athlete_team_url: "#{athlete_team_name.gsub(/\s+/,'')}.com",
+                  athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
                   nationality: Faker::WorldCup.team,
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3),
                   )
@@ -141,7 +141,7 @@ athletes = []
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
-                  athlete_team_url: "#{athlete_team_name.gsub(/\s+/,'')}.com",
+                  athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
                   nationality: Faker::WorldCup.team,
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3),
                   )
@@ -155,7 +155,7 @@ athletes = []
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
-                  athlete_team_url: "#{athlete_team_name.gsub(/\s+/,'')}.com",
+                  athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
                   nationality: Faker::WorldCup.team,
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3),
                   )
@@ -169,7 +169,7 @@ athletes = []
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
-                  athlete_team_url: "#{athlete_team_name.gsub(/\s+/,'')}.com",
+                  athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
                   nationality: Faker::WorldCup.team,
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3),
                   )
@@ -183,7 +183,7 @@ athletes = []
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
-                  athlete_team_url: "#{athlete_team_name.gsub(/\s+/,'')}.com",
+                  athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
                   nationality: Faker::WorldCup.team,
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3),
                   )
@@ -197,7 +197,7 @@ athletes = []
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
-                  athlete_team_url: "#{athlete_team_name.gsub(/\s+/,'')}.com",
+                  athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
                   nationality: Faker::WorldCup.team,
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3),
                   )
@@ -211,7 +211,7 @@ athletes = []
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
-                  athlete_team_url: "#{athlete_team_name.gsub(/\s+/,'')}.com",
+                  athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
                   nationality: Faker::WorldCup.team,
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3),
                   )
@@ -225,7 +225,7 @@ athletes = []
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
-                  athlete_team_url: "#{athlete_team_name.gsub(/\s+/,'')}.com",
+                  athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
                   nationality: Faker::WorldCup.team,
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3),
                   )
@@ -239,7 +239,7 @@ athletes = []
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
-                  athlete_team_url: "#{athlete_team_name.gsub(/\s+/,'')}.com",
+                  athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
                   nationality: Faker::WorldCup.team,
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3),
                   )
@@ -253,7 +253,7 @@ athletes = []
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
-                  athlete_team_url: "#{athlete_team_name.gsub(/\s+/,'')}.com",
+                  athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
                   nationality: Faker::WorldCup.team,
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3),
                   )
@@ -267,7 +267,7 @@ athletes = []
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
-                  athlete_team_url: "#{athlete_team_name.gsub(/\s+/,'')}.com",
+                  athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
                   nationality: Faker::WorldCup.team,
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3),
                   )
@@ -281,7 +281,7 @@ athletes = []
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
-                  athlete_team_url: "#{athlete_team_name.gsub(/\s+/,'')}.com",
+                  athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
                   nationality: Faker::WorldCup.team,
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3),
                   )
@@ -295,7 +295,7 @@ athletes = []
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
-                  athlete_team_url: "#{athlete_team_name.gsub(/\s+/,'')}.com",
+                  athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
                   nationality: Faker::WorldCup.team,
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3),
                   )
@@ -309,7 +309,7 @@ athletes = []
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
-                  athlete_team_url: "#{athlete_team_name.gsub(/\s+/,'')}.com",
+                  athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
                   nationality: Faker::WorldCup.team,
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3),
                   )
@@ -323,7 +323,7 @@ athletes = []
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
-                  athlete_team_url: "#{athlete_team_name.gsub(/\s+/,'')}.com",
+                  athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
                   nationality: Faker::WorldCup.team,
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3),
                   )
@@ -337,7 +337,7 @@ athletes = []
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
-                  athlete_team_url: "#{athlete_team_name.gsub(/\s+/,'')}.com",
+                  athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
                   nationality: Faker::WorldCup.team,
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3),
                   )
@@ -351,7 +351,7 @@ athletes = []
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
-                  athlete_team_url: "#{athlete_team_name.gsub(/\s+/,'')}.com",
+                  athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
                   nationality: Faker::WorldCup.team,
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3),
                   )
@@ -365,7 +365,7 @@ athletes = []
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
-                  athlete_team_url: "#{athlete_team_name.gsub(/\s+/,'')}.com",
+                  athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
                   nationality: Faker::WorldCup.team,
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3),
                   )
@@ -379,7 +379,7 @@ athletes = []
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
-                  athlete_team_url: "#{athlete_team_name.gsub(/\s+/,'')}.com",
+                  athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
                   nationality: Faker::WorldCup.team,
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3),
                   )
@@ -393,7 +393,7 @@ athletes = []
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
-                  athlete_team_url: "#{athlete_team_name.gsub(/\s+/,'')}.com",
+                  athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
                   nationality: Faker::WorldCup.team,
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3),
                   )
@@ -407,7 +407,7 @@ athletes = []
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
-                  athlete_team_url: "#{athlete_team_name.gsub(/\s+/,'')}.com",
+                  athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
                   nationality: Faker::WorldCup.team,
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3),
                   )
@@ -421,7 +421,7 @@ athletes = []
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
-                  athlete_team_url: "#{athlete_team_name.gsub(/\s+/,'')}.com",
+                  athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
                   nationality: Faker::WorldCup.team,
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3),
                   )
@@ -436,7 +436,7 @@ athletes = []
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
-                  athlete_team_url: "#{athlete_team_name.gsub(/\s+/,'')}.com",
+                  athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
                   nationality: Faker::WorldCup.team,
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3),
                   )
@@ -450,7 +450,7 @@ athletes = []
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
-                  athlete_team_url: "#{athlete_team_name.gsub(/\s+/,'')}.com",
+                  athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
                   nationality: Faker::WorldCup.team,
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3),
                   )
@@ -464,7 +464,7 @@ athletes = []
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
-                  athlete_team_url: "#{athlete_team_name.gsub(/\s+/,'')}.com",
+                  athlete_team_url: "www.#{athlete_team_name.downcase.gsub(/\s+/,'')}.com",
                   nationality: Faker::WorldCup.team,
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3),
                   )
