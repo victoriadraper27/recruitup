@@ -9,7 +9,7 @@
         <% end %>
       </p>
       <h2 class="upcoming-event-header">
-        <%= @event.start_date.strftime("%A, %B %d") %> at <%= @event.start_time.strftime("%I:%M %p") %>
+        <%= @event.start_date.strftime("%A, %B %d") %> at <%= Time.at((@event.start_time.to_time.to_i / 600.0).round * 600).to_datetime.strftime("%I:%M %p") %>
       </h2>
       <p class="upcoming-event-header ml-4">
         <%= link_to event_url(params[:id].to_i + 1), class: "event-show-color" do %>

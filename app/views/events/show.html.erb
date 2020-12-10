@@ -8,7 +8,7 @@
         <% end %>
       </p>
       <p class="event-show-header"><strong>
-        <%= @event.start_date.strftime("%A, %B %d") %> at <%= @event.start_time.strftime("%I:%M %p") %>
+        <%= @event.start_date.strftime("%A, %B %d") %> at <%= Time.at((@event.start_time.to_time.to_i / 600.0).round * 600).to_datetime.strftime("%I:%M %p") %>
       </strong></p>
       <p class="event-show-header ml-4">
         <%= link_to event_path(params[:id].to_i + 1), class: "event-show-color" do %>
