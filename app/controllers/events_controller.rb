@@ -10,6 +10,8 @@ class EventsController < ApplicationController
     @note = Note.new
     @notes = @event.notes.order(created_at: :desc)
     @athlete = policy_scope(Athlete).sample
+    recruits = policy_scope(Recruit).map { |rec_hash| rec_hash[:athlete_id] }
+    recruits.exclude?(@athlete.id) ? @athlete : @athlete = policy_scope(Athlete).last
     @schedules = current_user.team.schedules
     @schedule = current_user.team.selected_schedule || @schedules.first
 

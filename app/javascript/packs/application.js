@@ -7,7 +7,7 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-
+require('datatables.net-bs4')
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -25,7 +25,8 @@ require("channels")
 // External imports
 import "bootstrap";
 import $ from 'jquery';
-// import "../plugins/init_flatpickr";
+global.$ = jQuery;
+
 
 // Internal imports, e.g:
 import { initSelect2 } from '../plugins/init_select2';
@@ -45,6 +46,35 @@ document.addEventListener('turbolinks:load', () => {
 
   initMapbox();
 
+  setTimeout(()=>{
+    $('#dashboard_athlete').DataTable( {
+      "scrollY":        "200px",
+      "scrollCollapse": true,
+      "paging":         false
+    })
+  }, 2000)
+
+  setTimeout(()=>{
+    $('#dashboard_recruit').DataTable( {
+          "scrollY":        "200px",
+          "scrollCollapse": true,
+          "paging":         false
+    })
+  }, 2000)
+  setTimeout(()=>{
+    $('#recruit-index').DataTable( {
+          "scrollY":        "400px",
+          "scrollCollapse": true,
+          "paging":         false
+    });
+  }, 2000)
+  setTimeout(()=>{
+    $('#athlete-index').DataTable({
+          "scrollY":        "400px",
+          "scrollCollapse": true,
+          "paging":         false
+    })
+   }, 2000)
 //   $('.dropdown-menu').on('hidden.bs.dropdown', function (event) {
 //     console.log(event)
 // })

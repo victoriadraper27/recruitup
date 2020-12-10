@@ -1,0 +1,5 @@
+meta_product_name: "Recruitup"
+meta_title: "Recruitup - Recruiting made efficient!"
+meta_description: "Allows you to create your recruiting schedule with ease."
+meta_image: "og:image.jpg" # should exist in `app/assets/images/`
+twitter_account: "@recruit_up"   # required for Twitter Cards
