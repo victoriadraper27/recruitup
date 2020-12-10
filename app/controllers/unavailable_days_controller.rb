@@ -6,9 +6,9 @@ class UnavailableDaysController < ApplicationController
     @unavailable_day.user = current_user
 
     if @unavailable_day.save
-      render json: { status: 'ok' }
+      # render json: { status: 'ok' }
 
-      # redirect_to '/dashboard'
+      redirect_to '/dashboard'
     else
       render '/dashboard'
     end
