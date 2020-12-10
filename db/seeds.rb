@@ -150,8 +150,8 @@ athletes = []
   puts "Generated #{athlete1.first_name} #{athlete1.last_name}"
 
  athlete_team_name = Faker::University.name
-  athlete2 = Athlete.new( first_name: Faker::Name.female_first_name,
-                  last_name: Faker::Name.last_name  ,
+  athlete2 = Athlete.new( first_name: 'Karen',
+                  last_name: Faker::Name.last_name,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
                   athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
@@ -164,7 +164,7 @@ athletes = []
   puts "Generated #{athlete2.first_name} #{athlete2.last_name}"
 
  athlete_team_name = Faker::University.name
-  athlete3 = Athlete.new( first_name: Faker::Name.female_first_name,
+  athlete3 = Athlete.new( first_name: 'Jennifer',
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
@@ -178,7 +178,7 @@ athletes = []
   puts "Generated #{athlete3.first_name} #{athlete3.last_name}"
 
  athlete_team_name = Faker::University.name
-  athlete4 = Athlete.new( first_name: Faker::Name.female_first_name,
+  athlete4 = Athlete.new( first_name: 'Amanda',
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
@@ -192,7 +192,7 @@ athletes = []
   puts "Generated #{athlete4.first_name} #{athlete4.last_name}"
 
  athlete_team_name = Faker::University.name
-  athlete5 = Athlete.new( first_name: Faker::Name.female_first_name,
+  athlete5 = Athlete.new( first_name: 'Victoria',
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
@@ -206,7 +206,7 @@ athletes = []
   puts "Generated #{athlete5.first_name} #{athlete5.last_name}"
 
  athlete_team_name = Faker::University.name
-  athlete6 = Athlete.new( first_name: Faker::Name.female_first_name,
+  athlete6 = Athlete.new( first_name: 'Rachael',
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
@@ -220,7 +220,7 @@ athletes = []
   puts "Generated #{athlete6.first_name} #{athlete6.last_name}"
 
  athlete_team_name = Faker::University.name
-  athlete7 = Athlete.new( first_name: Faker::Name.female_first_name,
+  athlete7 = Athlete.new( first_name: 'Cindy',
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
@@ -234,7 +234,7 @@ athletes = []
   puts "Generated #{athlete7.first_name} #{athlete7.last_name}"
 
  athlete_team_name = Faker::University.name
-  athlete8 = Athlete.new( first_name: Faker::Name.female_first_name,
+  athlete8 = Athlete.new( first_name: 'Sarah',
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
@@ -248,7 +248,7 @@ athletes = []
   puts "Generated #{athlete8.first_name} #{athlete8.last_name}"
 
  athlete_team_name = Faker::University.name
-  athlete9 = Athlete.new( first_name: Faker::Name.female_first_name,
+  athlete9 = Athlete.new( first_name: 'Emma',
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
@@ -262,7 +262,7 @@ athletes = []
   puts "Generated #{athlete9.first_name} #{athlete9.last_name}"
 
  athlete_team_name = Faker::University.name
-  athlete10 = Athlete.new( first_name: Faker::Name.female_first_name,
+  athlete10 = Athlete.new( first_name: 'Abby',
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
@@ -276,7 +276,7 @@ athletes = []
   puts "Generated #{athlete10.first_name} #{athlete10.last_name}"
 
  athlete_team_name = Faker::University.name
-  athlete11 = Athlete.new( first_name: Faker::Name.female_first_name,
+  athlete11 = Athlete.new( first_name: 'Lily',
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
@@ -290,7 +290,7 @@ athletes = []
   puts "Generated #{athlete11.first_name} #{athlete11.last_name}"
 
  athlete_team_name = Faker::University.name
-  athlete12 = Athlete.new( first_name: Faker::Name.female_first_name,
+  athlete12 = Athlete.new( first_name: 'Chloe',
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
@@ -304,7 +304,7 @@ athletes = []
   puts "Generated #{athlete12.first_name} #{athlete12.last_name}"
 
  athlete_team_name = Faker::University.name
-  athlete13 = Athlete.new( first_name: Faker::Name.female_first_name,
+  athlete13 = Athlete.new( first_name: 'Lucy',
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
@@ -318,7 +318,7 @@ athletes = []
   puts "Generated #{athlete13.first_name} #{athlete13.last_name}"
 
  athlete_team_name = Faker::University.name
-  athlete14 = Athlete.new( first_name: Faker::Name.female_first_name,
+  athlete14 = Athlete.new( first_name: 'Hannah',
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
@@ -332,7 +332,7 @@ athletes = []
   puts "Generated #{athlete14.first_name} #{athlete14.last_name}"
 
  athlete_team_name = Faker::University.name
-  athlete15 = Athlete.new( first_name: Faker::Name.female_first_name,
+  athlete15 = Athlete.new( first_name: 'Sofie',
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
@@ -346,7 +346,7 @@ athletes = []
   puts "Generated #{athlete15.first_name} #{athlete15.last_name}"
 
  athlete_team_name = Faker::University.name
-  athlete16 = Athlete.new( first_name: Faker::Name.female_first_name,
+  athlete16 = Athlete.new( first_name: 'Maria',
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
@@ -360,7 +360,7 @@ athletes = []
   puts "Generated #{athlete16.first_name} #{athlete16.last_name}"
 
  athlete_team_name = Faker::University.name
-  athlete17 = Athlete.new( first_name: Faker::Name.female_first_name,
+  athlete17 = Athlete.new( first_name: 'Ashley',
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
@@ -374,7 +374,7 @@ athletes = []
   puts "Generated #{athlete17.first_name} #{athlete17.last_name}"
 
  athlete_team_name = Faker::University.name
-  athlete18 = Athlete.new( first_name: Faker::Name.female_first_name,
+  athlete18 = Athlete.new( first_name: 'Haley',
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
@@ -388,7 +388,7 @@ athletes = []
   puts "Generated #{athlete18.first_name} #{athlete18.last_name}"
 
  athlete_team_name = Faker::University.name
-  athlete19 = Athlete.new( first_name: Faker::Name.female_first_name,
+  athlete19 = Athlete.new( first_name: 'Courtney',
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
@@ -402,7 +402,7 @@ athletes = []
   puts "Generated #{athlete19.first_name} #{athlete19.last_name}"
 
  athlete_team_name = Faker::University.name
-  athlete20 = Athlete.new( first_name: Faker::Name.female_first_name,
+  athlete20 = Athlete.new( first_name: 'Jenna',
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
@@ -416,7 +416,7 @@ athletes = []
   puts "Generated #{athlete20.first_name} #{athlete20.last_name}"
 
  athlete_team_name = Faker::University.name
-  athlete21 = Athlete.new( first_name: Faker::Name.female_first_name,
+  athlete21 = Athlete.new( first_name: 'Kaitlin',
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
@@ -430,7 +430,7 @@ athletes = []
   puts "Generated #{athlete21.first_name} #{athlete21.last_name}"
 
  athlete_team_name = Faker::University.name
-  athlete22 = Athlete.new( first_name: Faker::Name.female_first_name,
+  athlete22 = Athlete.new( first_name: 'Maggie',
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
@@ -445,7 +445,7 @@ athletes = []
 
 
  athlete_team_name = Faker::University.name
-  athlete23 = Athlete.new( first_name: Faker::Name.female_first_name,
+  athlete23 = Athlete.new( first_name: 'Kendall',
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
@@ -459,7 +459,7 @@ athletes = []
   puts "Generated #{athlete23.first_name} #{athlete23.last_name}"
 
  athlete_team_name = Faker::University.name
-  athlete24 = Athlete.new( first_name: Faker::Name.female_first_name,
+  athlete24 = Athlete.new( first_name: 'Sam',
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
@@ -473,7 +473,7 @@ athletes = []
   puts "Generated #{athlete24.first_name} #{athlete24.last_name}"
 
  athlete_team_name = Faker::University.name
-  athlete25 = Athlete.new( first_name: Faker::Name.female_first_name,
+  athlete25 = Athlete.new( first_name: 'Rebecca',
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
