@@ -1,8 +1,8 @@
 <%= simple_form_for(schedule_event, url: assign_event_path(schedule_event), method: :patch, remote: true, html: {class: "form-inline", id: "assign_form"}) do |f| %>
-<div>
-  <%= f.input :user, collection: team_members, label: 'Assign to', input_html: { class: 'select2' }, class: 'assigned-input' %>
+<div class="text-center p-1 d-flex" style="width: 180px;">
+  <%= f.input :user, label: 'To:', collection: team_members, input_html: { class: 'select2' }, class: 'assigned-input' %>
  <!--  <button data-action='click->assign#trigger'> -->
-  <%= f.button :submit, 'Submit', html: {class: 'hide.bs.dropdown'}, class: "assigned-btn" %>
+  <%= f.submit "submit" %>
   <!-- </button> -->
 </div>
 <% end %>
