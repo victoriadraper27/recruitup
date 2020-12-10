@@ -15,18 +15,19 @@
           </div>
 
           <div>
-            <p>Team: <strong>  <%= @athlete.athlete_team %> - <%= @athlete.athlete_team_url %></strong></p>
-            <p>Graduation Year: <strong><%= @athlete.grad_year %></strong></p>
-            <p>Nationality: <strong><%= @athlete.nationality %>  <%= c = ISO3166::Country.find_country_by_name(@athlete.nationality).emoji_flag if ISO3166::Country.find_country_by_name(@athlete.nationality)  %></strong></p>
-            <p>Rating: <strong><%= @athlete.rating %></strong></p>
+            <p>Team: <strong class="athlete-show-info">  <%= @athlete.athlete_team %> - <%= @athlete.athlete_team_url %></strong></p>
+            <p>Graduation Year: <strong class="athlete-show-info"><%= @athlete.grad_year %></strong></p>
+            <p>Nationality: <strong class="athlete-show-info"><%= @athlete.nationality %>  <%= c = ISO3166::Country.find_country_by_name(@athlete.nationality).emoji_flag if ISO3166::Country.find_country_by_name(@athlete.nationality)  %></strong></p>
+            <h3 class="mt-3"><strong>STATISTICS</strong></h3>
+            <div class="d-flex">
+              <p>Rating: <strong class="athlete-show-info"><%= @athlete.rating %></strong></p>
+              <p>&nbsp;Divisor: <strong class="athlete-show-info"><%= Faker::Number.within(range: 10..20) %>.<%= Faker::Number.decimal_part(digits: 4) %></strong></p>
+              <p>&nbsp;Points Average: <strong class="athlete-show-info"><%= Faker::Number.within(range: 1000..1500) %>.<%= Faker::Number.decimal_part(digits: 4) %></strong></p>
+            </div>
           </div>
           <%# if @athlete.teams.include?(current_user.team) %>
           <!-- <%#= link_to athlete_recruit_path(@athlete.recruit.id.to_i + 1) do %><i class="fas fa-share">Next Recruit</i><%# end %> -->
         </div>
-
-      <div class="card py-1 px-3">
-        <p> Notes: </p>
-      </div>
 
         <div class="mt-3 row justify-content-center">
           <div class="btn-group btn-group-lg" role="group" aria-label="Add to Recruiting List">
