@@ -12,12 +12,12 @@
       <% event.recruits.each do |recruit| %>
 
       <% if recruit.athlete.grad_year == 2022 %>
+        <div class="btn-group bg-danger">
           <a href="/events/<%= event.id %>" class="calendar btn-sm list-group-item list-group-item-action list-group-item-danger d-flex justify-content-between" type='button'>
             <%= Time.at((event.start_time.to_time.to_i / 600.0).round * 600).to_datetime.to_s(:time) %>-<%= recruit.athlete.first_name %>
           </a>
         <div class='d-block text-center'>
-        <div class="btn-group bg-danger">
-          <p class="coach-assigned">Assigned to: <%= schedule_event.user.first_name.upcase if schedule_event.user %></p>
+          <p class="coach-assigned p-1"><%= schedule_event.user.first_name.upcase if schedule_event.user %></p>
           <div class='dropdown'>
             <button type="button" class="btn btn-sm dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdownMenuButton">
               <span class="sr-only"></span>
@@ -30,12 +30,12 @@
       </div>
 
       <% elsif recruit.athlete.grad_year == 2023 %>
+        <div class="btn-group bg-primary">
         <a href="/events/<%= event.id %>" class="calendar btn-sm list-group-item list-group-item-action list-group-item-primary d-flex justify-content-between" type='button'>
           <%= Time.at((event.start_time.to_time.to_i / 600.0).round * 600).to_datetime.to_s(:time) %>-<%= recruit.athlete.first_name %>
         </a>
         <div class='d-block text-center'>
-        <div class="btn-group bg-primary">
-          <p class="coach-assigned">Assigned to: <%= schedule_event.user.first_name.upcase if schedule_event.user %></p>
+          <p class="coach-assigned p-1"><%= schedule_event.user.first_name.upcase if schedule_event.user %></p>
         <div class='dropdown'>
           <button type="button" class="btn btn-sm dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdownMenuButton">
             <span class="sr-only"></span>
@@ -48,12 +48,12 @@
       </div>
 
       <% elsif recruit.athlete.grad_year == 2024 %>
+        <div class="btn-group bg-info">
         <a href="/events/<%= event.id %>" class="calendar btn-sm list-group-item list-group-item-action list-group-item-info d-flex justify-content-between" type='button'>
           <%= Time.at((event.start_time.to_time.to_i / 600.0).round * 600).to_datetime.to_s(:time) %>-<%= recruit.athlete.first_name %>
         </a>
         <div class='d-block text-center'>
-        <div class="btn-group bg-info">
-          <p class="coach-assigned">Assigned to: <%= schedule_event.user.first_name.upcase if schedule_event.user %></p>
+          <p class="coach-assigned p-1"><%= schedule_event.user.first_name.upcase if schedule_event.user %></p>
         <div class='dropdown'>
           <button type="button" class="btn btn-sm dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdownMenuButton">
             <span class="sr-only"></span>
@@ -66,12 +66,12 @@
         </div>
 
       <% else %>
+        <div class="btn-group bg-success">
         <a href="/events/<%= event.id %>" class="calendar btn-sm list-group-item list-group-item-action list-group-item-success d-flex justify-content-between" type='button'>
          <%= Time.at((event.start_time.to_time.to_i / 600.0).round * 600).to_datetime.to_s(:time) %>-<%= recruit.athlete.first_name %>
         </a>
         <div class='d-block text-center'>
-        <div class="btn-group bg-success">
-          <p class="coach-assigned">Assigned to: <%= schedule_event.user.first_name.upcase if schedule_event.user %></p>
+          <p class="coach-assigned p-1"><%= schedule_event.user.first_name.upcase if schedule_event.user %></p>
         <div class='dropdown'>
           <button type="button" class="btn btn-sm dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdownMenuButton">
             <span class="sr-only"></span>

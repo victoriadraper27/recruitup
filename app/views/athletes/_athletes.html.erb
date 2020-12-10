@@ -10,11 +10,11 @@
           <th>Graduation Year</th>
           <th>Nationality</th>
           <th>Rating</th>
-          <th>
-            <% if policy(@recruit).create? %>
+          <% if policy(@recruit).create? %>
+            <th>
               Add
-            <% end %>
-          </th>
+            </th>
+          <% end %>
         </thead>
 
         <tbody>
@@ -39,7 +39,7 @@
             <td>
               <div class='d-flex justify-content-around'>
                 <%= c = ISO3166::Country.find_country_by_name(athlete.nationality).emoji_flag if ISO3166::Country.find_country_by_name(athlete.nationality)  %>
-                <span class='nationality d-flex ml-1'>
+                <span class='nationality d-flex'>
                   <%= athlete.nationality %>
                 </span>
               </div>
@@ -48,7 +48,7 @@
             <!--  <td class="text-center"><%#= athlete.athlete_team_url %></td> -->
             <td><%= athlete.rating %></td>
 
-            <td>
+            <td class="text-center">
               <% if policy(@recruit).create? %>
                 <%= link_to athlete_recruits_path(athlete), method: :post, remote: true do %>
                   <i class="fas fa-plus"></i>

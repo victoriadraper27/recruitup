@@ -21,11 +21,11 @@
           <tr class="athlete-table-header">
             <th>Name</th>
             <th>Graduation Year</th>
-            <th>
-              <% if policy(@recruit).destroy? %>
+            <% if policy(@recruit).destroy? %>
+              <th>
                 Remove
-              <% end %>
-            </th>
+              </th>
+            <% end %>
           </tr>
         </thead>
         <tbody>
@@ -45,7 +45,7 @@
                     <% end %>
                   </td>
                   <td class="text-center grad_year"><%= recruit.athlete.grad_year %></td>
-                  <td>
+                  <td class="text-center">
                     <% if policy(@recruit).destroy? %>
                       <%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %>
                        <i class="fas fa-trash-alt"></i>
@@ -67,7 +67,7 @@
                   <% end %>
                   </td>
                   <td class="text-center grad_year"><%= recruit.athlete.grad_year %></td>
-                  <td>
+                  <td class="text-center">
                     <% if policy(@recruit).destroy? %>
                       <%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %>
                         <i class="fas fa-trash-alt"></i>
@@ -89,7 +89,7 @@
                   <% end %>
                   </td>
                   <td class="text-center grad_year"><%= recruit.athlete.grad_year %></td>
-                  <td>
+                  <td class="text-center">
                     <% if policy(@recruit).destroy? %>
                       <%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %>
                        <i class="fas fa-trash-alt"></i>
@@ -111,7 +111,7 @@
                   <% end %>
                   </td>
                   <td class="text-center grad_year"><%= recruit.athlete.grad_year %></td>
-                  <td>
+                  <td  class="text-center">
                     <% if policy(@recruit).destroy? %>
                       <%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %>
                         <i class="fas fa-trash-alt"></i>

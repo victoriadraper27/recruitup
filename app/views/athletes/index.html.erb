@@ -13,11 +13,11 @@
           <th class="text-center">Nationality</th>
           <th class="text-center">Team</th>
           <th class="text-center">Rating</th>
-          <th>
-            <% if policy(@athlete).create? %>
+          <% if policy(@athlete).create? %>
+            <th>
               Add
-            <% end %>
-          </th>
+            </th>
+          <% end %>
       </thead>
       <tbody>
         <% @athletes.each do |athlete| %>
