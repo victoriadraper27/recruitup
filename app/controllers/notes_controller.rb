@@ -1,9 +1,12 @@
 class NotesController < ApplicationController
-  after_action :authorize_note, except: :show
+  after_action :authorize_note, except: [:index, :show]
 
   def index
-    @event = Event.find(parmas[:event_id])
-    @notes = @event.notes.order(created_at: :desc)
+    @notes = policy_scope(Note).order(created_at: :desc)
+    @schedule = current_user.team.selected_schedule || current_user.team.schedules.first
+    @schedule_events = @schedule.schedule_events
+    @chatroom = current_user.team.chatroom
+    @message = Message.new
   end
 
   def create

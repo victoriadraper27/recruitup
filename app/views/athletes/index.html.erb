@@ -13,7 +13,11 @@
           <th class="text-center">Nationality</th>
           <th class="text-center">Team</th>
           <th class="text-center">Rating</th>
-          <th>Add</th>
+          <th>
+            <% if policy(@athlete).create? %>
+              Add
+            <% end %>
+          </th>
       </thead>
       <tbody>
         <% @athletes.each do |athlete| %>
@@ -48,7 +52,13 @@
             </td>
             <td class="text-center"><%= athlete.athlete_team %></td>
             <td class="text-center rating"><%= athlete.rating %></td>
-            <td class="text-center"><%= link_to athlete_recruits_path(athlete), method: :post, remote: true do %><i class="fas fa-plus"></i><% end %></td>
+            <td class="text-center">
+              <% if policy(@athlete).create? %>
+                <%= link_to athlete_recruits_path(athlete), method: :post, remote: true do %>
+                  <i class="fas fa-plus"></i>
+                <% end %>
+              <% end %>
+            </td>
           </tr>
         <% end %>
       </tbody>

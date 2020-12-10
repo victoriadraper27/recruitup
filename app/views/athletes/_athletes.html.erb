@@ -3,33 +3,37 @@
 
     <div class="table-responsive">
 
-    <table id ="dashboard_athlete" class="table table-striped table-hover table-sm">
-      <h1>Top <%= current_user.team.sport.name  %> Athletes</h1>
-      <thead>
+      <table id ="dashboard_athlete" class="table table-striped table-hover table-sm">
+        <h1>Top <%= current_user.team.sport.name  %> Athletes</h1>
+        <thead>
           <th>Name</th>
           <th>Graduation Year</th>
           <th>Nationality</th>
           <th>Rating</th>
-          <th>Add</th>
-      </thead>
+          <th>
+            <% if policy(@recruit).create? %>
+              Add
+            <% end %>
+          </th>
+        </thead>
 
-      <tbody>
-        <% @athletes.each do |athlete| %>
+        <tbody>
+          <% @athletes.each do |athlete| %>
 
           <tr>
             <td>
-                <%= image_tag athlete.photo, class: 'avatar-small mr-2' %>
-                <%= athlete.first_name %> <%= athlete.last_name %>
+              <%= image_tag athlete.photo, class: 'avatar-small mr-2' %>
+              <%= athlete.first_name %> <%= athlete.last_name %>
             </td>
             <% case athlete.grad_year %>
             <% when 2022 %>
-              <td class="text-center grad_year text-danger"><%= athlete.grad_year %></td>
+            <td class="text-center grad_year text-danger"><%= athlete.grad_year %></td>
             <% when 2023 %>
-              <td class="text-center grad_year text-primary"><%= athlete.grad_year %></td>
+            <td class="text-center grad_year text-primary"><%= athlete.grad_year %></td>
             <% when 2024 %>
-              <td class="text-center grad_year text-info"><%= athlete.grad_year %></td>
+            <td class="text-center grad_year text-info"><%= athlete.grad_year %></td>
             <% when 2025 %>
-              <td class="text-center grad_year text-success"><%= athlete.grad_year %></td>
+            <td class="text-center grad_year text-success"><%= athlete.grad_year %></td>
             <% end %>
 
             <td>
@@ -41,13 +45,20 @@
               </div>
             </td>
             <!-- <td class="text-center"><%#= athlete.athlete_team %></td> -->
-           <!--  <td class="text-center"><%#= athlete.athlete_team_url %></td> -->
+            <!--  <td class="text-center"><%#= athlete.athlete_team_url %></td> -->
             <td><%= athlete.rating %></td>
-            <td><%= link_to athlete_recruits_path(athlete), method: :post, remote: true do %><i class="fas fa-plus"></i><% end %></td>
+
+            <td>
+              <% if policy(@recruit).create? %>
+                <%= link_to athlete_recruits_path(athlete), method: :post, remote: true do %>
+                  <i class="fas fa-plus"></i>
+                <% end %>
+              <% end %>
+            </td>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

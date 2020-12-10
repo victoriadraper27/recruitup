@@ -59,6 +59,14 @@ user2_attributes = {
   role: 'Assistant Coach'
 }
 
+user3_attributes = {
+  email: 'other@email.com',
+  password: 'otherassistant',
+  first_name: 'Mary',
+  last_name: 'Ritchie',
+  role: 'Assistant Coach'
+}
+
 file_pia = URI.open('https://res.cloudinary.com/jvr-projects/image/upload/v1607481093/pia_nilsson_copy_gkxkjf.png')
 user = User.new(user_attributes)
 user.team = team
@@ -70,6 +78,12 @@ user2 = User.new(user2_attributes)
 user2.team = team
 user2.photo.attach(io: file_lynn, filename: 'lynn.png', content_type: 'image/png')
 user2.save!
+
+file_mary = URI.open('https://res.cloudinary.com/jvr-projects/image/upload/v1607569394/Coach_Ritchie_2019_e80o8l.png')
+user3 = User.new(user3_attributes)
+user3.team = team
+user3.photo.attach(io: file_mary, filename: 'mary.png', content_type: 'image/png')
+user3.save!
 
 3.times do
   udays = UnavailableDay.create!(
@@ -91,11 +105,10 @@ puts "Generated #{user2.first_name} #{user2.last_name} user"
 
 schedule = Schedule.create!(team: team)
 
-
-file1 = URI.open('https://res.cloudinary.com/jvr-projects/image/upload/v1607388862/athlete30.jpg')
+file1 = URI.open('https://res.cloudinary.com/jvr-projects/image/upload/v1607395280/athlete35.jpg')
 file2 = URI.open('https://res.cloudinary.com/jvr-projects/image/upload/v1607395447/athlete40.jpg')
-file3 = URI.open('https://res.cloudinary.com/jvr-projects/image/upload/v1607395412/athlete41.jpg')
-file4 = URI.open('https://res.cloudinary.com/jvr-projects/image/upload/v1607395280/athlete35.jpg')
+file3 = URI.open('https://res.cloudinary.com/jvr-projects/image/upload/v1607388862/athlete30.jpg')
+file4 = URI.open('https://res.cloudinary.com/jvr-projects/image/upload/v1607395412/athlete41.jpg')
 file5 = URI.open('https://res.cloudinary.com/jvr-projects/image/upload/v1607388778/athlete25.jpg')
 file6 = URI.open('https://res.cloudinary.com/jvr-projects/image/upload/v1607388410/athlete20.jpg')
 file7 = URI.open('https://res.cloudinary.com/jvr-projects/image/upload/v1607341660/athlete13.jpg')
@@ -123,13 +136,13 @@ athletes = []
 
 
   athlete_team_name = Faker::University.name
-  athlete1 = Athlete.new( first_name: Faker::Name.female_first_name,
-                  last_name: Faker::Name.last_name  ,
+  athlete1 = Athlete.new( first_name: 'Ruby',
+                  last_name: 'Kim',
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
                   athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
-                  nationality: Faker::WorldCup.team,
-                  rating: Faker::Number.decimal(l_digits: 3, r_digits: 3)
+                  nationality: 'South Korea',
+                  rating: Faker::Number.decimal(l_digits: 3, r_digits: 3),
                   )
   athlete1.photo.attach(io: file1, filename: 'athlete1.jpg', content_type: 'image/jpg')
   athlete1.save!
@@ -498,7 +511,7 @@ athletes_3 = athletes - athletes_2
 
 athletes_3.each do |athlete|
   3.times do
-  event = Event.create!(start_date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
+  event = Event.create!(start_date: Faker::Date.between(from: Date.today + 3, to: 45.days.from_now),
                         address: "2000 Visalia Row, Coronado, CA 92118, United States",
                         start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
   athlete_event = AthleteEvent.create!(event: event, athlete: athlete)
@@ -507,7 +520,7 @@ end
 
 athletes_3.each do |athlete|
   2.times do
-  event = Event.create!(start_date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
+  event = Event.create!(start_date: Faker::Date.between(from: Date.today + 3, to: 45.days.from_now),
                         address: "2000 Visalia Row, Coronado, CA 92118, United States",
                         start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
   athlete_event = AthleteEvent.create!(event: event, athlete: athlete)
@@ -515,10 +528,9 @@ athletes_3.each do |athlete|
 end
 
 
-
 recruit1 = Recruit.create!(athlete: athlete1, team: team)
 3.times do
-  event = Event.create!(start_date: Faker::Date.between(from: Date.today - 5, to: 45.days.from_now),
+  event = Event.create!(start_date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
                         address: "2000 Visalia Row, Coronado, CA 92118, United States",
                         start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
   appearence = Appearance.create!(event: event, recruit: recruit1)
@@ -530,7 +542,7 @@ end
 
 recruit2 = Recruit.create!(athlete: athlete2, team: team)
 3.times do
-  event = Event.create!(start_date: Faker::Date.between(from: Date.today - 5, to: 45.days.from_now),
+  event = Event.create!(start_date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
                         address: "6320 Grandview Dr W, University Place, WA 98467, United States",
                         start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
   appearence = Appearance.create!(event: event, recruit: recruit2)
@@ -542,7 +554,7 @@ end
 
 recruit3 = Recruit.create!(athlete: athlete3, team: team)
 3.times do
-  event = Event.create!(start_date: Faker::Date.between(from: Date.today - 5, to: 45.days.from_now),
+  event = Event.create!(start_date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
                         address: "Van Cortlandt Park S, The Bronx, NY 10463, United States",
                         start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
   appearence = Appearance.create!(event: event, recruit: recruit3)
@@ -554,7 +566,7 @@ end
 
 recruit4 = Recruit.create!(athlete: athlete4, team: team)
 3.times do
-  event = Event.create!(start_date: Faker::Date.between(from: Date.today - 5, to: 45.days.from_now),
+  event = Event.create!(start_date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
                         address: "1700 W Renwick Rd, Romeoville, IL 60446, United States",
                         start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
   appearence = Appearance.create!(event: event, recruit: recruit4)
@@ -567,7 +579,7 @@ end
 recruit5 = Recruit.create!(athlete: athlete5, team: team)
 
 3.times do
-  event = Event.create!(start_date: Faker::Date.between(from: Date.today - 5, to: 45.days.from_now),
+  event = Event.create!(start_date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
                         address: "600 Delaware Springs Blvd, Burnet, TX 78611, United States",
                         start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
   appearence = Appearance.create!(event: event, recruit: recruit5)
@@ -580,7 +592,7 @@ schedule2 = Schedule.create!(team: team)
 recruits = [recruit1, recruit2, recruit3, recruit4, recruit5]
 
 5.times do
-  event = Event.create!(start_date: Faker::Date.between(from: Date.today - 5, to: 45.days.from_now),
+  event = Event.create!(start_date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
                         address: "Ankerveien 127, 0766 Oslo, Norway",
                         start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
   appearence = Appearance.create!(event: event, recruit: recruits.sample)
@@ -588,7 +600,7 @@ recruits = [recruit1, recruit2, recruit3, recruit4, recruit5]
 end
 
 5.times do
-  event = Event.create!(start_date: Faker::Date.between(from: Date.today - 5, to: 45.days.from_now),
+  event = Event.create!(start_date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
                         address: "N1, Sidi Bouknadel, Morocco",
                         start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
   appearence = Appearance.create!(event: event, recruit: recruits.sample)
@@ -596,12 +608,81 @@ end
 end
 
 5.times do
-  event = Event.create!(start_date: Faker::Date.between(from: Date.today - 5, to: 45.days.from_now),
+  event = Event.create!(start_date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
                         address: "2600 Constitution Ave, Prattville, AL 36066, United States",
                         start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
   appearence = Appearance.create!(event: event, recruit: recruits.sample)
   schedule_event = ScheduleEvent.create!(event: event, schedule: schedule2)
 end
+
+
+
+# manufactured previous events
+puts "Manufacturing Previous Events for Both Calendars"
+
+1.times do
+  event = Event.create!(start_date: Date.today,
+                        address: "2000 Visalia Row, Coronado, CA 92118, United States",
+                        start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
+  appearence = Appearance.create!(event: event, recruit: recruit1)
+  schedule_event = ScheduleEvent.create!(event: event, schedule: schedule)
+  schedule_event = ScheduleEvent.create!(event: event, schedule: schedule2)
+
+  puts "Generated event on #{event.start_date} with recruit #{recruit1.athlete.first_name}"
+end
+
+1.times do
+  event = Event.create!(start_date: Faker::Date.between(from: Date.today - 10, to: Date.today - 1),
+                        address: "6320 Grandview Dr W, University Place, WA 98467, United States",
+                        start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
+  appearence = Appearance.create!(event: event, recruit: recruit2)
+  schedule_event = ScheduleEvent.create!(event: event, schedule: schedule)
+  schedule_event = ScheduleEvent.create!(event: event, schedule: schedule2)
+
+  puts "Generated event on #{event.start_date} with recruit #{recruit2.athlete.first_name}"
+end
+
+1.times do
+  event = Event.create!(start_date: Faker::Date.between(from: Date.today - 10, to: Date.today - 1),
+                        address: "Van Cortlandt Park S, The Bronx, NY 10463, United States",
+                        start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
+  appearence = Appearance.create!(event: event, recruit: recruit3)
+  schedule_event = ScheduleEvent.create!(event: event, schedule: schedule)
+  schedule_event = ScheduleEvent.create!(event: event, schedule: schedule2)
+
+  puts "Generated event on #{event.start_date} with recruit #{recruit3.athlete.first_name}"
+end
+
+
+1.times do
+  event = Event.create!(start_date: Faker::Date.between(from: Date.today - 10, to: Date.today - 1),
+                        address: "1700 W Renwick Rd, Romeoville, IL 60446, United States",
+                        start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
+  appearence = Appearance.create!(event: event, recruit: recruit4)
+  schedule_event = ScheduleEvent.create!(event: event, schedule: schedule)
+  schedule_event = ScheduleEvent.create!(event: event, schedule: schedule2)
+
+  puts "Generated event on #{event.start_date} with recruit #{recruit4.athlete.first_name}"
+end
+
+
+1.times do
+  event = Event.create!(start_date: Faker::Date.between(from: Date.today - 10, to: Date.today - 1),
+                        address: "600 Delaware Springs Blvd, Burnet, TX 78611, United States",
+                        start_time: Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :all))
+  appearence = Appearance.create!(event: event, recruit: recruit5)
+  schedule_event = ScheduleEvent.create!(event: event, schedule: schedule)
+  schedule_event = ScheduleEvent.create!(event: event, schedule: schedule2)
+
+  puts "Generated event on #{event.start_date} with recruit #{recruit5.athlete.first_name}"
+end
+
+
+
+
+
+
+
 
 # Need to prioritize games that have overlapping recruits
 # Need to only see one recruit 3 times in a Schedule

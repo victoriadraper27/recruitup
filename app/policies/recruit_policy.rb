@@ -10,16 +10,16 @@ class RecruitPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    user.role == "Head Coach"
   end
 
   def destroy?
-    owner_or_admin?
+    user.role == "Head Coach"
   end
 
   private
 
   def owner_or_admin?
-    user.team == record.team || user.admin
+    user.team == record.team
   end
 end

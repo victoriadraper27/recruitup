@@ -31,6 +31,7 @@ Rails.application.routes.draw do
     resources :notes, except: [:index, :new, :show]
   end
 
+  resources :notes, only: [:index]
   resources :recruits, except: [:new, :create]
 
   resources :athletes, only: [:index, :show] do

@@ -8,4 +8,8 @@ class AthletePolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def create?
+    user.role == 'Head Coach'
+  end
 end

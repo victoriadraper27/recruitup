@@ -7,6 +7,7 @@ class AthletesController < ApplicationController
     chat_id = current_user.team.chatroom_id
     @chatroom = Chatroom.find_by_id(chat_id)
     @message = Message.new
+    @athlete = Athlete.new
   end
 
   def show
