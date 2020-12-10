@@ -142,7 +142,7 @@ athletes = []
                   athlete_team: athlete_team_name,
                   athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
                   nationality: 'South Korea',
-                  rating: Faker::Number.decimal(l_digits: 3, r_digits: 3),
+                  rating: 871,
                   )
   athlete1.photo.attach(io: file1, filename: 'athlete1.jpg', content_type: 'image/jpg')
   athlete1.save!
@@ -178,7 +178,7 @@ athletes = []
   puts "Generated #{athlete3.first_name} #{athlete3.last_name}"
 
  athlete_team_name = Faker::University.name
-  athlete4 = Athlete.new( first_name: 'Amanda',
+  athlete4 = Athlete.new( first_name: 'Rachael',
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
@@ -430,7 +430,7 @@ athletes = []
   puts "Generated #{athlete21.first_name} #{athlete21.last_name}"
 
  athlete_team_name = Faker::University.name
-  athlete22 = Athlete.new( first_name: 'Maggie',
+  athlete22 = Athlete.new( first_name: 'Kendall',
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
@@ -445,13 +445,13 @@ athletes = []
 
 
  athlete_team_name = Faker::University.name
-  athlete23 = Athlete.new( first_name: 'Kendall',
+  athlete23 = Athlete.new( first_name: 'Maggie',
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
                   athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
                   nationality: Faker::WorldCup.team,
-                  rating: Faker::Number.decimal(l_digits: 3, r_digits: 3)
+                  rating: 227
                   )
   athlete23.photo.attach(io: file23, filename: 'athlete23.jpg', content_type: 'image/jpg')
   athlete23.save!
@@ -461,11 +461,11 @@ athletes = []
  athlete_team_name = Faker::University.name
   athlete24 = Athlete.new( first_name: 'Sam',
                   last_name: Faker::Name.last_name  ,
-                  grad_year: rand(2022..2025),
+                  grad_year: 2025,
                   athlete_team: athlete_team_name,
                   athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
                   nationality: Faker::WorldCup.team,
-                  rating: Faker::Number.decimal(l_digits: 3, r_digits: 3)
+                  rating: 716
                   )
   athlete24.photo.attach(io: file24, filename: 'athlete24.jpg', content_type: 'image/jpg')
   athlete24.save!
@@ -479,7 +479,7 @@ athletes = []
                   athlete_team: athlete_team_name,
                   athlete_team_url: "www.#{athlete_team_name.downcase.gsub(/\s+/,'')}.com",
                   nationality: Faker::WorldCup.team,
-                  rating: Faker::Number.decimal(l_digits: 3, r_digits: 3)
+                  rating: 842
                   )
   athlete25.photo.attach(io: file25, filename: 'athlete25.jpg', content_type: 'image/jpg')
   athlete25.save!
