@@ -17,7 +17,7 @@
       <% if recruit.athlete.grad_year == 2022 %>
         <div class="btn-group bg-danger">
         <a href="/events/<%= event.id %>" class="calendar btn-sm list-group-item list-group-item-action list-group-item-danger d-flex justify-content-between" type='button'>
-          <%= event.start_time.to_s(:time) %>-<%= recruit.athlete.first_name %>
+          <%= Time.at((event.start_time.to_time.to_i / 600.0).round * 600).to_datetime.to_s(:time) %>-<%= recruit.athlete.first_name %>
         </a>
         <div class='d-block text-center'>
         <div class='dropdown'>
@@ -34,7 +34,7 @@
       <% elsif recruit.athlete.grad_year == 2023 %>
         <div class="btn-group bg-primary">
         <a href="/events/<%= event.id %>" class="calendar btn-sm list-group-item list-group-item-action list-group-item-primary d-flex justify-content-between" type='button'>
-          <%= event.start_time.to_s(:time) %>-<%= recruit.athlete.first_name %>
+          <%= Time.at((event.start_time.to_time.to_i / 600.0).round * 600).to_datetime.to_s(:time) %>-<%= recruit.athlete.first_name %>
         </a>
         <div class='d-block text-center'>
         <div class='dropdown'>
@@ -51,7 +51,7 @@
       <% elsif recruit.athlete.grad_year == 2024 %>
         <div class="btn-group bg-info">
         <a href="/events/<%= event.id %>" class="calendar btn-sm list-group-item list-group-item-action list-group-item-info d-flex justify-content-between" type='button'>
-          <%= event.start_time.to_s(:time) %>-<%= recruit.athlete.first_name %>
+          <%= Time.at((event.start_time.to_time.to_i / 600.0).round * 600).to_datetime.to_s(:time) %>-<%= recruit.athlete.first_name %>
         </a>
         <div class='d-block text-center'>
         <div class='dropdown'>
@@ -68,7 +68,7 @@
       <% else %>
         <div class="btn-group bg-success">
         <a href="/events/<%= event.id %>" class="calendar btn-sm list-group-item list-group-item-action list-group-item-success d-flex justify-content-between" type='button'>
-          <%= event.start_time.to_s(:time) %>-<%= recruit.athlete.first_name %>
+          <%= Time.at((event.start_time.to_time.to_i / 600.0).round * 600).to_datetime.to_s(:time) %>-<%= recruit.athlete.first_name %>
         </a>
         <div class='d-block text-center'>
         <div class='dropdown'>

@@ -1,3 +1,5 @@
+require 'date'
+
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
@@ -16,7 +18,7 @@ class PagesController < ApplicationController
     @team = current_user.team
     @schedule = @team.selected_schedule || @schedules.first
     # @events = @team.selected_schedule.events
-    @event = @schedule.events.first
+    @event = @schedule.events.order(start_date: :asc).where('start_date > ?', DateTime.now).first
     @athletes = policy_scope(Athlete)
     @athlete = policy_scope(Athlete).sample
     recruits = policy_scope(Recruit).map { |rec_hash| rec_hash[:athlete_id] }
