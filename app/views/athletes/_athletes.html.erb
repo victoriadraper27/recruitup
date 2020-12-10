@@ -10,7 +10,11 @@
           <th>Graduation Year</th>
           <th>Nationality</th>
           <th>Rating</th>
-          <th>Add</th>
+          <th>
+            <% if policy(@recruit).create? %>
+              Add
+            <% end %>
+          </th>
         </thead>
 
         <tbody>

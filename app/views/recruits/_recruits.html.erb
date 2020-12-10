@@ -19,7 +19,11 @@
           <tr class="athlete-table-header">
             <th>Name</th>
             <th>Graduation Year</th>
-            <th>Remove</th>
+            <th>
+              <% if policy(@recruit).destroy? %>
+                Remove
+              <% end %>
+            </th>
           </tr>
         </thead>
         <tbody>

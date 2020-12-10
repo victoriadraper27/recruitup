@@ -6,6 +6,6 @@ class AthletePolicy < ApplicationPolicy
   end
 
   def show?
-    true
+    user.role == 'Head Coach'
   end
 end
