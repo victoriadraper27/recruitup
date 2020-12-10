@@ -1,4 +1,4 @@
-<div class="my-5 py-5">
+<div class="my-4 py-5">
   <div class='mx-5 mb-3 athlete-index-card'>
   <div class="my-1 container athlete-index">
 
@@ -12,9 +12,7 @@
           <th>Graduation Year</th>
           <th class="text-center">Nationality</th>
           <th class="text-center">Team</th>
-          <th class="text-center">Team URL</th>
           <th class="text-center">Rating</th>
-          <th>More Info</th>
           <th>
             <% if policy(@athlete).create? %>
               Add
@@ -24,14 +22,16 @@
       <tbody>
         <% @athletes.each do |athlete| %>
           <tr class="athlete-table-content">
-            <th scope='row'>
-              <div class='d-flex justify-content-start'>
-                <%= image_tag athlete.photo, class: 'avatar' %>
-              <span class='name d-flex ml-4'>
-                  <%= athlete.first_name %> <%= athlete.last_name %>
-              </span>
-              </div>
-            </th>
+            <td>
+              <%= link_to athlete_path(athlete) do %>
+                <div class='d-flex justify-content-start'>
+                  <%= image_tag athlete.photo, class: 'avatar' %>
+                <span class='name d-flex ml-4'>
+                    <%= athlete.first_name %> <%= athlete.last_name %>
+                </span>
+                </div>
+              <% end %>
+            </td>
             <% case athlete.grad_year %>
               <% when 2022 %>
                 <td class="text-center grad_year text-danger"><%= athlete.grad_year %></td>
@@ -51,10 +51,8 @@
               </div>
             </td>
             <td class="text-center"><%= athlete.athlete_team %></td>
-            <td class="text-center"><%= athlete.athlete_team_url %></td>
             <td class="text-center rating"><%= athlete.rating %></td>
-            <td><%= link_to 'VIEW', athlete %></td>
-            <td>
+            <td class="text-center">
               <% if policy(@athlete).create? %>
                 <%= link_to athlete_recruits_path(athlete), method: :post, remote: true do %>
                   <i class="fas fa-plus"></i>

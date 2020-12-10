@@ -52,7 +52,7 @@ document.addEventListener('turbolinks:load', () => {
       "scrollCollapse": true,
       "paging":         false
     })
-  }, 2000)
+  }, 1000)
 
   setTimeout(()=>{
     $('#dashboard_recruit').DataTable( {
@@ -60,7 +60,7 @@ document.addEventListener('turbolinks:load', () => {
           "scrollCollapse": true,
           "paging":         false
     })
-  }, 2000)
+  }, 1000)
   setTimeout(()=>{
     $('#recruit-index').DataTable( {
           "scrollY":        "400px",

@@ -18,8 +18,9 @@
   }
 
   p {
-    font-size: 20px;
+    font-size: 18px;
     color: #393e46;
+    margin-bottom: 0.2rem;
   }
 
   .btn {
@@ -28,7 +29,15 @@
   }
 }
 
+.athlete-show-info {
+  font-size: 20px;
+}
+
+
 .athlete-show-card {
+  width: 1000px;
+  height: 500px;
+  overflow: auto;
   border-radius: 20px;
   background-color: $baby-powder;
   padding: 30px;
