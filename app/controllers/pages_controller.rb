@@ -26,5 +26,6 @@ class PagesController < ApplicationController
     @unavailable_days = policy_scope(Event).order(created_at: :desc)
     @chatroom = current_user.team.chatroom
     @message = Message.new
+    @recruit = Recruit.new
   end
 end

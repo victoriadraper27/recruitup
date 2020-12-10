@@ -39,7 +39,13 @@
                     <% end %>
                   </td>
                   <td class="text-center grad_year"><%= recruit.athlete.grad_year %></td>
-                  <td><%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %><i class="fas fa-trash-alt"></i><% end %></td>
+                  <td>
+                    <% if policy(@recruit).destroy? %>
+                      <%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %>
+                       <i class="fas fa-trash-alt"></i>
+                      <% end %>
+                    <% end %>
+                  </td>
                 </tr>
 
               <% when 2023 %>
@@ -55,7 +61,13 @@
                   <% end %>
                   </td>
                   <td class="text-center grad_year"><%= recruit.athlete.grad_year %></td>
-                  <td><%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %><i class="fas fa-trash-alt"></i><% end %></td>
+                  <td>
+                    <% if policy(@recruit).destroy? %>
+                      <%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %>
+                        <i class="fas fa-trash-alt"></i>
+                      <% end %>
+                    <% end %>
+                  </td>
                 </tr>
 
               <% when 2024 %>
@@ -71,7 +83,13 @@
                   <% end %>
                   </td>
                   <td class="text-center grad_year"><%= recruit.athlete.grad_year %></td>
-                  <td><%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %><i class="fas fa-trash-alt"></i><% end %></td>
+                  <td>
+                    <% if policy(@recruit).destroy? %>
+                      <%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %>
+                       <i class="fas fa-trash-alt"></i>
+                      <% end %>
+                    <% end %>
+                  </td>
                 </tr>
 
               <% when 2025 %>
@@ -87,8 +105,15 @@
                   <% end %>
                   </td>
                   <td class="text-center grad_year"><%= recruit.athlete.grad_year %></td>
-                  <td><%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %><i class="fas fa-trash-alt"></i><% end %></td>
+                  <td>
+                    <% if policy(@recruit).destroy? %>
+                      <%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %>
+                        <i class="fas fa-trash-alt"></i>
+                      <% end %>
+                    <% end %>
+                  </td>
                 </tr>
+
             <% end %>
           <% end %>
         </tbody>
