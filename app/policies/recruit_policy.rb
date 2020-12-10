@@ -14,7 +14,7 @@ class RecruitPolicy < ApplicationPolicy
   end
 
   def destroy?
-    owner_or_admin? && user.role == "Head Coach"
+    user.role == "Head Coach"
   end
 
   private
