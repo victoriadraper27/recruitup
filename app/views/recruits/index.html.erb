@@ -7,7 +7,9 @@
 
       <div class="recruit-index-top">
         <div class="d-flex justify-content-center mt-3">
-          <%= link_to 'Generate Schedules', schedules_path, class: "p-3" %>
+          <% if policy(@recruit).destroy? %>
+            <%= link_to 'Generate Schedules', schedules_path, class: "p-3" %>
+          <% end %>
         </div>
       </div>
 
@@ -46,7 +48,13 @@
                   <td class="text-center"><%= recruit.athlete.athlete_team %></td>
                   <td class="text-center"><%= recruit.athlete.athlete_team_url %></td>
                   <td class="text-center rating"><%= recruit.athlete.rating %></td>
-                  <td><%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %><i class="fas fa-trash-alt"></i><% end %></td>
+                  <td>
+                    <% if policy(@recruit).destroy? %>
+                      <%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %>
+                        <i class="fas fa-trash-alt"></i>
+                      <% end %>
+                    <% end %>
+                  </td>
                 </tr>
 
               <% when 2023 %>
@@ -69,7 +77,13 @@
                   <td class="text-center"><%= recruit.athlete.athlete_team %></td>
                   <td class="text-center"><%= recruit.athlete.athlete_team_url %></td>
                   <td class="text-center rating"><%= recruit.athlete.rating %></td>
-                  <td><%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %><i class="fas fa-trash-alt"></i><% end %></td>
+                  <td>
+                    <% if policy(@recruit).destroy? %>
+                      <%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %>
+                        <i class="fas fa-trash-alt"></i>
+                      <% end %>
+                    <% end %>
+                  </td>
                 </tr>
 
 
@@ -93,7 +107,13 @@
                   <td class="text-center"><%= recruit.athlete.athlete_team %></td>
                   <td class="text-center"><%= recruit.athlete.athlete_team_url %></td>
                   <td class="text-center rating"><%= recruit.athlete.rating %></td>
-                  <td><%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %><i class="fas fa-trash-alt"></i><% end %></td>
+                  <td>
+                    <% if policy(@recruit).destroy? %>
+                      <%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %>
+                        <i class="fas fa-trash-alt"></i>
+                      <% end %>
+                    <% end %>
+                  </td>
                 </tr>
 
 
@@ -117,9 +137,14 @@
                 <td class="text-center"><%= recruit.athlete.athlete_team %></td>
                 <td class="text-center"><%= recruit.athlete.athlete_team_url %></td>
                 <td class="text-center rating"><%= recruit.athlete.rating %></td>
-                <td><%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %><i class="fas fa-trash-alt"></i><% end %></td>
+                <td>
+                  <% if policy(@recruit).destroy? %>
+                    <%= link_to recruit_path(recruit), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %>
+                      <i class="fas fa-trash-alt"></i>
+                    <% end %>
+                  <% end %>
+                </td>
               </tr>
-
           <% end %>
           <% end %>
         </tbody>
