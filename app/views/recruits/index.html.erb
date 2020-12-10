@@ -16,11 +16,10 @@
       <table class="table table-striped table-hover" id="recruit-index">
         <thead>
           <th>Name</th>
-          <th>Graduation Year</th>
-          <th>Nationality</th>
-          <th>Team</th>
-          <th>Team URL</th>
-          <th>Rating</th>
+          <th class="text-center">Graduation Year</th>
+          <th class="text-center">Nationality</th>
+          <th class="text-center">Team</th>
+          <th  class="text-center">Rating</th>
           <th></th>
         </thead>
 
@@ -38,15 +37,12 @@
                   <% end %>
                   <td class="text-center grad_year"><%= recruit.athlete.grad_year %></td>
                   <td class="text-center">
-                    <div class='d-flex justify-content-around'>
+                    <div class='d-flex justify-content-center'>
                       <%= c = ISO3166::Country.find_country_by_name(recruit.athlete.nationality).emoji_flag if ISO3166::Country.find_country_by_name(recruit.athlete.nationality)  %>
-                      <span class='nationality d-flex ml-1'>
                         <%= recruit.athlete.nationality %>
-                      </span>
                     </div>
                   </td>
                   <td class="text-center"><%= recruit.athlete.athlete_team %></td>
-                  <td class="text-center"><%= recruit.athlete.athlete_team_url %></td>
                   <td class="text-center rating"><%= recruit.athlete.rating %></td>
                   <td>
                     <% if policy(@recruit).destroy? %>
@@ -67,15 +63,14 @@
                   <% end %>
                   <td class="text-center grad_year"><%= recruit.athlete.grad_year %></td>
                   <td class="text-center">
-                    <div class='d-flex justify-content-around'>
+                    <div class='d-flex justify-content-center
+'>
                       <%= c = ISO3166::Country.find_country_by_name(recruit.athlete.nationality).emoji_flag if ISO3166::Country.find_country_by_name(recruit.athlete.nationality)  %>
-                      <span class='nationality d-flex ml-1'>
                         <%= recruit.athlete.nationality %>
-                      </span>
                     </div>
                   </td>
                   <td class="text-center"><%= recruit.athlete.athlete_team %></td>
-                  <td class="text-center"><%= recruit.athlete.athlete_team_url %></td>
+
                   <td class="text-center rating"><%= recruit.athlete.rating %></td>
                   <td>
                     <% if policy(@recruit).destroy? %>
@@ -97,15 +92,14 @@
                   <% end %>
                   <td class="text-center grad_year"><%= recruit.athlete.grad_year %></td>
                   <td class="text-center">
-                    <div class='d-flex justify-content-around'>
+                    <div class='d-flex justify-content-center
+'>
                       <%= c = ISO3166::Country.find_country_by_name(recruit.athlete.nationality).emoji_flag if ISO3166::Country.find_country_by_name(recruit.athlete.nationality)  %>
-                      <span class='nationality d-flex ml-1'>
                         <%= recruit.athlete.nationality %>
-                      </span>
                     </div>
                   </td>
                   <td class="text-center"><%= recruit.athlete.athlete_team %></td>
-                  <td class="text-center"><%= recruit.athlete.athlete_team_url %></td>
+
                   <td class="text-center rating"><%= recruit.athlete.rating %></td>
                   <td>
                     <% if policy(@recruit).destroy? %>
@@ -127,15 +121,12 @@
                   <% end %>
                 <td class="text-center grad_year"><%= recruit.athlete.grad_year %></td>
                 <td class="text-center">
-                  <div class='d-flex justify-content-around'>
+                  <div class='d-flex justify-content-center'>
                     <%= c = ISO3166::Country.find_country_by_name(recruit.athlete.nationality).emoji_flag if ISO3166::Country.find_country_by_name(recruit.athlete.nationality)  %>
-                    <span class='nationality d-flex ml-1'>
-                      <%= recruit.athlete.nationality %>
-                    </span>
+                    <%= recruit.athlete.nationality %>
                   </div>
                 </td>
                 <td class="text-center"><%= recruit.athlete.athlete_team %></td>
-                <td class="text-center"><%= recruit.athlete.athlete_team_url %></td>
                 <td class="text-center rating"><%= recruit.athlete.rating %></td>
                 <td>
                   <% if policy(@recruit).destroy? %>

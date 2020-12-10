@@ -23,7 +23,7 @@
       <% current_user.team.users.each do |user| %>
       <% team_members << (@user = user.first_name) if user.unavailable_days.map { |ud_hash| ud_hash[:date] }.exclude?(@event.start_date) %>
       <% end %>
-      <h2 class="text-grey"><%= @schedule_event.user.first_name if @schedule_event.user %></h2>
+        <h2 class="text-grey">assigned to: &nbsp;&nbsp;&nbsp;<%= @schedule_event.user.first_name if @schedule_event.user %></h2>
       <%= render partial: 'shared/assignedform', locals: { event: @event, schedule: @schedule, schedule_event: @schedule_event, team_members: team_members} %>
     </div>
 
