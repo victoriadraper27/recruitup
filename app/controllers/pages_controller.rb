@@ -25,7 +25,7 @@ class PagesController < ApplicationController
     recruits.exclude?(@athlete.id) ? @athlete : @athlete = policy_scope(Athlete).last
     @recruits = @team.recruits.all
     @unavailable_day = UnavailableDay.new
-    @unavailable_days = policy_scope(Event).order(created_at: :desc)
+    @unavailable_days = policy_scope(UnavailableDay).order(date: :desc)
     @chatroom = current_user.team.chatroom
     @message = Message.new
     @recruit = Recruit.new
