@@ -1,0 +1,9 @@
+<div class="mt-3 p-3 unavailable-card">
+  <h3>Listing of Unavailable Days</h3>
+    <% @unavailable_days.each do |day| %>
+      <div class="d-flex">
+        <p class="unavailable-red"><%= day.date.strftime("%m-%d-%Y") %>:&nbsp;</p>
+        <p><%= day.user.first_name.upcase %></p>
+      </div>
+    <% end %>
+</div>
