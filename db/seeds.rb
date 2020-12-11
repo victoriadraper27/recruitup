@@ -95,6 +95,7 @@ end
   udays2 = UnavailableDay.create!(
           date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
           user: user2 )
+end
 
 1.times do
   udays3 = UnavailableDay.create!(
