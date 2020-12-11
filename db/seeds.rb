@@ -85,16 +85,21 @@ user3.team = team
 user3.photo.attach(io: file_mary, filename: 'mary.png', content_type: 'image/png')
 user3.save!
 
-3.times do
+1.times do
   udays = UnavailableDay.create!(
           date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
           user: user )
 end
 
-3.times do
+1.times do
   udays2 = UnavailableDay.create!(
           date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
           user: user2 )
+
+1.times do
+  udays3 = UnavailableDay.create!(
+          date: Faker::Date.between(from: Date.today, to: 45.days.from_now),
+          user: user3 )
 end
 
 
