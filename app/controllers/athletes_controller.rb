@@ -12,6 +12,8 @@ class AthletesController < ApplicationController
 
   def show
     @athlete = Athlete.find(params[:id])
+    @recruits = current_user.team.recruits
+    @recruit_names = @recruits.map { |recruit| recruit.athlete.first_name }
     @recruit = Recruit.new
     chat_id = current_user.team.chatroom_id
     @chatroom = Chatroom.find_by_id(chat_id)
