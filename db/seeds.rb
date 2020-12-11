@@ -161,7 +161,7 @@ athletes = []
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
                   athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
-                  nationality: Faker::WorldCup.team,
+                  nationality: 'Argentina',
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3)
                   )
   athlete2.photo.attach(io: file2, filename: 'athlete2.jpg', content_type: 'image/jpg')
@@ -175,7 +175,7 @@ athletes = []
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
                   athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
-                  nationality: Faker::WorldCup.team,
+                  nationality: 'Switzerland',
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3)
                   )
   athlete3.photo.attach(io: file3, filename: 'athlete3.jpg', content_type: 'image/jpg')
@@ -184,12 +184,12 @@ athletes = []
   puts "Generated #{athlete3.first_name} #{athlete3.last_name}"
 
  athlete_team_name = Faker::University.name
-  athlete4 = Athlete.new( first_name: 'Rachael',
+  athlete4 = Athlete.new( first_name: 'Alice',
                   last_name: Faker::Name.last_name  ,
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
                   athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
-                  nationality: Faker::WorldCup.team,
+                  nationality: 'Germany',
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3)
                   )
   athlete4.photo.attach(io: file4, filename: 'athlete4.jpg', content_type: 'image/jpg')
@@ -203,7 +203,7 @@ athletes = []
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
                   athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
-                  nationality: Faker::WorldCup.team,
+                  nationality: 'Denmark',
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3)
                   )
   athlete5.photo.attach(io: file5, filename: 'athlete5.jpg', content_type: 'image/jpg')
@@ -217,7 +217,7 @@ athletes = []
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
                   athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
-                  nationality: Faker::WorldCup.team,
+                  nationality: 'Spain',
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3)
                   )
   athlete6.photo.attach(io: file6, filename: 'athlete6.jpg', content_type: 'image/jpg')
@@ -231,7 +231,7 @@ athletes = []
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
                   athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
-                  nationality: Faker::WorldCup.team,
+                  nationality: 'France',
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3)
                   )
   athlete7.photo.attach(io: file7, filename: 'athlete7.jpg', content_type: 'image/jpg')
@@ -245,7 +245,7 @@ athletes = []
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
                   athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
-                  nationality: Faker::WorldCup.team,
+                  nationality: 'Croatia',
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3)
                   )
   athlete8.photo.attach(io: file8, filename: 'athlete8.jpg', content_type: 'image/jpg')
@@ -259,7 +259,7 @@ athletes = []
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
                   athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
-                  nationality: Faker::WorldCup.team,
+                  nationality: 'Iran',
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3)
                   )
   athlete9.photo.attach(io: file9, filename: 'athlete9.jpg', content_type: 'image/jpg')
@@ -273,7 +273,7 @@ athletes = []
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
                   athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
-                  nationality: Faker::WorldCup.team,
+                  nationality: 'South Korea',
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3)
                   )
   athlete10.photo.attach(io: file10, filename: 'athlete10.jpg', content_type: 'image/jpg')
@@ -287,7 +287,7 @@ athletes = []
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
                   athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
-                  nationality: Faker::WorldCup.team,
+                  nationality: 'Panama',
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3)
                   )
   athlete11.photo.attach(io: file11, filename: 'athlete11.jpg', content_type: 'image/jpg')
@@ -301,7 +301,7 @@ athletes = []
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
                   athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
-                  nationality: Faker::WorldCup.team,
+                  nationality: 'Poland',
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3)
                   )
   athlete12.photo.attach(io: file12, filename: 'athlete12.jpg', content_type: 'image/jpg')
@@ -315,7 +315,7 @@ athletes = []
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
                   athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
-                  nationality: Faker::WorldCup.team,
+                  nationality: 'Portugal',
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3)
                   )
   athlete13.photo.attach(io: file13, filename: 'athlete13.jpg', content_type: 'image/jpg')
@@ -329,7 +329,7 @@ athletes = []
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
                   athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
-                  nationality: Faker::WorldCup.team,
+                  nationality: 'Russia',
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3)
                   )
   athlete14.photo.attach(io: file14, filename: 'athlete14.jpg', content_type: 'image/jpg')
@@ -343,7 +343,7 @@ athletes = []
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
                   athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
-                  nationality: Faker::WorldCup.team,
+                  nationality: 'Sweden',
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3)
                   )
   athlete15.photo.attach(io: file15, filename: 'athlete15.jpg', content_type: 'image/jpg')
@@ -357,7 +357,7 @@ athletes = []
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
                   athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
-                  nationality: Faker::WorldCup.team,
+                  nationality: 'Tunisia',
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3)
                   )
   athlete16.photo.attach(io: file16, filename: 'athlete16.jpg', content_type: 'image/jpg')
@@ -371,7 +371,7 @@ athletes = []
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
                   athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
-                  nationality: Faker::WorldCup.team,
+                  nationality: 'Uraguay',
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3)
                   )
   athlete17.photo.attach(io: file17, filename: 'athlete17.jpg', content_type: 'image/jpg')
@@ -385,7 +385,7 @@ athletes = []
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
                   athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
-                  nationality: Faker::WorldCup.team,
+                  nationality: 'China',
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3)
                   )
   athlete18.photo.attach(io: file18, filename: 'athlete18.jpg', content_type: 'image/jpg')
@@ -399,7 +399,7 @@ athletes = []
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
                   athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
-                  nationality: Faker::WorldCup.team,
+                  nationality: 'Panama',
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3)
                   )
   athlete19.photo.attach(io: file19, filename: 'athlete19.jpg', content_type: 'image/jpg')
@@ -413,7 +413,7 @@ athletes = []
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
                   athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
-                  nationality: Faker::WorldCup.team,
+                  nationality: 'Japan',
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3)
                   )
   athlete20.photo.attach(io: file20, filename: 'athlete20.jpg', content_type: 'image/jpg')
@@ -427,7 +427,7 @@ athletes = []
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
                   athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
-                  nationality: Faker::WorldCup.team,
+                  nationality: 'Spain',
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3)
                   )
   athlete21.photo.attach(io: file21, filename: 'athlete21.jpg', content_type: 'image/jpg')
@@ -441,7 +441,7 @@ athletes = []
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
                   athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
-                  nationality: Faker::WorldCup.team,
+                  nationality: 'Australia',
                   rating: Faker::Number.decimal(l_digits: 3, r_digits: 3)
                   )
   athlete22.photo.attach(io: file22, filename: 'athlete22.jpg', content_type: 'image/jpg')
@@ -456,7 +456,7 @@ athletes = []
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
                   athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
-                  nationality: Faker::WorldCup.team,
+                  nationality: 'France',
                   rating: 227
                   )
   athlete23.photo.attach(io: file23, filename: 'athlete23.jpg', content_type: 'image/jpg')
@@ -470,7 +470,7 @@ athletes = []
                   grad_year: 2025,
                   athlete_team: athlete_team_name,
                   athlete_team_url: "www.#{athlete_team_name.gsub(/\s+/,'')}.com",
-                  nationality: Faker::WorldCup.team,
+                  nationality: 'Norway',
                   rating: 716
                   )
   athlete24.photo.attach(io: file24, filename: 'athlete24.jpg', content_type: 'image/jpg')
@@ -484,7 +484,7 @@ athletes = []
                   grad_year: rand(2022..2025),
                   athlete_team: athlete_team_name,
                   athlete_team_url: "www.#{athlete_team_name.downcase.gsub(/\s+/,'')}.com",
-                  nationality: Faker::WorldCup.team,
+                  nationality: 'Philippines',
                   rating: 842
                   )
   athlete25.photo.attach(io: file25, filename: 'athlete25.jpg', content_type: 'image/jpg')
